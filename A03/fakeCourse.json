@@ -1,0 +1,38 @@
+[
+  {
+    "uniqueid": "14ws-00123",
+    "semester": "14ss",
+    "description": "Multifunction Programmierung",
+    "itemId": 29
+  },
+  {
+    "uniqueid": "14ss-00312",
+    "semester": "14ss",
+    "description": "Future Topic in Human Computer Interaction",
+    "itemId": 29
+  },
+  {
+    "uniqueid": "14ss-03465",
+    "semester": "14ss",
+    "description": "Designing Interactive System III",
+    "itemId": 29
+  },
+  {
+    "uniqueid": "14ss-15213",
+    "semester": "14ss",
+    "description": "Multimedia Computing Laboratory - COPENHAGEN",
+    "itemId": 29
+  },
+  {
+    "uniqueid": "14ss-12456",
+    "semester": "14ss",
+    "description": "Implementation of Framework",
+    "itemId": 29
+  },
+  {
+    "uniqueid": "14ss-44234",
+    "semester": "14ss",
+    "description": "Object-Oriented Embedded Software Analysis",
+    "itemId": 29
+  }
+]
