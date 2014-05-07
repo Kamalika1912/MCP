@@ -30,9 +30,14 @@
     
     //Do I have a token already? Otherwise to the One-Time login
     if (![l2pConn hasToken]){
-        NSLog(@"%@",@"No token yet. asking for it now..");
-            [l2pConn requestDeviceCode];
-    } else NSLog(@"%@",@"Got Token");
+        NSLog(@"%@%@",@"No token yet. asking for it now.. at address %@", [l2pConn getVerificationUrl]);
+//            [l2pConn getValidationUrl];
+    
+    
+    
+    } else NSLog(@"%@",@"Got Token already");
+    
+    
     
     
 }

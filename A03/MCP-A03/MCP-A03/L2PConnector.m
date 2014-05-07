@@ -94,7 +94,44 @@
 
 
 
+-(NSURL *)getVerificationUrl
+{
+    // create the url to be returned
+    NSURL * verificationUrl = [NSURL URLWithString:@""];
+    
+    NSURL *requestUrl = [NSURL URLWithString:self.config[@"codeUrl"]];
+    NSString *bodyString = [NSString stringWithFormat:@"client_id=%@&scope=%@", self.config[@"clientID"],self.config[@"scope"]];
+    
+    NSMutableURLRequest *userCodeRequest = [NSMutableURLRequest requestWithURL:requestUrl];
+    [userCodeRequest setHTTPMethod:@"POST"];
+    [userCodeRequest setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    //NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://google.com"]];
+    NSURLResponse * response = nil;
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:userCodeRequest
+                                          returningResponse:&response
+                                                      error:&error];
+    
+    if (error == nil)
+    {
+        NSString *stringResponseData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"%@",  stringResponseData);
+        
+        NSError *e;
+        NSDictionary *responseDataDictionary =
+        [NSJSONSerialization JSONObjectWithData: data
+                                        options: NSJSONReadingMutableContainers
+                                          error: &e];
+        
+//        NSDictionary *responseDataDictionary = [NSDictionary dictionaryWithObject:data] ;
+        verificationUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@?q=verify&d=%@", responseDataDictionary[@"verification_url"],responseDataDictionary[@"user_code"]]];
+        
+    } else NSLog(@"%@" , @"NOPE");
 
+    // return the url. Hopefully not an empty string
+    return verificationUrl;
+}
 
 
 

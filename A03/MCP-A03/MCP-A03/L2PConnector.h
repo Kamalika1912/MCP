@@ -20,7 +20,7 @@ typedef enum L2PConnectorState : NSInteger {
 
 
 -(void)requestToken;
--(void)requestDeviceCode;
+-(NSURL *)getVerificationUrl;
 -(BOOL)hasToken;
 
 @end
