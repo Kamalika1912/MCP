@@ -22,8 +22,8 @@
 		3553D4B8191A735C0024CA89 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3553D497191A735C0024CA89 /* UIKit.framework */; };
 		3553D4C0191A735C0024CA89 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3553D4BE191A735C0024CA89 /* InfoPlist.strings */; };
 		3553D4C2191A735C0024CA89 /* MCP_A03Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3553D4C1191A735C0024CA89 /* MCP_A03Tests.m */; };
-		3553D4CC191A76D00024CA89 /* L2PConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3553D4CB191A76D00024CA89 /* L2PConfig.plist */; };
 		3553D4CF191A7C410024CA89 /* L2PConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 3553D4CE191A7C410024CA89 /* L2PConnector.m */; };
+		3553D4D1191A862E0024CA89 /* L2PConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3553D4D0191A862E0024CA89 /* L2PConfig.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +58,9 @@
 		3553D4BD191A735C0024CA89 /* MCP-A03Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MCP-A03Tests-Info.plist"; sourceTree = "<group>"; };
 		3553D4BF191A735C0024CA89 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3553D4C1191A735C0024CA89 /* MCP_A03Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCP_A03Tests.m; sourceTree = "<group>"; };
-		3553D4CB191A76D00024CA89 /* L2PConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = L2PConfig.plist; sourceTree = "<group>"; };
 		3553D4CD191A7C410024CA89 /* L2PConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = L2PConnector.h; sourceTree = "<group>"; };
 		3553D4CE191A7C410024CA89 /* L2PConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = L2PConnector.m; sourceTree = "<group>"; };
+		3553D4D0191A862E0024CA89 /* L2PConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = L2PConfig.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +142,7 @@
 				3553D49C191A735C0024CA89 /* InfoPlist.strings */,
 				3553D49F191A735C0024CA89 /* main.m */,
 				3553D4A1191A735C0024CA89 /* MCP-A03-Prefix.pch */,
-				3553D4CB191A76D00024CA89 /* L2PConfig.plist */,
+				3553D4D0191A862E0024CA89 /* L2PConfig.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -242,8 +242,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3553D4AF191A735C0024CA89 /* Images.xcassets in Resources */,
-				3553D4CC191A76D00024CA89 /* L2PConfig.plist in Resources */,
 				3553D49E191A735C0024CA89 /* InfoPlist.strings in Resources */,
+				3553D4D1191A862E0024CA89 /* L2PConfig.plist in Resources */,
 				3553D4A7191A735C0024CA89 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

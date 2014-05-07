@@ -28,6 +28,12 @@
     //load an L2P connector
     l2pConn = [[L2PConnector alloc] init];
     
+    //Do I have a token already? Otherwise to the One-Time login
+    if (![l2pConn hasToken]){
+        NSLog(@"%@",@"No token yet. asking for it now..");
+            [l2pConn requestDeviceCode];
+    } else NSLog(@"%@",@"Got Token");
+    
     
 }
 

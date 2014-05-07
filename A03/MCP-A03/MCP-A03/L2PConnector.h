@@ -8,14 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-@interface L2PConnector : NSObject
+@interface L2PConnector : NSObject<NSURLConnectionDelegate>
 
 // Used to track the connection status
 typedef enum L2PConnectorState : NSInteger {
-    NSConnectorStateError = -1,
-    NSConnectorStateReady = 0,
-    NSConnectorStateConnecting = 1,
-    NSConnectorStateWaitingForResponse = 2
+    L2PConnectorStateError = -1,
+    L2PConnectorStateReady = 0,
+    L2PConnectorStateConnecting = 1,
+    L2PConnectorStateWaitingForResponse = 2
 } L2PConnectorState;
+
+
+-(void)requestToken;
+-(void)requestDeviceCode;
+-(BOOL)hasToken;
 
 @end
