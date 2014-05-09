@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "WebViewController.h"
+#import "L2PConnector.h"
 
-@interface LoginViewController : UIViewController<WebViewControllerDelegate,UIAlertViewDelegate>
+@interface LoginViewController : UIViewController<WebViewControllerDelegate,UIAlertViewDelegate,L2PConnectorDelegate>
 
 @end

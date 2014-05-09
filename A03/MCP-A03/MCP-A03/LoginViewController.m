@@ -13,10 +13,7 @@
 @interface LoginViewController ()
 {
     L2PConnector *l2pConn;
-    
-    // url for requesting the user authorization
-    NSURL *verificationUrl;
-    
+
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
@@ -33,6 +30,7 @@
     
     //load an L2P connector
     l2pConn = [[L2PConnector alloc] init];
+    [l2pConn setDelegate:self];
     
 
     //Do I have a token already? Otherwise perform the One-Time login
@@ -53,7 +51,10 @@
         [_welcomeLabel setText:[NSString stringWithFormat:@"Welcome Back Dear %@! \r Whoever you are! \r (we have no way of knowing)",
                                     [[NSUserDefaults standardUserDefaults] valueForKey:@"userCode" ] ]];
         
-        
+        // UNCOMMENT EVERY 30 MINUTE
+//        [l2pConn refreshAccessToken];
+        [l2pConn getL2PDiscussionsForCourse:@"14ss-33389"];
+//        [l2pConn getL2PCourseRooms];
     }
     
     
@@ -63,19 +64,25 @@
 
 
 // ALERT DISSMISSED
-// when alert is dismissed, we load the webview
+// when alert is dismissed, we ask for the verificationURL
 - (void)alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    
+    // ask for the url from the L2PConnector object and wait for the delegate method to be fired up
+    [l2pConn getVerificationUrl];
+}
+
+// when we receive the verification url, show the user the authentication page
+-(void)didReceiveVerifcationURL:(NSURL *)verificationURL
+{
     // create the webview from the xib file (just a simple webview inside) and set ourself as delegate
     WebViewController *webVC = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:Nil];
     webVC.delegate=self;
-    // retrive the url from the L2PConnector object and open it in the view
-    [webVC openURL:[l2pConn getVerificationUrl]];
+    // tell the view to load the url
+    [webVC openURL:verificationURL];
     // present the view (skip the parameter as modal is default)
     [self presentViewController:webVC animated:YES completion:nil];
-    
 }
+
 
 
 
@@ -86,12 +93,11 @@
 - (void)viewIsDone
 {
     // dismiss the WebViewController view we called before
-    [self dismissViewControllerAnimated:TRUE completion:^{}];
+    [self dismissViewControllerAnimated:TRUE completion:nil];
     // ask for the first access token
     if ([l2pConn requestAccessToken]) NSLog(@"%@",@"YEAHHHH");
 
     // FROM THIS POIN ON WE CAN START USE THE APP
-
 }
 
 
