@@ -12,6 +12,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    // START UP = HardCode the URL standard informations
+    NSUserDefaults *ud =[NSUserDefaults standardUserDefaults];
+    [ud setValue:@"l2p2013.rwth" forKey:@"scope"];
+    [ud setValue:@"https://oauth.campus.rwth-aachen.de/oauth2waitress/oauth2.svc/token" forKey:@"tokenUrl"];
+    [ud setValue:@"https://oauth.campus.rwth-aachen.de/oauth2waitress/oauth2.svc/code" forKey:@"codeUrl"];
+
+    
+    // need to synchronize manually to see the values on the other classes
+    [ud synchronize];
+    
+    
+    
     // Override point for customization after application launch.
     return YES;
 }

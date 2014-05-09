@@ -10,11 +10,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MCP-A03/L2PConnector.m"
-            timestampString = "421172103.437449"
+            timestampString = "421260703.022629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "-requestAccessToken"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MCP-A03/L2PConnector.m"
+            timestampString = "421258857.60887"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "-init"
             landmarkType = "5">
          </BreakpointContent>
@@ -25,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MCP-A03/L2PConnector.m"
-            timestampString = "421171554.218196"
+            filePath = "MCP-A03/AppDelegate.m"
+            timestampString = "421258160.772165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-init"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,29 +57,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MCP-A03/L2PConnector.m"
-            timestampString = "421171463.389752"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-init"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MCP-A03/L2PConnector.m"
-            timestampString = "421174033.065674"
+            filePath = "MCP-A03/VerificationWebViewController.m"
+            timestampString = "421265122.587965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "-init"
+            landmarkName = "-openURL:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,62 +73,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MCP-A03/L2PConnector.m"
-            timestampString = "421176349.072925"
+            filePath = "MCP-A03/WebViewController.m"
+            timestampString = "421331821.708024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "-requestDeviceCode"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MCP-A03/L2PConnector.m"
-            timestampString = "421176349.072925"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "-requestDeviceCode"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MCP-A03/L2PConnector.m"
-            timestampString = "421176349.072925"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-requestDeviceCode"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MCP-A03/LoginViewController.m"
-            timestampString = "421177714.466505"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "@implementation WebViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

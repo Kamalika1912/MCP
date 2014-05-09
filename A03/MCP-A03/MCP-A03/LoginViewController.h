@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WebViewController.h"
 
-@interface LoginViewController : UIViewController<UIWebViewDelegate>
+@interface LoginViewController : UIViewController<WebViewControllerDelegate,UIAlertViewDelegate>
 
 @end

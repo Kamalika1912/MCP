@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol L2PConnectorDelegate <NSObject>
+
+-(NSDictionary *)didReceiveResponse;
+-(void)didReceiveError;
+
+@end
+
+
 @interface L2PConnector : NSObject<NSURLConnectionDelegate>
 
 // Used to track the connection status
@@ -19,8 +27,12 @@ typedef enum L2PConnectorState : NSInteger {
 } L2PConnectorState;
 
 
--(void)requestToken;
+-(bool)requestAccessToken;
 -(NSURL *)getVerificationUrl;
 -(BOOL)hasToken;
+
+//-(NSDictionary)request
+
+
 
 @end
