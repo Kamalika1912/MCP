@@ -47,33 +47,34 @@ bool parseData;
 
 
 
-// request the device Code to use in the token request
--(void)requestDeviceCode
-{
-
-    NSURL *requestUrl = [NSURL URLWithString:[_config valueForKey:@"codeUrl"]];
-    NSString *bodyString = [NSString stringWithFormat:@"client_id=%@&scope=%@", [_config valueForKey:@"clientID"],[_config valueForKey:@"scope"]];
-    
-    NSMutableURLRequest *userCodeRequest = [NSMutableURLRequest requestWithURL:requestUrl];
-    [userCodeRequest setHTTPMethod:@"POST"];
-    [userCodeRequest setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
-  
-    //NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://google.com"]];
-    NSURLResponse * response = nil;
-    NSError * error = nil;
-    NSData * data = [NSURLConnection sendSynchronousRequest:userCodeRequest
-                                          returningResponse:&response
-                                                      error:&error];
-    
-    if (error == nil)
-    {
-        NSLog(@"%@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding] );
-    } else NSLog(@"%@" , @"NOPE");
-    
+//// request the device Code to use in the token request
+//-(void)requestDeviceCode
+//{
+//    _lastCall = DeviceCodeRequest;
+//    NSURL *requestUrl = [NSURL URLWithString:[_config valueForKey:@"codeUrl"]];
+//    NSString *bodyString = [NSString stringWithFormat:@"client_id=%@&scope=%@", [_config valueForKey:@"clientID"],[_config valueForKey:@"scope"]];
+//    
+//    NSMutableURLRequest *userCodeRequest = [NSMutableURLRequest requestWithURL:requestUrl];
+//    [userCodeRequest setHTTPMethod:@"POST"];
+//    [userCodeRequest setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
+//  
+////    //NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://google.com"]];
+////    NSURLResponse * response = nil;
+////    NSError * error = nil;
+////    NSData * data = [NSURLConnection sendSynchronousRequest:userCodeRequest
+////                                          returningResponse:&response
+////                                                      error:&error];
+////    
+////    if (error == nil)
+////    {
+////        NSLog(@"%@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding] );
+////    } else NSLog(@"%@" , @"NOPE");
+//    
 //    self.connection = [[NSURLConnection alloc] initWithRequest:userCodeRequest delegate:self startImmediately:YES];
-
-}
-
+//
+//}
+//
+//
 
 
 // this is now SYNCHRONOUS
@@ -90,37 +91,8 @@ bool parseData;
     NSMutableURLRequest *userCodeRequest = [NSMutableURLRequest requestWithURL:requestUrl];
     [userCodeRequest setHTTPMethod:@"POST"];
     [userCodeRequest setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
-
+    // launch the connection
     self.connection = [[NSURLConnection alloc] initWithRequest:userCodeRequest delegate:self startImmediately:YES];
-    
-//    NSURLResponse * response = nil;
-//    NSError * error = nil;
-//    NSData * data = [NSURLConnection sendSynchronousRequest:userCodeRequest
-//                                          returningResponse:&response
-//                                                      error:&error];
-//
-//    // this is synchrounous, so we can wait for the answer here.
-//    // and the user can't do anything with the app unless he's authenticated anyway.. so..
-//    if (error == nil)
-//    {
-//        // load the response into a dictionary
-//        NSError *e;
-//        NSDictionary *responseDataDictionary = [NSJSONSerialization JSONObjectWithData: data
-//                                                                               options: NSJSONReadingMutableContainers
-//                                                                                 error: &e];
-//
-//        // we will need the user_code and device_code in the future. so save them in our config
-//        [_config setValue:responseDataDictionary[@"user_code"] forKey:@"userCode"];
-//        [_config setValue:responseDataDictionary[@"device_code"] forKey:@"deviceCode"];
-//        // save them
-//        [_config synchronize];
-//        
-//        // extract the url, composing the basic url and the usercode
-//        verificationUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@?q=verify&d=%@", responseDataDictionary[@"verification_url"],[_config valueForKey:@"userCode"]]];
-//        
-//    }
-//    // return the url. Hopefully not an empty string
-//    return verificationUrl;
 }
 
 
@@ -131,9 +103,9 @@ bool parseData;
 // Request for the first ACCESS TOKEN
 // even here the user can't do anything before obtaining it, so we'll stick to synchrounous request
 
--(bool ) requestAccessToken
+-(void) requestAccessToken
 {
-    _lastCall = RefreshTokenRequest;
+    _lastCall = AccessTokenRequest;
     
     NSURL *requestUrl = [NSURL URLWithString:[_config valueForKey:@"tokenUrl"]];
     NSString *bodyString = [NSString stringWithFormat:@"client_id=%@&code=%@&grant_type=device", [_config valueForKey:@"clientID"], [_config valueForKey:@"deviceCode"]];
@@ -142,47 +114,13 @@ bool parseData;
     [tokenRequest setHTTPMethod:@"POST"];
     [tokenRequest setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
     
-    NSURLResponse * response = nil;
-    NSError * error = nil;
-    NSData * data = [NSURLConnection sendSynchronousRequest:tokenRequest
-                                          returningResponse:&response
-                                                      error:&error];
-    if (error == nil)
-    {
-                NSString *stringResponseData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-                NSLog(@"%@",  stringResponseData);
-        
-        // load the response into a dictionary
-        NSError *e;
-        NSDictionary *responseDataDictionary = [NSJSONSerialization JSONObjectWithData: data
-                                                                               options: NSJSONReadingMutableContainers
-                                                                                 error: &e];
-        // check that the response is successfull
-        if ([responseDataDictionary[@"status"] rangeOfString:@"error"].location == NSNotFound) {
-           
-            //LOG
-            NSLog(@"%@%@",@" accessToken = ",responseDataDictionary[@"access_token"]);
-            NSLog(@"%@%@",@" accessToken = ",responseDataDictionary[@"refresh_token"]);
-            
-            // we will need the user_code and device_code in the future. so save them in our config
-            [_config setValue:responseDataDictionary[@"refresh_token"] forKey:@"refreshToken"];
-            [_config setValue:responseDataDictionary[@"access_token"] forKey:@"accessToken"];
-            // save them
-            [_config synchronize];
-            
-            return TRUE;
-        } else {
-            NSLog(@"%@",@" ERROOOOORR ");
-            return FALSE;
-        }
-
-        
-    } else return FALSE;
-    
+    self.connection = [[NSURLConnection alloc] initWithRequest:tokenRequest delegate:self startImmediately:YES];
 }
 
--(bool)refreshAccessToken
+-(void)refreshAccessToken
 {
+    _lastCall = RefreshTokenRequest;
+    
     NSURL *requestUrl = [NSURL URLWithString:[_config valueForKey:@"tokenUrl"]];
     NSString *bodyString = [NSString stringWithFormat:@"client_id=%@&refresh_token=%@&grant_type=refresh_token", [_config valueForKey:@"clientID"], [_config valueForKey:@"refreshToken"]];
     
@@ -191,44 +129,9 @@ bool parseData;
     [tokenRequest setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
     [tokenRequest addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     
-    NSURLResponse * response = nil;
-    NSError * error = nil;
-    NSData * data = [NSURLConnection sendSynchronousRequest:tokenRequest
-                                          returningResponse:&response
-                                                      error:&error];
-    if (error == nil)
-    {
-        NSString *stringResponseData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"%@",  stringResponseData);
-        
-        // load the response into a dictionary
-        NSError *e;
-        NSDictionary *responseDataDictionary = [NSJSONSerialization JSONObjectWithData: data
-                                                                               options: NSJSONReadingMutableContainers
-                                                                                 error: &e];
-        // check that the response is successfull
-        if ([responseDataDictionary[@"status"] rangeOfString:@"error"].location == NSNotFound) {
-            
-            //LOG
-            NSLog(@"%@%@",@" accessToken = ",responseDataDictionary[@"access_token"]);
-//            NSLog(@"%@%@",@" accessToken = ",responseDataDictionary[@"refresh_token"]);
-            
-            // we will need the user_code and device_code in the future. so save them in our config
-//            [_config setValue:responseDataDictionary[@"refresh_token"] forKey:@"refreshToken"];
-            [_config setValue:responseDataDictionary[@"access_token"] forKey:@"accessToken"];
-            // save them
-            [_config synchronize];
-            
-            return TRUE;
-        } else {
-            NSLog(@"%@",@" ERROOOOORR ");
-            return FALSE;
-        }
-        
-        
-    } else return FALSE;
-
+    self.connection = [[NSURLConnection alloc] initWithRequest:tokenRequest delegate:self startImmediately:YES];
 }
+
 
 
 
@@ -249,7 +152,7 @@ bool parseData;
     NSString *parameterString = [NSString stringWithFormat:@"accessToken=%@&cid=%@", [_config valueForKey:@"accessToken"],courseCID];
     NSString *url = [NSString stringWithFormat:@"%@%@?%@",[_config valueForKey:@"apiUrl"], @"viewAllDiscussionItems", parameterString];
     // create the request for the URL
-    NSMutableURLRequest *discussionsRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[url stringByAppendingString:parameterString]]];
+    NSMutableURLRequest *discussionsRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     // start the connection
     self.connection = [[NSURLConnection alloc] initWithRequest:discussionsRequest delegate:self startImmediately:YES];
 }
@@ -260,9 +163,9 @@ bool parseData;
     
     // compose the URL by 3 part : API endpoint URL + method name + parameters  (no need for body cause apis are GET)
     NSString *parameterString = [NSString stringWithFormat:@"accessToken=%@&cid=%@", [_config valueForKey:@"accessToken"],courseCID];
-    NSString *url = [NSString stringWithFormat:@"%@%@?%@",[_config valueForKey:@"apiUrl"], @"viewAllDiscussionItems", parameterString];
+    NSString *url = [NSString stringWithFormat:@"%@%@?%@",[_config valueForKey:@"apiUrl"], @"viewAllAnnouncements", parameterString];
     // create the request for the URL
-    NSMutableURLRequest *discussionsRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[url stringByAppendingString:parameterString]]];
+    NSMutableURLRequest *discussionsRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     // start the connection
     self.connection = [[NSURLConnection alloc] initWithRequest:discussionsRequest delegate:self startImmediately:YES];
 }
@@ -299,6 +202,29 @@ bool parseData;
 }
 
 
+-(void)handleAccessTokenResults:(NSDictionary *)data
+{
+    //TODO store interval, and implement the automatic refresh mechanism
+    
+    // save the tokens in our config
+    [_config setValue:data[@"refresh_token"] forKey:@"refreshToken"];
+    [_config setValue:data[@"access_token"] forKey:@"accessToken"];
+    [_config synchronize];
+    // notify the delegate that we have now a working token
+    [_delegate tokenIsValid];
+}
+
+-(void)handleRefreshTokenResults:(NSDictionary *)data
+{
+    //TODO store interval, and implement the automatic refresh mechanism
+    
+    // save the new tokens in our config
+    [_config setValue:data[@"access_token"] forKey:@"accessToken"];
+    [_config synchronize];
+    // notify the delegate that we have now a working token
+    [_delegate tokenIsValid];
+}
+
 
 
 
@@ -306,7 +232,7 @@ bool parseData;
 
 
 //
-// INTERNAL DELEGATE METHOD TO HANDLE RESPONSES FROM SERVER
+// INTERNAL DELEGATE METHOD TO HANDLE RESPONSES FROM SERVER AND PARSE THEM
 //
 
 
@@ -314,28 +240,49 @@ bool parseData;
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 // Copied and lightly modified from the given Example.
 {
+//    // log the response
+//    NSString *stringResponseData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+//    NSLog(@"%@",  stringResponseData);
     
-    // log the response
-    NSString *stringResponseData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",  stringResponseData);
-  
-    // load the response into a dictionary
-    NSError *e;
-    NSDictionary *responseDataDictionary = [NSJSONSerialization JSONObjectWithData: data
-                                                                           options: NSJSONReadingMutableContainers
-                                                                             error: &e];
-
+    
+    NSDictionary *responseDataDictionary = nil;
+    
+    if (parseData) {
+        // load the response into a dictionary
+        NSError *e;
+        responseDataDictionary = [NSJSONSerialization JSONObjectWithData: data
+                                                                 options: NSJSONReadingMutableContainers
+                                                                   error: &e];
+    }
+    
+    
     // if no error on parsing, handle the data depending on where they come from
     if (responseDataDictionary!=nil) {
         
         switch ( _lastCall ) {
+                
+                // actual api
             case ApiCallAnnouncements:
                 [self handleAnnouncementsResults:responseDataDictionary];
                 break;
                 
+                
+                
+                
+                // token management
             case VerificationURLRequest:
                 [self handleVerificationURLResults:responseDataDictionary];
                 break;
+                
+            case AccessTokenRequest:
+                [self handleAccessTokenResults:responseDataDictionary];
+                break;
+                
+            case RefreshTokenRequest:
+                [self handleRefreshTokenResults:responseDataDictionary];
+                break;
+                
+                
             default:
                 break;
         }

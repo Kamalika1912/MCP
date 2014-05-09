@@ -11,6 +11,9 @@
 // DELEGATE PROTOCOL that whoever wanna use the L2PApi must implement to receive data back
 @protocol L2PConnectorDelegate <NSObject>
 
+// all methods are optional. every class should make sure to implement what it uses
+@optional
+
 // return the verification URL to who asked it
 -(void)didReceiveVerifcationURL:(NSURL *)verificationURL;
 
@@ -33,11 +36,13 @@
 
 // Used to track the connection status
 typedef enum ApiCallName  {
+    // token api
     VerificationURLRequest,
-    TokenRequest,
+    AccessTokenRequest,
     RefreshTokenRequest,
-
-    //real api names
+    DeviceCodeRequest,
+    
+    //real L2P api 
     ApiCallAnnouncements,
     ApiCallEmails
 } ApiCallName;
@@ -51,8 +56,8 @@ typedef enum ApiCallName  {
 
 
 // Token related api
--(bool)refreshAccessToken;
--(bool)requestAccessToken;
+-(void)refreshAccessToken;
+-(void)requestAccessToken;
 -(void)getVerificationUrl;
 -(BOOL)hasToken;
 

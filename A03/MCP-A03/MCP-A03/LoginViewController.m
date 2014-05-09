@@ -51,16 +51,27 @@
         [_welcomeLabel setText:[NSString stringWithFormat:@"Welcome Back Dear %@! \r Whoever you are! \r (we have no way of knowing)",
                                     [[NSUserDefaults standardUserDefaults] valueForKey:@"userCode" ] ]];
         
+
+        
+        
+        // just for testing.. nothing should be done here actually
+        
+        
         // UNCOMMENT EVERY 30 MINUTE
-//        [l2pConn refreshAccessToken];
-        [l2pConn getL2PDiscussionsForCourse:@"14ss-33389"];
-//        [l2pConn getL2PCourseRooms];
+        [l2pConn refreshAccessToken];
+        
+
     }
     
-    
-    
-    
 }
+
+-(void)didReceiveData:(NSDictionary *)data {
+    // log the response
+    NSLog(@"%@",  data);
+}
+
+
+
 
 
 // ALERT DISSMISSED
@@ -77,10 +88,10 @@
     // create the webview from the xib file (just a simple webview inside) and set ourself as delegate
     WebViewController *webVC = [[WebViewController alloc] initWithNibName:@"WebViewController" bundle:Nil];
     webVC.delegate=self;
-    // tell the view to load the url
-    [webVC openURL:verificationURL];
     // present the view (skip the parameter as modal is default)
     [self presentViewController:webVC animated:YES completion:nil];
+    // tell the view to load the url
+    [webVC openURL:verificationURL];
 }
 
 
@@ -95,13 +106,25 @@
     // dismiss the WebViewController view we called before
     [self dismissViewControllerAnimated:TRUE completion:nil];
     // ask for the first access token
-    if ([l2pConn requestAccessToken]) NSLog(@"%@",@"YEAHHHH");
+    [l2pConn requestAccessToken];
 
-    // FROM THIS POIN ON WE CAN START USE THE APP
 }
 
+// we now have a valid token. means we have an USER!
+// udpdate the label!
+-(void)tokenIsValid
+{
+    // FROM THIS POIN ON WE CAN START USE THE APP
 
+    // We already got the token, so say Hi to our user, whoever he is (we use the user_code everywere when we need an ID)
+    [_welcomeLabel setText:[NSString stringWithFormat:@"Welcome Back Dear %@! \r Whoever you are! \r (we have no way of knowing)",
+                            [[NSUserDefaults standardUserDefaults] valueForKey:@"userCode" ] ]];
+    
 
+    
+        // JUST FOR TESTING should be deleted / moved to real class that manage the response
+    [l2pConn getL2PAnnouncementsForCourse:@"14ss-33389"];
+}
 
 
 

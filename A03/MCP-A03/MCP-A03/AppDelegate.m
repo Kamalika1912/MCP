@@ -19,9 +19,7 @@
     [ud setValue:@"https://oauth.campus.rwth-aachen.de/oauth2waitress/oauth2.svc/token" forKey:@"tokenUrl"];
     [ud setValue:@"https://oauth.campus.rwth-aachen.de/oauth2waitress/oauth2.svc/code" forKey:@"codeUrl"];
     [ud setValue:@"iupSdInI9z1zBvpFZ2u7IirZEhVIul46XkrYa8JVD0iWiip3PQA0th22ZHWliDfw.apps.rwth-aachen.de" forKey:@"clientID"];
-    [ud setValue:@"https://www.elearning.rwth-aachen.de/_vti_bin/l2pservices/api.svc/v1/" forKey:@"apiUrl"];
     // need to synchronize manually to see the values on the other classes
-    [ud setValue:@"" forKey:@"accessToken"];
     [ud synchronize];
     
     
