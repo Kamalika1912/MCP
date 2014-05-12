@@ -55,22 +55,27 @@
         
         
         // just for testing.. nothing should be done here actually
-        
-        
-        // UNCOMMENT EVERY 30 MINUTE
-        [l2pConn refreshAccessToken];
+//        [l2pConn getL2PAnnouncementsForCourse:@"14ss-33389"];
         
 
     }
     
 }
 
--(void)didReceiveData:(NSDictionary *)data {
+
+-(void)didReceiveData:(NSDictionary *)data
+{
     // log the response
     NSLog(@"%@",  data);
+    
 }
 
 
+-(void)didReceiveError:(int)statusCode
+{
+    NSLog(@"%d",  statusCode);
+
+}
 
 
 
@@ -81,6 +86,8 @@
     // ask for the url from the L2PConnector object and wait for the delegate method to be fired up
     [l2pConn getVerificationUrl];
 }
+
+
 
 // when we receive the verification url, show the user the authentication page
 -(void)didReceiveVerifcationURL:(NSURL *)verificationURL
@@ -120,10 +127,6 @@
     [_welcomeLabel setText:[NSString stringWithFormat:@"Welcome Back Dear %@! \r Whoever you are! \r (we have no way of knowing)",
                             [[NSUserDefaults standardUserDefaults] valueForKey:@"userCode" ] ]];
     
-
-    
-        // JUST FOR TESTING should be deleted / moved to real class that manage the response
-    [l2pConn getL2PAnnouncementsForCourse:@"14ss-33389"];
 }
 
 

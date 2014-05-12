@@ -2,6 +2,13 @@
 //  L2PConnector.m
 //  MCP-A03
 //
+//
+//  This connector will check if the token is valid at EVERY call.
+//  If the time is almost up (2min lag) we will renew before calling the api.
+//  everything is kept internal, the api selector and its parameter are stored for use with a new token
+//
+//  The architecture is based on the delegation, as showed too in the Example
+
 //  Created by Giorgio Pretto on 5/7/14.
 //  Copyright (c) 2014 Giorgio Pretto - Devashish Jasani - Kamalika Dutta. All rights reserved.
 //
@@ -17,6 +24,15 @@
 // enum used to track which request i need to handle
 @property ApiCallName lastCall;
 
+// selector to be call. in case we need to refresh the token before
+// calling the api, we need to put it on hold
+@property SEL apiCall;
+//@property NSInvocation *apiInvocation;
+
+// SHOULD EXTEND TO SUPPORT MULTIPLE PARAMETER FOR CALLBACK ! but for this exercise this is enough
+// callback parameter to be passed to the callback api
+@property NSString *storedCourseCID;
+
 @end
 
 
@@ -31,53 +47,41 @@ bool parseData;
     self = [super init];
     if (self !=nil) {
         
-        
         // read the config from the NSDefault (initialized hardcoded in AppDelegate.m)
         _config =[NSUserDefaults standardUserDefaults];
     
+        //set the apiCall callback to nil
+        _apiCall = nil;
     }
     return self;
 }
 
 
+// INTERNAL UTILITY METHODS
+
 // check if we already did the authentication (aka if we have the token)
--(BOOL)hasToken{
+-(BOOL)hasToken
+{
     return !([@"" isEqual:[_config valueForKey:@"accessToken"]]);
+}
+
+// check if we need to refresh the token before a call
+-(BOOL)needToRefreshToken
+{
+    NSInteger now = [NSDate date].timeIntervalSince1970;
+    NSInteger lastRefresh = [(NSDate *)[_config objectForKey:@"lastRefreshDate"] timeIntervalSince1970];
+    NSInteger tokenExpiresIn = [_config integerForKey:@"tokenExpiresIn"];
+//    NSInteger tokenExpireDate = [(NSDate *)[_config objectForKey:@"tokenExpireDate"] timeIntervalSince1970 ] ;
+//    return true;
+    //insert 2 minutes for safety, just to not run request with token that may exires during the connection time;
+    return (now - lastRefresh - 2*60 > tokenExpiresIn);
 }
 
 
 
-//// request the device Code to use in the token request
-//-(void)requestDeviceCode
-//{
-//    _lastCall = DeviceCodeRequest;
-//    NSURL *requestUrl = [NSURL URLWithString:[_config valueForKey:@"codeUrl"]];
-//    NSString *bodyString = [NSString stringWithFormat:@"client_id=%@&scope=%@", [_config valueForKey:@"clientID"],[_config valueForKey:@"scope"]];
-//    
-//    NSMutableURLRequest *userCodeRequest = [NSMutableURLRequest requestWithURL:requestUrl];
-//    [userCodeRequest setHTTPMethod:@"POST"];
-//    [userCodeRequest setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
-//  
-////    //NSURLRequest * urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://google.com"]];
-////    NSURLResponse * response = nil;
-////    NSError * error = nil;
-////    NSData * data = [NSURLConnection sendSynchronousRequest:userCodeRequest
-////                                          returningResponse:&response
-////                                                      error:&error];
-////    
-////    if (error == nil)
-////    {
-////        NSLog(@"%@", [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding] );
-////    } else NSLog(@"%@" , @"NOPE");
-//    
-//    self.connection = [[NSURLConnection alloc] initWithRequest:userCodeRequest delegate:self startImmediately:YES];
-//
-//}
-//
-//
 
 
-// this is now SYNCHRONOUS
+
 // obtain the url for the first authorization request
 // do to do, we ask for the DEVICE CODE, and use it to ask the server for the url
 -(void)getVerificationUrl
@@ -143,31 +147,54 @@ bool parseData;
 
 
 // METHODS TO BE CALLED FROM OUR REAL APP
-
 // Inspired, but Heavily modified from Example (the example wasn't using l2p api. not the one we are supposed to use anyway - No need for XML/SOAP)
--(void)getL2PDiscussionsForCourse:(NSString *)courseCID
-{
-//    _lastCall = ApiCallEmails
-    // compose the URL by 3 part : API endpoint URL + method name + parameters  (no need for body cause apis are GET)
-    NSString *parameterString = [NSString stringWithFormat:@"accessToken=%@&cid=%@", [_config valueForKey:@"accessToken"],courseCID];
-    NSString *url = [NSString stringWithFormat:@"%@%@?%@",[_config valueForKey:@"apiUrl"], @"viewAllDiscussionItems", parameterString];
-    // create the request for the URL
-    NSMutableURLRequest *discussionsRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-    // start the connection
-    self.connection = [[NSURLConnection alloc] initWithRequest:discussionsRequest delegate:self startImmediately:YES];
-}
 
 -(void)getL2PAnnouncementsForCourse:(NSString *)courseCID
 {
-    _lastCall = ApiCallAnnouncements;
-    
-    // compose the URL by 3 part : API endpoint URL + method name + parameters  (no need for body cause apis are GET)
-    NSString *parameterString = [NSString stringWithFormat:@"accessToken=%@&cid=%@", [_config valueForKey:@"accessToken"],courseCID];
-    NSString *url = [NSString stringWithFormat:@"%@%@?%@",[_config valueForKey:@"apiUrl"], @"viewAllAnnouncements", parameterString];
-    // create the request for the URL
-    NSMutableURLRequest *discussionsRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-    // start the connection
-    self.connection = [[NSURLConnection alloc] initWithRequest:discussionsRequest delegate:self startImmediately:YES];
+    // first we'll need to see if we need to refresh the access token
+    if ([self needToRefreshToken]) {
+        // if so, we need to create the callback invocation to this method again. after the refresh
+        _storedCourseCID = courseCID;
+        _apiCall = @selector(getL2PAnnouncementsForCourse:);
+        
+        // then we refresh the token
+        [self refreshAccessToken];
+        
+    } else { // go on if the token is ok
+        _lastCall = ApiCallAnnouncements;
+        // compose the URL by 3 part : API endpoint URL + method name + parameters  (no need for body cause apis are GET)
+        NSString *parameterString = [NSString stringWithFormat:@"accessToken=%@&cid=%@", [_config valueForKey:@"accessToken"],courseCID];
+        NSString *url = [NSString stringWithFormat:@"%@%@?%@",[_config valueForKey:@"apiUrl"], @"viewAllAnnouncements", parameterString];
+        // create the request for the URL
+        NSMutableURLRequest *Request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+        // start the connection
+        self.connection = [[NSURLConnection alloc] initWithRequest:Request delegate:self startImmediately:YES];
+    }
+}
+
+
+// get the hyperlinks
+-(void)getL2PHyperlinksForCourse:(NSString *)courseCID
+{
+    // first we'll need to see if we need to refresh the access token
+    if ([self needToRefreshToken]) {
+        // if so, we need to create the callback invocation to this method again. after the refresh
+        _storedCourseCID = courseCID;
+        _apiCall = @selector(getL2PHyperlinksForCourse:);
+        
+        // then we refresh the token
+        [self refreshAccessToken];
+        
+    } else { // go on if the token is ok
+        _lastCall = ApiCallHyperlinks;
+        // compose the URL by 3 part : API endpoint URL + method name + parameters  (no need for body cause apis are GET)
+        NSString *parameterString = [NSString stringWithFormat:@"accessToken=%@&cid=%@", [_config valueForKey:@"accessToken"],courseCID];
+        NSString *url = [NSString stringWithFormat:@"%@%@?%@",[_config valueForKey:@"apiUrl"], @"viewAllHyperlinks", parameterString];
+        // create the request for the URL
+        NSMutableURLRequest *Request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+        // start the connection
+        self.connection = [[NSURLConnection alloc] initWithRequest:Request delegate:self startImmediately:YES];
+    }
 }
 
 
@@ -175,16 +202,27 @@ bool parseData;
 
 
 
-//METHODS THAT HANDLE PARSED DATA AND RETURN THEM TO THE DELEGATE WHO ASKED FOR THEM
+//METHODS THAT HANDLE PARSED DATA AND RETURN THEM TO THE DELEGATE WHO ASKED FOR THEM (or handle them internally if about token)
 
 
 -(void)handleAnnouncementsResults:(NSDictionary *)data
 {
-    // just pass the data to the delegate
-    [_delegate didReceiveData:data];
+    // for this call we only want to pass back the dataset.
+    // so the delegate have the array of object without further data managment necessary
+    [_delegate didReceiveData:[data objectForKey:@"dataSet"]];
+}
+
+-(void)handleHyperlinksResults:(NSDictionary *)data
+{
+    // for this call we only want to pass back the dataset.
+    // so the delegate have the array of object without further data managment necessary
+    [_delegate didReceiveData:[data objectForKey:@"listOfHyperlinks"]];
 }
 
 
+
+
+// TOKEN MANAGEMENT
 -(void)handleVerificationURLResults:(NSDictionary *)data
 {
     
@@ -210,19 +248,38 @@ bool parseData;
     [_config setValue:data[@"refresh_token"] forKey:@"refreshToken"];
     [_config setValue:data[@"access_token"] forKey:@"accessToken"];
     [_config synchronize];
+  
+    
     // notify the delegate that we have now a working token
-    [_delegate tokenIsValid];
+//    [self tokenIsValid];
 }
+
+// I just refresh the token. this means that I have been called because one request
+// check the timing and the token was close to the expiration date.
+// now i will need then to recall it. (stored in _apiCall)
 
 -(void)handleRefreshTokenResults:(NSDictionary *)data
 {
-    //TODO store interval, and implement the automatic refresh mechanism
     
     // save the new tokens in our config
     [_config setValue:data[@"access_token"] forKey:@"accessToken"];
+    // update the other config options
+    [_config setInteger: (int)data[@"expires_in"] forKey:@"tokenExpiresIn"];
+    NSLog(@"%@",data[@"expires_in"]);
+    [_config setObject:[NSDate date] forKey:@"lastRefreshDate"];
+//    [_config setObject:[NSDate dateWithTimeIntervalSinceNow:[data[@"expires_in"] integerValue] * 60 - 30] forKey:@"tokenExpireDate"];
     [_config synchronize];
-    // notify the delegate that we have now a working token
-    [_delegate tokenIsValid];
+    
+NSLog(@"%@",[_config valueForKey:@"tokenExpiresIn"]);
+    
+    // we were most likely called by one of the apis that needed a new token.
+    // check if that's the case and go back to that api call
+    if (_apiCall!=nil){
+        [self performSelector:_apiCall withObject:_storedCourseCID ];
+         _apiCall = nil;
+    }
+
+    
 }
 
 
@@ -241,8 +298,10 @@ bool parseData;
 // Copied and lightly modified from the given Example.
 {
 //    // log the response
-//    NSString *stringResponseData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
-//    NSLog(@"%@",  stringResponseData);
+    NSString *stringResponseData = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",  stringResponseData);
+    
+    NSLog(@"%@", [_config valueForKey:@"accessToken"]);
     
     
     NSDictionary *responseDataDictionary = nil;
@@ -265,8 +324,9 @@ bool parseData;
             case ApiCallAnnouncements:
                 [self handleAnnouncementsResults:responseDataDictionary];
                 break;
-                
-                
+            case ApiCallHyperlinks:
+                [self handleHyperlinksResults:responseDataDictionary];
+                break;
                 
                 
                 // token management
@@ -300,11 +360,12 @@ bool parseData;
     
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)response;
     NSInteger statusCode = [httpResponse statusCode];
-    NSLog(@"%d",  statusCode);
+    NSLog(@"%d",  (int)statusCode);
+//    NSLog(@"%@", [NSString stringWithFormat:@"%@",  httpResponse]);
     if (statusCode >= 300) {
-
+        
         // call method on delegate
-//      [delegate didReceiveError( RETRIVE THE ERROR FROM THE RESPONSE );
+        [_delegate didReceiveError:statusCode];
         
         parseData = NO;
     } else {

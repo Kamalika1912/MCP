@@ -25,7 +25,12 @@
 		3553D4D1191A862E0024CA89 /* L2PConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3553D4D0191A862E0024CA89 /* L2PConfig.plist */; };
 		35856E2A191C001600F1CD41 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35856E28191C001600F1CD41 /* WebViewController.m */; };
 		35856E2B191C001600F1CD41 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35856E29191C001600F1CD41 /* WebViewController.xib */; };
-		35A67F51191D0F9000802C1F /* DiscussionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A67F50191D0F9000802C1F /* DiscussionViewController.m */; };
+		35FF05A21920DEDC009343D7 /* AnnouncementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FF05A11920DEDC009343D7 /* AnnouncementsViewController.m */; };
+		35FF05A5192123CE009343D7 /* HyperlinksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FF05A4192123CE009343D7 /* HyperlinksViewController.m */; };
+		35FF05A719212721009343D7 /* Link.png in Resources */ = {isa = PBXBuildFile; fileRef = 35FF05A619212721009343D7 /* Link.png */; };
+		35FF05A919212830009343D7 /* Microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 35FF05A819212830009343D7 /* Microphone.png */; };
+		35FF05AB19212918009343D7 /* Stop-Light.png in Resources */ = {isa = PBXBuildFile; fileRef = 35FF05AA19212918009343D7 /* Stop-Light.png */; };
+		35FF05AD19212FBE009343D7 /* Bookmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 35FF05AC19212FBE009343D7 /* Bookmark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,8 +69,14 @@
 		35856E27191C001600F1CD41 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		35856E28191C001600F1CD41 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		35856E29191C001600F1CD41 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
-		35A67F4F191D0F9000802C1F /* DiscussionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussionViewController.h; sourceTree = "<group>"; };
-		35A67F50191D0F9000802C1F /* DiscussionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscussionViewController.m; sourceTree = "<group>"; };
+		35FF05A01920DEDC009343D7 /* AnnouncementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementsViewController.h; sourceTree = "<group>"; };
+		35FF05A11920DEDC009343D7 /* AnnouncementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementsViewController.m; sourceTree = "<group>"; };
+		35FF05A3192123CE009343D7 /* HyperlinksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HyperlinksViewController.h; sourceTree = "<group>"; };
+		35FF05A4192123CE009343D7 /* HyperlinksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HyperlinksViewController.m; sourceTree = "<group>"; };
+		35FF05A619212721009343D7 /* Link.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Link.png; sourceTree = "<group>"; };
+		35FF05A819212830009343D7 /* Microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Microphone.png; sourceTree = "<group>"; };
+		35FF05AA19212918009343D7 /* Stop-Light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stop-Light.png"; sourceTree = "<group>"; };
+		35FF05AC19212FBE009343D7 /* Bookmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bookmark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,11 +136,16 @@
 		3553D499191A735C0024CA89 /* MCP-A03 */ = {
 			isa = PBXGroup;
 			children = (
+				35FF05A01920DEDC009343D7 /* AnnouncementsViewController.h */,
+				35FF05A11920DEDC009343D7 /* AnnouncementsViewController.m */,
+				35FF05A3192123CE009343D7 /* HyperlinksViewController.h */,
+				35FF05A4192123CE009343D7 /* HyperlinksViewController.m */,
 				3553D4A2191A735C0024CA89 /* AppDelegate.h */,
 				3553D4A3191A735C0024CA89 /* AppDelegate.m */,
 				3553D4A5191A735C0024CA89 /* Main.storyboard */,
-				35A67F4F191D0F9000802C1F /* DiscussionViewController.h */,
-				35A67F50191D0F9000802C1F /* DiscussionViewController.m */,
+				35FF05AA19212918009343D7 /* Stop-Light.png */,
+				35FF05AC19212FBE009343D7 /* Bookmark.png */,
+				35FF05A819212830009343D7 /* Microphone.png */,
 				35856E27191C001600F1CD41 /* WebViewController.h */,
 				35856E28191C001600F1CD41 /* WebViewController.m */,
 				35856E29191C001600F1CD41 /* WebViewController.xib */,
@@ -146,6 +162,7 @@
 		3553D49A191A735C0024CA89 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				35FF05A619212721009343D7 /* Link.png */,
 				3553D49B191A735C0024CA89 /* MCP-A03-Info.plist */,
 				3553D49C191A735C0024CA89 /* InfoPlist.strings */,
 				3553D49F191A735C0024CA89 /* main.m */,
@@ -250,10 +267,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3553D4AF191A735C0024CA89 /* Images.xcassets in Resources */,
+				35FF05A919212830009343D7 /* Microphone.png in Resources */,
 				3553D49E191A735C0024CA89 /* InfoPlist.strings in Resources */,
 				3553D4D1191A862E0024CA89 /* L2PConfig.plist in Resources */,
+				35FF05AB19212918009343D7 /* Stop-Light.png in Resources */,
+				35FF05A719212721009343D7 /* Link.png in Resources */,
 				35856E2B191C001600F1CD41 /* WebViewController.xib in Resources */,
 				3553D4A7191A735C0024CA89 /* Main.storyboard in Resources */,
+				35FF05AD19212FBE009343D7 /* Bookmark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,10 +294,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3553D4A4191A735C0024CA89 /* AppDelegate.m in Sources */,
+				35FF05A21920DEDC009343D7 /* AnnouncementsViewController.m in Sources */,
 				35856E2A191C001600F1CD41 /* WebViewController.m in Sources */,
 				3553D4AA191A735C0024CA89 /* LoginViewController.m in Sources */,
 				3553D4A0191A735C0024CA89 /* main.m in Sources */,
-				35A67F51191D0F9000802C1F /* DiscussionViewController.m in Sources */,
+				35FF05A5192123CE009343D7 /* HyperlinksViewController.m in Sources */,
 				3553D4CF191A7C410024CA89 /* L2PConnector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

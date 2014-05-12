@@ -17,15 +17,16 @@
 // return the verification URL to who asked it
 -(void)didReceiveVerifcationURL:(NSURL *)verificationURL;
 
-// notify delegate that now he can use the api (after first call or refresh)
+// notify delegate that now he can use the api (after first accessToken)
 -(void)tokenIsValid;
 
 
 // return the data from the server to the delegate who asked for it
--(void)didReceiveData:(NSDictionary *)data;
+-(void)didReceiveData:(NSArray *)data;
+//-(void)didReceiveData:(NSDictionary *)data;
 
-// generic notification of error
--(void)didReceiveError;
+// generic notification of error with relative status code
+-(void)didReceiveError: (int)statusCode;
 
 @end
 
@@ -44,7 +45,7 @@ typedef enum ApiCallName  {
     
     //real L2P api 
     ApiCallAnnouncements,
-    ApiCallEmails
+    ApiCallHyperlinks
 } ApiCallName;
 
 
@@ -65,7 +66,7 @@ typedef enum ApiCallName  {
 
 
 // Api Access Methods
--(void)getL2PDiscussionsForCourse:(NSString *)courseCID;
+-(void)getL2PHyperlinksForCourse:(NSString *)courseCID;
 -(void)getL2PAnnouncementsForCourse:(NSString *)courseCID;
 
 @end
