@@ -62,7 +62,8 @@ bool parseData;
 // check if we already did the authentication (aka if we have the token)
 -(BOOL)hasToken
 {
-    return !([@"" isEqual:[_config valueForKey:@"accessToken"]]);
+    return !( [_config valueForKey:@"accessToken"] == nil
+             || [@"" isEqual:[_config valueForKey:@"accessToken"]]);
 }
 
 // check if we need to refresh the token before a call
@@ -251,7 +252,7 @@ bool parseData;
   
     
     // notify the delegate that we have now a working token
-//    [self tokenIsValid];
+    [_delegate tokenIsValid];
 }
 
 // I just refresh the token. this means that I have been called because one request

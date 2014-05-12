@@ -13,6 +13,7 @@
 @interface LoginViewController ()
 {
     L2PConnector *l2pConn;
+    UIActivityIndicatorView *indicator;
 
 }
 
@@ -83,6 +84,19 @@
 // when alert is dismissed, we ask for the verificationURL
 - (void)alertView:(UIAlertView *)alert clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    // create a loading icon while we wait for the response.
+    //    stolen from http://stackoverflow.com/questions/9976278/how-to-programmatically-add-a-simple-default-loadingprogress-bar-in-iphone-app
+    
+    indicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    indicator.frame = CGRectMake(0.0, 0.0, 80.0, 80.0);
+    indicator.center = self.view.center;
+    [self.view addSubview:indicator];
+    [indicator bringSubviewToFront:self.view];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = TRUE;
+    
+    
+    [indicator startAnimating];
+
     // ask for the url from the L2PConnector object and wait for the delegate method to be fired up
     [l2pConn getVerificationUrl];
 }
@@ -99,6 +113,8 @@
     [self presentViewController:webVC animated:YES completion:nil];
     // tell the view to load the url
     [webVC openURL:verificationURL];
+    [indicator stopAnimating];
+
 }
 
 
@@ -113,7 +129,10 @@
     // dismiss the WebViewController view we called before
     [self dismissViewControllerAnimated:TRUE completion:nil];
     // ask for the first access token
+    
+    [indicator startAnimating];
     [l2pConn requestAccessToken];
+    
 
 }
 
@@ -126,6 +145,7 @@
     // We already got the token, so say Hi to our user, whoever he is (we use the user_code everywere when we need an ID)
     [_welcomeLabel setText:[NSString stringWithFormat:@"Welcome Back Dear %@! \r Whoever you are! \r (we have no way of knowing)",
                             [[NSUserDefaults standardUserDefaults] valueForKey:@"userCode" ] ]];
+    [indicator stopAnimating];
     
 }
 
