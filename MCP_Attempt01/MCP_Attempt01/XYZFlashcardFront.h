@@ -14,4 +14,6 @@
 @property (strong,nonatomic) UILabel *redLabel;
 @property (strong,nonatomic) UILabel *greenLabel;
 
+-(id) initWithQuestion: (NSString *)question withThumbsUp:(NSInteger)thumbsUp andThumbsDown:(NSInteger)thumbsDown isAddedToFavourites:(BOOL)addedToFavourites withFrame:(CGRect)frame;
+
 @end

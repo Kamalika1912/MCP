@@ -193,6 +193,14 @@
                     <view key="view" contentMode="scaleToFill" id="Cdb-XX-44s">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 of 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ft7-xr-Xk8">
+                                <rect key="frame" x="113" y="439" width="95" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="4XJ-rQ-9kA">
@@ -210,31 +218,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cardNumber" destination="ft7-xr-Xk8" id="ZNk-rA-MB4"/>
                         <outlet property="favouriteButton" destination="fao-ec-b6Z" id="4Ps-4N-Ova"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJB-j4-jON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3867" y="1040"/>
-        </scene>
-        <!--View Controller - Item-->
-        <scene sceneID="w2q-oI-WzJ">
-            <objects>
-                <viewController id="y22-zu-Ktv" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="AvU-GB-5db"/>
-                        <viewControllerLayoutGuide type="bottom" id="A1j-iN-ev9"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YZl-b5-mly">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qPN-yf-EJC"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ctB-22-hQ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4985" y="2473"/>
+            <point key="canvasLocation" x="-3867" y="1030"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -249,8 +239,8 @@
                     <connections>
                         <segue destination="CZ4-MO-1fc" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
                         <segue destination="7sj-0z-8e8" kind="relationship" relationship="viewControllers" id="rvs-LR-B2E"/>
-                        <segue destination="y22-zu-Ktv" kind="relationship" relationship="viewControllers" id="OCG-2a-tXA"/>
                         <segue destination="MQP-UY-b3K" kind="relationship" relationship="viewControllers" id="0ub-RV-P7A"/>
+                        <segue destination="XQk-mD-GmC" kind="relationship" relationship="viewControllers" id="hJD-O5-Ndm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
@@ -382,11 +372,11 @@
             </objects>
             <point key="canvasLocation" x="-3867" y="1763"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Store-->
         <scene sceneID="L8F-qz-5B2">
             <objects>
                 <navigationController definesPresentationContext="YES" id="MQP-UY-b3K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ezB-gn-Jqd"/>
+                    <tabBarItem key="tabBarItem" title="Store" id="ezB-gn-Jqd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1GO-6J-mhe">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -401,6 +391,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQs-Yq-SPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4985" y="1763"/>
+        </scene>
+        <!--View Controller - Create-->
+        <scene sceneID="I2a-F5-grJ">
+            <objects>
+                <viewController id="XQk-mD-GmC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oq5-qz-HJT"/>
+                        <viewControllerLayoutGuide type="bottom" id="pT9-qO-SC6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0mm-OU-7BJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Create" id="4VS-Ly-Hqt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wUL-F4-e5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4979" y="2488"/>
         </scene>
         <!--Navigation Controller - My Flashcards-->
         <scene sceneID="gwY-HB-B3I">

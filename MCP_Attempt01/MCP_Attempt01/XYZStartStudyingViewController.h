@@ -8,10 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XYZStartStudyingViewController : UIViewController
+@interface XYZStartStudyingViewController : UIViewController<UIScrollViewDelegate>
+{
 
-@property (weak, nonatomic) IBOutlet UIButton *favouriteButton;
+    NSMutableArray *myCardsList;
+}
 
+
+@property (strong, nonatomic) IBOutlet UIButton *favouriteButton;
+
+@property (strong, nonatomic) UIScrollView *horizontalScroll;
+@property (strong, nonatomic) IBOutlet UILabel *cardNumber;
 
 
 - (IBAction)favouriteButtonClicked:(id)sender;

@@ -10,4 +10,10 @@
 
 @interface XYZFlashcardBack : UIView
 
+@property (strong,nonatomic) UIButton *backCoverButton;
+@property (strong,nonatomic) UILabel *redLabel;
+@property (strong,nonatomic) UILabel *greenLabel;
+
+-(id) initWithAnswer: (NSString *)answer withThumbsUp:(NSInteger)thumbsUp andThumbsDown:(NSInteger)thumbsDown isAddedToFavourites:(BOOL)addedToFavourites withFrame:(CGRect)frame;
+
 @end

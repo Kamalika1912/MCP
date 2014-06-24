@@ -10,19 +10,21 @@
 
 @implementation XYZFlashcardFront
 
-- (id)initWithFrame:(CGRect)frame
+-(id) initWithQuestion: (NSString *)question withThumbsUp:(NSInteger)thumbsUp andThumbsDown:(NSInteger)thumbsDown isAddedToFavourites:(BOOL)addedToFavourites withFrame:(CGRect)frame
 {
+    
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
         
+        
         self.frontCoverButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         self.frontCoverButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
         self.frontCoverButton.layer.borderWidth = 1.0;
-        self.frontCoverButton.frame = CGRectMake(27, 77, 273, 383);
+        self.frontCoverButton.frame = CGRectMake(20, 10, 280, 330);
         //self.preview.backgroundColor = [UIColor blueColor];
         self.frontCoverButton.layer.cornerRadius = 5.0;
-        [self.frontCoverButton setTitle:@"Flashcards are awesome to study and it comes in pretty handy" forState:UIControlStateNormal];
+        [self.frontCoverButton setTitle:question forState:UIControlStateNormal];
         self.frontCoverButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         [self.frontCoverButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         self.frontCoverButton.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -30,28 +32,25 @@
         [self addSubview:self.frontCoverButton];
         
         
-        self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(163, 5, 39, 21)];
+        self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(210, 15, 35, 25)];
         self.redLabel.textColor = [UIColor redColor];
-        [self.redLabel setFont:[UIFont systemFontOfSize:45]];
-        self.redLabel.text = @"-45";
+        [self.redLabel setFont:[UIFont systemFontOfSize:17]];
+        self.redLabel.text = [NSString stringWithFormat:@"+%i",thumbsDown];
         self.redLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.redLabel];
         
-        self.greenLabel = [[UILabel alloc] initWithFrame:CGRectMake(214, 5, 39, 121)];
+        self.greenLabel = [[UILabel alloc] initWithFrame:CGRectMake(250, 15, 35, 25)];
         self.greenLabel.textColor = [UIColor greenColor];
-        [self.greenLabel setFont:[UIFont systemFontOfSize:45]];
-        self.greenLabel.text = @"+79";
+        [self.greenLabel setFont:[UIFont systemFontOfSize:17]];
+        self.greenLabel.text = [NSString stringWithFormat:@"-%i",thumbsUp];;
         self.greenLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.greenLabel];
-
-        
-        
-        
         
         
     }
     return self;
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
