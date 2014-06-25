@@ -78,6 +78,8 @@
     XYZCardPreview *cardPreview = [[XYZCardPreview alloc] initWithFrame:CGRectMake(5, 5, 160 , 320)];
     //use initEithFlashcard:frame: later to add flashcard data to it
     
+    
+    
     [tagCell.contentView addSubview:cardPreview];
     //tagCell.selectionStyle = UITableViewCellSelectionStyleNone;
     

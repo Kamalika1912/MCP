@@ -71,11 +71,14 @@ bool parseData;
 {
     NSInteger now = [NSDate date].timeIntervalSince1970;
     NSInteger lastRefresh = [(NSDate *)[_config objectForKey:@"lastRefreshDate"] timeIntervalSince1970];
-    NSInteger tokenExpiresIn = [_config integerForKey:@"tokenExpiresIn"];
+//    int tokenExpiresIn = (int)[_config valueForKey:@"tokenExpiresIn"];
+    
+    NSLog(@"%@%d", @"RIGHT > ",[_config integerForKey:@"tokenExpiresIn"]);
+//    NSLog(@"%d",tokenExpiresIn);
 //    NSInteger tokenExpireDate = [(NSDate *)[_config objectForKey:@"tokenExpireDate"] timeIntervalSince1970 ] ;
 //    return true;
     //insert 2 minutes for safety, just to not run request with token that may exires during the connection time;
-    return (now - lastRefresh - 2*60 > tokenExpiresIn);
+    return (now - lastRefresh - 2*60 > 36);
 }
 
 
@@ -265,13 +268,14 @@ bool parseData;
     // save the new tokens in our config
     [_config setValue:data[@"access_token"] forKey:@"accessToken"];
     // update the other config options
-    [_config setInteger: (int)data[@"expires_in"] forKey:@"tokenExpiresIn"];
+//    [NSInteger 
+    [_config setInteger: [data[@"expires_in"] intValue] forKey:@"tokenExpiresIn"];
     NSLog(@"%@",data[@"expires_in"]);
     [_config setObject:[NSDate date] forKey:@"lastRefreshDate"];
 //    [_config setObject:[NSDate dateWithTimeIntervalSinceNow:[data[@"expires_in"] integerValue] * 60 - 30] forKey:@"tokenExpireDate"];
     [_config synchronize];
     
-NSLog(@"%@",[_config valueForKey:@"tokenExpiresIn"]);
+//NSLog(@"%@",[_config integerForKey:@"tokenExpiresIn"]);
     
     // we were most likely called by one of the apis that needed a new token.
     // check if that's the case and go back to that api call
