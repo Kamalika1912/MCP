@@ -22,6 +22,8 @@
 		350DDB72195AC4C60032E539 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 350DDB70195AC4C60032E539 /* InfoPlist.strings */; };
 		350DDB74195AC4C60032E539 /* FLIPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 350DDB73195AC4C60032E539 /* FLIPTests.m */; };
 		350DDB7F195AC66D0032E539 /* FLIP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 350DDB7D195AC66D0032E539 /* FLIP.xcdatamodeld */; };
+		350DDB82195ACAFF0032E539 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350DDB81195ACAFF0032E539 /* StoreViewController.m */; };
+		350DDB84195AD3BE0032E539 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DDB83195AD3BE0032E539 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,9 @@
 		350DDB71195AC4C60032E539 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		350DDB73195AC4C60032E539 /* FLIPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FLIPTests.m; sourceTree = "<group>"; };
 		350DDB7E195AC66D0032E539 /* FLIP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FLIP.xcdatamodel; sourceTree = "<group>"; };
+		350DDB80195ACAFF0032E539 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
+		350DDB81195ACAFF0032E539 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
+		350DDB83195AD3BE0032E539 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				350DDB84195AD3BE0032E539 /* CoreData.framework in Frameworks */,
 				350DDB48195AC4C50032E539 /* CoreGraphics.framework in Frameworks */,
 				350DDB4A195AC4C50032E539 /* UIKit.framework in Frameworks */,
 				350DDB46195AC4C50032E539 /* Foundation.framework in Frameworks */,
@@ -103,6 +109,7 @@
 		350DDB44195AC4C50032E539 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				350DDB83195AD3BE0032E539 /* CoreData.framework */,
 				350DDB45195AC4C50032E539 /* Foundation.framework */,
 				350DDB47195AC4C50032E539 /* CoreGraphics.framework */,
 				350DDB49195AC4C50032E539 /* UIKit.framework */,
@@ -120,6 +127,8 @@
 				350DDB5A195AC4C50032E539 /* FirstViewController.h */,
 				350DDB5B195AC4C50032E539 /* FirstViewController.m */,
 				350DDB7D195AC66D0032E539 /* FLIP.xcdatamodeld */,
+				350DDB80195ACAFF0032E539 /* StoreViewController.h */,
+				350DDB81195ACAFF0032E539 /* StoreViewController.m */,
 				350DDB60195AC4C60032E539 /* Images.xcassets */,
 				350DDB4C195AC4C50032E539 /* Supporting Files */,
 			);
@@ -256,6 +265,7 @@
 				350DDB56195AC4C50032E539 /* AppDelegate.m in Sources */,
 				350DDB5C195AC4C50032E539 /* FirstViewController.m in Sources */,
 				350DDB52195AC4C50032E539 /* main.m in Sources */,
+				350DDB82195ACAFF0032E539 /* StoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FLIP/FLIP-Prefix.pch";
 				INFOPLIST_FILE = "FLIP/FLIP-Info.plist";
@@ -393,6 +404,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FLIP/FLIP-Prefix.pch";
 				INFOPLIST_FILE = "FLIP/FLIP-Info.plist";
