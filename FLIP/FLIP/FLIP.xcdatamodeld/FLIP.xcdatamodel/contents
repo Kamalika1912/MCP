@@ -4,11 +4,11 @@
         <attribute name="answer" attributeType="String" syncable="YES"/>
         <attribute name="author" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="certified" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
-        <attribute name="downCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="downVote" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="question" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="upCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="upVote" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="createdBy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
     </entity>
     <entity name="Course" syncable="YES">

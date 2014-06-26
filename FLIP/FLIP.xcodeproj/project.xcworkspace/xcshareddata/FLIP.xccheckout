@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A62EACD0-724D-4F0B-B5C9-A68C284383AB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FLIP</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>24324DAD-021F-432B-8C90-A6DB3573362C</key>
+		<string>https://github.com/psylok/MCP.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FLIP/FLIP.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>24324DAD-021F-432B-8C90-A6DB3573362C</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/psylok/MCP.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>24324DAD-021F-432B-8C90-A6DB3573362C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>24324DAD-021F-432B-8C90-A6DB3573362C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MCP</string>
+		</dict>
+	</array>
+</dict>
+</plist>

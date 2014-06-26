@@ -1,62 +1,31 @@
 //
-//  StoreViewController.m
+//  MyCardsTableTableViewController.m
 //  FLIP
 //
-//  Created by Giorgio Pretto on 6/25/14.
+//  Created by Giorgio Pretto on 6/26/14.
 //  Copyright (c) 2014 MCP 2014. All rights reserved.
 //
 
-#import "StoreViewController.h"
+#import "MyCardsTableTableViewController.h"
 
-@interface StoreViewController ()
+@interface MyCardsTableTableViewController ()
 
 @end
 
-@implementation StoreViewController
+@implementation MyCardsTableTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        
     }
     return self;
 }
 
-
-
-
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    //
-    //DATA
-    //
-    
-    // load the FAKE store from the file
-    NSString *storePath = [[NSBundle mainBundle] pathForResource:@"Store"
-                                                          ofType:@"json"];
-    
-    
-    // parse it and load it in an array
-    NSError *error;
-    _storeCards = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:storePath] options:NSJSONReadingMutableContainers error:&error];
-    if (error)
-        NSLog(@"JSONObjectWithData error: %@", error);
-    
-    // data ready to use from here on
-    
-    
-    
-    
-    
-    
-    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -77,38 +46,26 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [_storeCards count];
+    return 0;
 }
 
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cardCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    NSString *question = _storeCards[indexPath.row][@"question"];
-    
-    
-    
-    // set the question
-    ((UILabel *)[cell viewWithTag:1]).text = question;
-    // set the up/down vote star level (to be changed to whatever we want, just a quick example)
-    ((UILabel *)[cell viewWithTag:3]).text = @"@@@";
-
-    
+    // Configure the cell...
     
     return cell;
 }
-
-
-
-
+*/
 
 /*
 // Override to support conditional editing of the table view.
