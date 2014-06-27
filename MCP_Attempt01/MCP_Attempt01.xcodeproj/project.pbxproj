@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35FFA2D1195DB53D0007480E /* Store.json in Resources */ = {isa = PBXBuildFile; fileRef = 35FFA2D0195DB53D0007480E /* Store.json */; };
+		35FFA2D3195DB73F0007480E /* Courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 35FFA2D2195DB73F0007480E /* Courses.json */; };
 		5A55C32A195606BC00C38DB2 /* drop_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A55C329195606BC00C38DB2 /* drop_down@2x.png */; };
 		5A55C32C19564CC600C38DB2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A55C32B19564CC600C38DB2 /* QuartzCore.framework */; };
 		5A55C32F19568ED700C38DB2 /* XYZStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A55C32E19568ED700C38DB2 /* XYZStoreViewController.m */; };
@@ -47,7 +49,6 @@
 		5AE6D418194640DE006BCF1A /* XYZSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D417194640DE006BCF1A /* XYZSubject.m */; };
 		6E2ED56B195C8DA200016C15 /* XYZCreateCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */; };
 		6E2ED56E195C8DB100016C15 /* XYZPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2ED56D195C8DB100016C15 /* XYZPreviewViewController.m */; };
-		6E2ED570195CA9CA00016C15 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E2ED56F195CA9CA00016C15 /* background.jpg */; };
 		6EEC9BF8195CB23000B7E980 /* XYZCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */; };
 		6EEC9C00195CBB3100B7E980 /* thumbs_down.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */; };
 		6EEC9C02195CBB3A00B7E980 /* thumbs_up.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C01195CBB3A00B7E980 /* thumbs_up.jpg */; };
@@ -59,7 +60,6 @@
 		6EEC9C13195CF54200B7E980 /* id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C12195CF54200B7E980 /* id-card.png */; };
 		6EEC9C15195CF73100B7E980 /* pouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C14195CF73100B7E980 /* pouch.png */; };
 		6EEC9C17195CF9FB00B7E980 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C16195CF9FB00B7E980 /* Splash.png */; };
-		6EEC9C19195CFA1700B7E980 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C18195CFA1700B7E980 /* Images-2.xcassets */; };
 		6EEC9C1B195CFA9100B7E980 /* Flip-logo-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C1A195CFA9100B7E980 /* Flip-logo-120x120.png */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +74,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		35FFA2D0195DB53D0007480E /* Store.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Store.json; path = ../Store.json; sourceTree = "<group>"; };
+		35FFA2D2195DB73F0007480E /* Courses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Courses.json; sourceTree = "<group>"; };
 		5A55C329195606BC00C38DB2 /* drop_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drop_down@2x.png"; sourceTree = "<group>"; };
 		5A55C32B19564CC600C38DB2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5A55C32D19568ED700C38DB2 /* XYZStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZStoreViewController.h; sourceTree = "<group>"; };
@@ -135,7 +137,6 @@
 		6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCreateCardViewController.m; sourceTree = "<group>"; };
 		6E2ED56C195C8DB100016C15 /* XYZPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZPreviewViewController.h; sourceTree = "<group>"; };
 		6E2ED56D195C8DB100016C15 /* XYZPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZPreviewViewController.m; sourceTree = "<group>"; };
-		6E2ED56F195CA9CA00016C15 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../Desktop/background.jpg; sourceTree = "<group>"; };
 		6EEC9BF6195CB23000B7E980 /* XYZCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateViewController.h; sourceTree = "<group>"; };
 		6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCreateViewController.m; sourceTree = "<group>"; };
 		6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumbs_down.jpg; sourceTree = "<group>"; };
@@ -149,7 +150,6 @@
 		6EEC9C12195CF54200B7E980 /* id-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "id-card.png"; sourceTree = "<group>"; };
 		6EEC9C14195CF73100B7E980 /* pouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pouch.png; sourceTree = "<group>"; };
 		6EEC9C16195CF9FB00B7E980 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
-		6EEC9C18195CFA1700B7E980 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		6EEC9C1A195CFA9100B7E980 /* Flip-logo-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flip-logo-120x120.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,7 +226,6 @@
 				6EEC9C0A195CF1E700B7E980 /* Flip-logo.png */,
 				6EEC9C01195CBB3A00B7E980 /* thumbs_up.jpg */,
 				6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */,
-				6E2ED56F195CA9CA00016C15 /* background.jpg */,
 				5A6E43281958F82300C03987 /* favouriteSelected.png */,
 				5A6E43291958F82300C03987 /* favouriteNotSelected.png */,
 				5A55C329195606BC00C38DB2 /* drop_down@2x.png */,
@@ -333,7 +332,6 @@
 				5AE6D3E01946330E006BCF1A /* XYZAppDelegate.m */,
 				5AE6D3E21946330E006BCF1A /* Main.storyboard */,
 				5AE6D3EB1946330E006BCF1A /* Images.xcassets */,
-				6EEC9C18195CFA1700B7E980 /* Images-2.xcassets */,
 				5AE6D3D71946330E006BCF1A /* Supporting Files */,
 			);
 			path = MCP_Attempt01;
@@ -342,10 +340,12 @@
 		5AE6D3D71946330E006BCF1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				35FFA2D0195DB53D0007480E /* Store.json */,
 				5AE6D3D81946330E006BCF1A /* MCP_Attempt01-Info.plist */,
 				5AE6D3D91946330E006BCF1A /* InfoPlist.strings */,
 				5AE6D3DC1946330E006BCF1A /* main.m */,
 				5AE6D3DE1946330E006BCF1A /* MCP_Attempt01-Prefix.pch */,
+				35FFA2D2195DB73F0007480E /* Courses.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -470,10 +470,9 @@
 				5AB82239194BB71400A2A6FE /* flashcard.png in Resources */,
 				6EEC9C02195CBB3A00B7E980 /* thumbs_up.jpg in Resources */,
 				6EEC9C0F195CF3F800B7E980 /* plus-sign.png in Resources */,
-				6E2ED570195CA9CA00016C15 /* background.jpg in Resources */,
 				5A55C32A195606BC00C38DB2 /* drop_down@2x.png in Resources */,
 				5AB82235194BAD7300A2A6FE /* user.png in Resources */,
-				6EEC9C19195CFA1700B7E980 /* Images-2.xcassets in Resources */,
+				35FFA2D1195DB53D0007480E /* Store.json in Resources */,
 				6EEC9C00195CBB3100B7E980 /* thumbs_down.jpg in Resources */,
 				6EEC9C0B195CF1E700B7E980 /* Flip-logo.png in Resources */,
 				5AB8222F194B53D900A2A6FE /* filterIcon.png in Resources */,
@@ -490,6 +489,7 @@
 				5AE6D3E41946330E006BCF1A /* Main.storyboard in Resources */,
 				5A6E432B1958F82300C03987 /* favouriteNotSelected.png in Resources */,
 				5AB82233194BABE700A2A6FE /* coin.png in Resources */,
+				35FFA2D3195DB73F0007480E /* Courses.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

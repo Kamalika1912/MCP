@@ -1,0 +1,25 @@
+[
+ {
+ "id"       :  "1"
+ ,"title"    :  "DIS I"
+ ,"info"     :  "Designing Iteractive System I, Professor : Jan Borchers"
+ }
+ ,
+ {
+ "id"       :  "3"
+ ,"title"    :  "DIS II"
+ ,"info"     :  "Designing Iteractive System II, Professor : Christian Corsten"
+ }
+ ,
+ {
+ "id"       :  "3"
+ ,"title"    :  "MCP 14"
+ ,"info"     :  "Multimedia Computing Project, Professor : Nur Al-huda Hamdan"
+ }
+ ,
+ {
+ "id"       :  "4"
+ ,"title"    :  "CTHCI"
+ ,"info"     :  "Current Topics in Human Computer Interaction, Professor : Chat Wacharamanotham"
+ }
+]

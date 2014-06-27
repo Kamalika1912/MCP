@@ -27,6 +27,11 @@
 
 
 
+// save a card in the local store
+- (IBAction)buyCard:(id)sender {
+
+}
+
 
 
 - (void)viewDidLoad

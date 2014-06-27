@@ -58,7 +58,22 @@
 
 -(void) loadCourseList {
     
-    courseList = [NSMutableArray arrayWithObjects:@"Designing Interactive Systems 1",@"Designing Interactive Systems 2",@"Media Computing Project",@"Internet Of Things",@"Current topics in HCI",@"Post Desktop User Interfaces", nil];
+    
+    NSString *coursePath = [[NSBundle mainBundle] pathForResource:@"Courses"
+                                                          ofType:@"json"];
+    
+    
+    // parse it and load it in an array
+    NSError *error;
+    courseList = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:coursePath] options:NSJSONReadingMutableContainers error:&error];
+    if (error)
+        NSLog(@"JSONObjectWithData error: %@", error);
+    
+
+    
+    
+    
+//    courseList = [NSMutableArray arrayWithObjects:@"Designing Interactive Systems 1",@"Designing Interactive Systems 2",@"Media Computing Project",@"Internet Of Things",@"Current topics in HCI",@"Post Desktop User Interfaces", nil];
     
     
 }
@@ -107,7 +122,7 @@
 // The data to return for the row and component (column) that's being passed in
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return courseList[row];
+    return courseList[row][@"title"];
 }
 
 // Catpure the picker view selection
@@ -127,7 +142,7 @@
     label.font= [UIFont systemFontOfSize:16];
     
     
-    label.text= [courseList objectAtIndex:row];
+    label.text= [courseList objectAtIndex:row][@"title"];
     label.textAlignment = NSTextAlignmentCenter;
     
     return label;

@@ -2,10 +2,11 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D65" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Card" syncable="YES">
         <attribute name="answer" attributeType="String" syncable="YES"/>
-        <attribute name="author" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="certified" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="createdby" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="downVote" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="id" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="question" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="upVote" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -23,8 +24,8 @@
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Card" positionX="-54" positionY="18" width="128" height="195"/>
         <element name="Course" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="Card" positionX="-54" positionY="18" width="128" height="178"/>
         <element name="User" positionX="-36" positionY="81" width="128" height="105"/>
     </elements>
 </model>

@@ -1,5 +1,5 @@
 //
-//  MyCardsTableTableViewController.h
+//  MyCardsTableViewController.h
 //  FLIP
 //
 //  Created by Giorgio Pretto on 6/26/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyCardsTableTableViewController : UITableViewController
+@interface MyCardsTableViewController : UITableViewController
 
 @end

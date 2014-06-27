@@ -86,9 +86,6 @@
                                             <state key="normal" title="BUY">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <connections>
-                                                <action selector="buyCard:" destination="6kY-R8-NxR" eventType="touchUpInside" id="0e1-GH-gTw"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>

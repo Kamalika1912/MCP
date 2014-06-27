@@ -43,7 +43,7 @@
     
     [self loadCourseList];
     self.coursePicker.dataSource = self;
-    self.coursePicker.delegate =self;
+    self.coursePicker.delegate = self;
     self.filteredTableView.dataSource = self;
     self.filteredTableView.delegate = self;
     

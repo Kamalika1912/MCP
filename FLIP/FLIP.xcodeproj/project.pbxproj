@@ -26,7 +26,7 @@
 		356DA4E7195C53460002C22E /* File in Resources */ = {isa = PBXBuildFile; fileRef = 356DA4E6195C53460002C22E /* File */; };
 		356DA4E9195C56870002C22E /* Store.json in Resources */ = {isa = PBXBuildFile; fileRef = 356DA4E8195C56870002C22E /* Store.json */; };
 		356DA4EC195C673F0002C22E /* MyCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356DA4EB195C673F0002C22E /* MyCardsViewController.m */; };
-		356DA4EF195C675C0002C22E /* MyCardsTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356DA4EE195C675C0002C22E /* MyCardsTableTableViewController.m */; };
+		356DA4EF195C675C0002C22E /* MyCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356DA4EE195C675C0002C22E /* MyCardsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +65,8 @@
 		356DA4E8195C56870002C22E /* Store.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Store.json; path = ../Store.json; sourceTree = "<group>"; };
 		356DA4EA195C673F0002C22E /* MyCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCardsViewController.h; path = ../MyCardsViewController.h; sourceTree = "<group>"; };
 		356DA4EB195C673F0002C22E /* MyCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCardsViewController.m; path = ../MyCardsViewController.m; sourceTree = "<group>"; };
-		356DA4ED195C675C0002C22E /* MyCardsTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCardsTableTableViewController.h; path = ../MyCardsTableTableViewController.h; sourceTree = "<group>"; };
-		356DA4EE195C675C0002C22E /* MyCardsTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCardsTableTableViewController.m; path = ../MyCardsTableTableViewController.m; sourceTree = "<group>"; };
+		356DA4ED195C675C0002C22E /* MyCardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCardsTableViewController.h; path = ../MyCardsTableViewController.h; sourceTree = "<group>"; };
+		356DA4EE195C675C0002C22E /* MyCardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCardsTableViewController.m; path = ../MyCardsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +131,8 @@
 			children = (
 				356DA4EA195C673F0002C22E /* MyCardsViewController.h */,
 				356DA4EB195C673F0002C22E /* MyCardsViewController.m */,
-				356DA4ED195C675C0002C22E /* MyCardsTableTableViewController.h */,
-				356DA4EE195C675C0002C22E /* MyCardsTableTableViewController.m */,
+				356DA4ED195C675C0002C22E /* MyCardsTableViewController.h */,
+				356DA4EE195C675C0002C22E /* MyCardsTableViewController.m */,
 				350DDB54195AC4C50032E539 /* AppDelegate.h */,
 				350DDB55195AC4C50032E539 /* AppDelegate.m */,
 				350DDB57195AC4C50032E539 /* Main.storyboard */,
@@ -274,7 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				356DA4EF195C675C0002C22E /* MyCardsTableTableViewController.m in Sources */,
+				356DA4EF195C675C0002C22E /* MyCardsTableViewController.m in Sources */,
 				350DDB7F195AC66D0032E539 /* FLIP.xcdatamodeld in Sources */,
 				350DDB56195AC4C50032E539 /* AppDelegate.m in Sources */,
 				350DDB52195AC4C50032E539 /* main.m in Sources */,
