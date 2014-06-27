@@ -1,21 +1,19 @@
 //
-//  XYZMyFlashcardsViewController.m
+//  XYZCreateViewController.m
 //  MCP_Attempt01
 //
-//  Created by Devashish Jasani on 14/06/14.
+//  Created by MCP 2014 on 26/06/14.
 //  Copyright (c) 2014 Devashish Jasani. All rights reserved.
 //
 
-#import "XYZMyFlashcardsViewController.h"
+#import "XYZCreateViewController.h"
 #import "XYZStartStudyingViewController.h"
 #import "QuartzCore/QuartzCore.h"
-
-@interface XYZMyFlashcardsViewController ()
+@interface XYZCreateViewController ()
 
 @end
 
-@implementation XYZMyFlashcardsViewController
-
+@implementation XYZCreateViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+  //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     selectedCourse=0;
     [self hideColorPickerView:YES];
     self.coursePickerView.layer.cornerRadius = 5.0;

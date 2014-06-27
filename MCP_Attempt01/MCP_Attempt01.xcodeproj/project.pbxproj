@@ -45,6 +45,22 @@
 		5AE6D40A19463644006BCF1A /* XYZFlashcard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D40919463644006BCF1A /* XYZFlashcard.m */; };
 		5AE6D41519463F93006BCF1A /* XYZLecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D41419463F93006BCF1A /* XYZLecture.m */; };
 		5AE6D418194640DE006BCF1A /* XYZSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D417194640DE006BCF1A /* XYZSubject.m */; };
+		6E2ED56B195C8DA200016C15 /* XYZCreateCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */; };
+		6E2ED56E195C8DB100016C15 /* XYZPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2ED56D195C8DB100016C15 /* XYZPreviewViewController.m */; };
+		6E2ED570195CA9CA00016C15 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E2ED56F195CA9CA00016C15 /* background.jpg */; };
+		6EEC9BF8195CB23000B7E980 /* XYZCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */; };
+		6EEC9C00195CBB3100B7E980 /* thumbs_down.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */; };
+		6EEC9C02195CBB3A00B7E980 /* thumbs_up.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C01195CBB3A00B7E980 /* thumbs_up.jpg */; };
+		6EEC9C09195CEE6700B7E980 /* XYZSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC9C08195CEE6700B7E980 /* XYZSplashViewController.m */; };
+		6EEC9C0B195CF1E700B7E980 /* Flip-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C0A195CF1E700B7E980 /* Flip-logo.png */; };
+		6EEC9C0F195CF3F800B7E980 /* plus-sign.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C0C195CF3F800B7E980 /* plus-sign.png */; };
+		6EEC9C10195CF3F800B7E980 /* graduation-cap.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C0D195CF3F800B7E980 /* graduation-cap.png */; };
+		6EEC9C11195CF3F800B7E980 /* shopping-cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C0E195CF3F800B7E980 /* shopping-cart.png */; };
+		6EEC9C13195CF54200B7E980 /* id-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C12195CF54200B7E980 /* id-card.png */; };
+		6EEC9C15195CF73100B7E980 /* pouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C14195CF73100B7E980 /* pouch.png */; };
+		6EEC9C17195CF9FB00B7E980 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C16195CF9FB00B7E980 /* Splash.png */; };
+		6EEC9C19195CFA1700B7E980 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C18195CFA1700B7E980 /* Images-2.xcassets */; };
+		6EEC9C1B195CFA9100B7E980 /* Flip-logo-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C1A195CFA9100B7E980 /* Flip-logo-120x120.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +131,26 @@
 		5AE6D41419463F93006BCF1A /* XYZLecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZLecture.m; sourceTree = "<group>"; };
 		5AE6D416194640DE006BCF1A /* XYZSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSubject.h; sourceTree = "<group>"; };
 		5AE6D417194640DE006BCF1A /* XYZSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSubject.m; sourceTree = "<group>"; };
+		6E2ED569195C8DA200016C15 /* XYZCreateCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateCardViewController.h; sourceTree = "<group>"; };
+		6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCreateCardViewController.m; sourceTree = "<group>"; };
+		6E2ED56C195C8DB100016C15 /* XYZPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZPreviewViewController.h; sourceTree = "<group>"; };
+		6E2ED56D195C8DB100016C15 /* XYZPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZPreviewViewController.m; sourceTree = "<group>"; };
+		6E2ED56F195CA9CA00016C15 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../Desktop/background.jpg; sourceTree = "<group>"; };
+		6EEC9BF6195CB23000B7E980 /* XYZCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateViewController.h; sourceTree = "<group>"; };
+		6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCreateViewController.m; sourceTree = "<group>"; };
+		6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumbs_down.jpg; sourceTree = "<group>"; };
+		6EEC9C01195CBB3A00B7E980 /* thumbs_up.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumbs_up.jpg; sourceTree = "<group>"; };
+		6EEC9C07195CEE6700B7E980 /* XYZSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSplashViewController.h; sourceTree = "<group>"; };
+		6EEC9C08195CEE6700B7E980 /* XYZSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSplashViewController.m; sourceTree = "<group>"; };
+		6EEC9C0A195CF1E700B7E980 /* Flip-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flip-logo.png"; sourceTree = "<group>"; };
+		6EEC9C0C195CF3F800B7E980 /* plus-sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus-sign.png"; sourceTree = "<group>"; };
+		6EEC9C0D195CF3F800B7E980 /* graduation-cap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "graduation-cap.png"; sourceTree = "<group>"; };
+		6EEC9C0E195CF3F800B7E980 /* shopping-cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shopping-cart.png"; sourceTree = "<group>"; };
+		6EEC9C12195CF54200B7E980 /* id-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "id-card.png"; sourceTree = "<group>"; };
+		6EEC9C14195CF73100B7E980 /* pouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pouch.png; sourceTree = "<group>"; };
+		6EEC9C16195CF9FB00B7E980 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
+		6EEC9C18195CFA1700B7E980 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		6EEC9C1A195CFA9100B7E980 /* Flip-logo-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flip-logo-120x120.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +182,8 @@
 		5A8E39C419471D030020836F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6EEC9C03195CEE1700B7E980 /* SplashScreen */,
+				6E2ED563195C888300016C15 /* Create */,
 				5AB25AAC19573961000EA6C1 /* Profile */,
 				5AB25AAB19573944000EA6C1 /* MyFlashcards */,
 				5AB25AAA1957392A000EA6C1 /* Store */,
@@ -180,11 +218,22 @@
 		5A8E39C919479B570020836F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6EEC9C16195CF9FB00B7E980 /* Splash.png */,
+				6EEC9C0C195CF3F800B7E980 /* plus-sign.png */,
+				6EEC9C1A195CFA9100B7E980 /* Flip-logo-120x120.png */,
+				6EEC9C0D195CF3F800B7E980 /* graduation-cap.png */,
+				6EEC9C0E195CF3F800B7E980 /* shopping-cart.png */,
+				6EEC9C0A195CF1E700B7E980 /* Flip-logo.png */,
+				6EEC9C01195CBB3A00B7E980 /* thumbs_up.jpg */,
+				6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */,
+				6E2ED56F195CA9CA00016C15 /* background.jpg */,
 				5A6E43281958F82300C03987 /* favouriteSelected.png */,
 				5A6E43291958F82300C03987 /* favouriteNotSelected.png */,
 				5A55C329195606BC00C38DB2 /* drop_down@2x.png */,
 				5AB8223C194BBD9700A2A6FE /* reputation.png */,
+				6EEC9C12195CF54200B7E980 /* id-card.png */,
 				5AB82238194BB71400A2A6FE /* flashcard.png */,
+				6EEC9C14195CF73100B7E980 /* pouch.png */,
 				5AB82234194BAD7300A2A6FE /* user.png */,
 				5AB82232194BABE700A2A6FE /* coin.png */,
 				5AB8222E194B53D900A2A6FE /* filterIcon.png */,
@@ -284,6 +333,7 @@
 				5AE6D3E01946330E006BCF1A /* XYZAppDelegate.m */,
 				5AE6D3E21946330E006BCF1A /* Main.storyboard */,
 				5AE6D3EB1946330E006BCF1A /* Images.xcassets */,
+				6EEC9C18195CFA1700B7E980 /* Images-2.xcassets */,
 				5AE6D3D71946330E006BCF1A /* Supporting Files */,
 			);
 			path = MCP_Attempt01;
@@ -316,6 +366,28 @@
 				5AE6D3FB1946330E006BCF1A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E2ED563195C888300016C15 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				6E2ED569195C8DA200016C15 /* XYZCreateCardViewController.h */,
+				6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */,
+				6E2ED56C195C8DB100016C15 /* XYZPreviewViewController.h */,
+				6E2ED56D195C8DB100016C15 /* XYZPreviewViewController.m */,
+				6EEC9BF6195CB23000B7E980 /* XYZCreateViewController.h */,
+				6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */,
+			);
+			name = Create;
+			sourceTree = "<group>";
+		};
+		6EEC9C03195CEE1700B7E980 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6EEC9C07195CEE6700B7E980 /* XYZSplashViewController.h */,
+				6EEC9C08195CEE6700B7E980 /* XYZSplashViewController.m */,
+			);
+			name = SplashScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,10 +468,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB82239194BB71400A2A6FE /* flashcard.png in Resources */,
+				6EEC9C02195CBB3A00B7E980 /* thumbs_up.jpg in Resources */,
+				6EEC9C0F195CF3F800B7E980 /* plus-sign.png in Resources */,
+				6E2ED570195CA9CA00016C15 /* background.jpg in Resources */,
 				5A55C32A195606BC00C38DB2 /* drop_down@2x.png in Resources */,
 				5AB82235194BAD7300A2A6FE /* user.png in Resources */,
+				6EEC9C19195CFA1700B7E980 /* Images-2.xcassets in Resources */,
+				6EEC9C00195CBB3100B7E980 /* thumbs_down.jpg in Resources */,
+				6EEC9C0B195CF1E700B7E980 /* Flip-logo.png in Resources */,
 				5AB8222F194B53D900A2A6FE /* filterIcon.png in Resources */,
+				6EEC9C1B195CFA9100B7E980 /* Flip-logo-120x120.png in Resources */,
+				6EEC9C13195CF54200B7E980 /* id-card.png in Resources */,
+				6EEC9C17195CF9FB00B7E980 /* Splash.png in Resources */,
+				6EEC9C10195CF3F800B7E980 /* graduation-cap.png in Resources */,
+				6EEC9C15195CF73100B7E980 /* pouch.png in Resources */,
 				5A6E432A1958F82300C03987 /* favouriteSelected.png in Resources */,
+				6EEC9C11195CF3F800B7E980 /* shopping-cart.png in Resources */,
 				5AE6D3EC1946330E006BCF1A /* Images.xcassets in Resources */,
 				5AB8223D194BBD9700A2A6FE /* reputation.png in Resources */,
 				5AE6D3DB1946330E006BCF1A /* InfoPlist.strings in Resources */,
@@ -426,16 +510,20 @@
 			files = (
 				5A6E43311959150300C03987 /* XYZFlashcardBack.m in Sources */,
 				5A6E4320195769CD00C03987 /* XYZStartStudyingViewController.m in Sources */,
+				6EEC9C09195CEE6700B7E980 /* XYZSplashViewController.m in Sources */,
 				5AE6D41519463F93006BCF1A /* XYZLecture.m in Sources */,
 				5AB821FD1949146900A2A6FE /* DropDownViewCell.m in Sources */,
 				5AB25AA9195735A7000EA6C1 /* XYZBuyCardsViewController.m in Sources */,
+				6E2ED56E195C8DB100016C15 /* XYZPreviewViewController.m in Sources */,
 				5A8E39C319471CDB0020836F /* XYZStartupViewController.m in Sources */,
 				5A8E39C019467DE80020836F /* XYZDBManager.m in Sources */,
 				5AB821FC1949146900A2A6FE /* DropDownListView.m in Sources */,
+				6E2ED56B195C8DA200016C15 /* XYZCreateCardViewController.m in Sources */,
 				5A6E43231957895500C03987 /* XYZCardPreview.m in Sources */,
 				5AB82242194C76D700A2A6FE /* XYZMyFlashcardsViewController.m in Sources */,
 				5AE6D40A19463644006BCF1A /* XYZFlashcard.m in Sources */,
 				5A6E432E195914E700C03987 /* XYZFlashcardFront.m in Sources */,
+				6EEC9BF8195CB23000B7E980 /* XYZCreateViewController.m in Sources */,
 				5A8E39BD194653FC0020836F /* XYZProfile.m in Sources */,
 				5AE6D3E11946330E006BCF1A /* XYZAppDelegate.m in Sources */,
 				5AE6D418194640DE006BCF1A /* XYZSubject.m in Sources */,
@@ -563,8 +651,6 @@
 		5AE6D4031946330E006BCF1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCP_Attempt01/MCP_Attempt01-Prefix.pch";
@@ -577,8 +663,6 @@
 		5AE6D4041946330E006BCF1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCP_Attempt01/MCP_Attempt01-Prefix.pch";

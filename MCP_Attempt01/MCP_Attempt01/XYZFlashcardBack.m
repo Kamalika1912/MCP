@@ -53,15 +53,21 @@
         self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(210, 15, 35, 25)];
         self.redLabel.textColor = [UIColor redColor];
         [self.redLabel setFont:[UIFont systemFontOfSize:17]];
-        self.redLabel.text = [NSString stringWithFormat:@"+%i",thumbsDown];
+        self.redLabel.text = [NSString stringWithFormat:@"-%i",thumbsDown];
         self.redLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.redLabel];
-        
+      //  [self.redLabel setBackgroundColor:[UIImage imageNamed:@"thumbs_up.jpeg"]];
+
+        UIColor *color = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_down.jpg"]];
+        self.redLabel.backgroundColor = color;
+
         self.greenLabel = [[UILabel alloc] initWithFrame:CGRectMake(250, 15, 35, 25)];
         self.greenLabel.textColor = [UIColor greenColor];
         [self.greenLabel setFont:[UIFont systemFontOfSize:17]];
-        self.greenLabel.text = [NSString stringWithFormat:@"-%i",thumbsUp];;
+        self.greenLabel.text = [NSString stringWithFormat:@"+%i",thumbsUp];;
         self.greenLabel.textAlignment = NSTextAlignmentCenter;
+        UIColor *color2 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_up.jpg"]];
+         self.greenLabel.backgroundColor = color2;
         [self addSubview:self.greenLabel];
         
         

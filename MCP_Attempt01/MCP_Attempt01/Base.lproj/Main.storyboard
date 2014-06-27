@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -77,7 +77,7 @@
                             <constraint firstItem="yoU-qe-cVV" firstAttribute="leading" secondItem="uFk-j4-c45" secondAttribute="trailing" constant="-55" id="r7I-3C-lQ5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="first" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="id-card.png" id="u1e-5L-l1D"/>
                     <connections>
                         <outlet property="coins" destination="yoU-qe-cVV" id="MZh-Yv-cRN"/>
                         <outlet property="username" destination="Zhg-ve-WU7" id="lGd-5p-F5D"/>
@@ -230,6 +230,7 @@
         <scene sceneID="Vex-rW-GRa">
             <objects>
                 <tabBarController useStoryboardIdentifierAsRestorationIdentifier="YES" id="8YX-ce-x5E" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="g66-lf-Fau"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="JQR-rB-NYL">
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
@@ -240,7 +241,7 @@
                         <segue destination="CZ4-MO-1fc" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
                         <segue destination="7sj-0z-8e8" kind="relationship" relationship="viewControllers" id="rvs-LR-B2E"/>
                         <segue destination="MQP-UY-b3K" kind="relationship" relationship="viewControllers" id="0ub-RV-P7A"/>
-                        <segue destination="XQk-mD-GmC" kind="relationship" relationship="viewControllers" id="hJD-O5-Ndm"/>
+                        <segue destination="iMu-hk-dTy" kind="relationship" relationship="viewControllers" id="rPv-s9-qtX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
@@ -343,6 +344,25 @@
             </objects>
             <point key="canvasLocation" x="-4443" y="1763"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="xQe-bl-mzr">
+            <objects>
+                <viewController id="EON-9m-4YN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dEa-RP-Vxj"/>
+                        <viewControllerLayoutGuide type="bottom" id="HeU-Z4-mxc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kZh-2X-IBa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FMT-Y1-Vqk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wVZ-wn-lbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3893" y="2416"/>
+        </scene>
         <!--Buy Cards View Controller-->
         <scene sceneID="YLU-vQ-ufb">
             <objects>
@@ -363,7 +383,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oqG-io-u0w"/>
+                    <navigationItem key="navigationItem" id="oqG-io-u0w">
+                        <barButtonItem key="rightBarButtonItem" image="pouch.png" id="OL8-rE-H10"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="BuyList" destination="a81-9I-zi3" id="0et-DS-6mC"/>
                     </connections>
@@ -376,7 +398,7 @@
         <scene sceneID="L8F-qz-5B2">
             <objects>
                 <navigationController definesPresentationContext="YES" id="MQP-UY-b3K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Store" id="ezB-gn-Jqd"/>
+                    <tabBarItem key="tabBarItem" title="Store" image="shopping-cart.png" id="ezB-gn-Jqd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1GO-6J-mhe">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -392,30 +414,88 @@
             </objects>
             <point key="canvasLocation" x="-4985" y="1763"/>
         </scene>
-        <!--View Controller - Create-->
-        <scene sceneID="I2a-F5-grJ">
+        <!--Create Card View Controller - Create a Card-->
+        <scene sceneID="glu-MS-FW6">
             <objects>
-                <viewController id="XQk-mD-GmC" sceneMemberID="viewController">
+                <viewController id="jkW-Py-OU4" customClass="XYZCreateCardViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Oq5-qz-HJT"/>
-                        <viewControllerLayoutGuide type="bottom" id="pT9-qO-SC6"/>
+                        <viewControllerLayoutGuide type="top" id="nad-xR-hTZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="qGZ-Q1-qwB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0mm-OU-7BJ">
+                    <view key="view" contentMode="scaleToFill" id="Efu-KA-wDp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write your Question" translatesAutoresizingMaskIntoConstraints="NO" id="QYF-fa-dod">
+                                <rect key="frame" x="9" y="121" width="284" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Give a tag (title) for your card" translatesAutoresizingMaskIntoConstraints="NO" id="Iwf-Ta-4xM">
+                                <rect key="frame" x="9" y="80" width="284" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write your answer" translatesAutoresizingMaskIntoConstraints="NO" id="h8J-xg-oiW">
+                                <rect key="frame" x="9" y="188" width="284" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHm-Uq-lf8">
+                                <rect key="frame" x="251" y="248" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Preview">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="PreviewButtonPressed:" destination="jkW-Py-OU4" eventType="touchUpInside" id="CFZ-jX-1Ga"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create a Card" id="vWJ-fO-gTP">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="4iz-4i-92h"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="AnswerTextView" destination="h8J-xg-oiW" id="sMk-1C-Icu"/>
+                        <outlet property="QuestionTextView" destination="QYF-fa-dod" id="3Oo-jU-eXy"/>
+                        <outlet property="TagTextView" destination="Iwf-Ta-4xM" id="iuY-cB-eqf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1rk-H5-9Ph" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2277" y="2480"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="7Xq-Cb-B6d">
+            <objects>
+                <viewController id="dcb-pc-B9r" customClass="XYZPreviewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Hd-xA-Q1J"/>
+                        <viewControllerLayoutGuide type="bottom" id="5ce-ys-Aae"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CMy-lU-tUP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Create" id="4VS-Ly-Hqt"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wUL-F4-e5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Bf-rg-EwC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4979" y="2488"/>
+            <point key="canvasLocation" x="-1661" y="2476"/>
         </scene>
         <!--Navigation Controller - My Flashcards-->
         <scene sceneID="gwY-HB-B3I">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7sj-0z-8e8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Flashcards" id="SFC-62-7Jd"/>
+                    <tabBarItem key="tabBarItem" title="My Flashcards" image="graduation-cap.png" id="SFC-62-7Jd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0tL-kB-jO6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -434,13 +514,58 @@
             </objects>
             <point key="canvasLocation" x="-4985" y="1040"/>
         </scene>
+        <!--Navigation Controller - Create-->
+        <scene sceneID="Yg2-qG-Qtn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="473-AI-eYF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Create" image="second" id="JOn-p9-biN"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zmg-OU-zkP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EON-9m-4YN" kind="relationship" relationship="rootViewController" id="TYp-aR-Wh4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oOW-br-0JR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4419" y="2416"/>
+        </scene>
+        <!--Navigation Controller - Create-->
+        <scene sceneID="iah-S5-7rV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iMu-hk-dTy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Create" image="plus-sign.png" id="vGH-om-9i5"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5e4-P1-7q1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jkW-Py-OU4" kind="relationship" relationship="rootViewController" id="kX5-At-Dsx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qpc-63-iwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2803" y="2480"/>
+        </scene>
     </scenes>
     <resources>
         <image name="coin.png" width="55" height="55"/>
         <image name="drop_down.png" width="153" height="27"/>
-        <image name="first" width="30" height="30"/>
         <image name="flashcard.png" width="55" height="38"/>
+        <image name="graduation-cap.png" width="30" height="30"/>
+        <image name="id-card.png" width="30" height="30"/>
+        <image name="plus-sign.png" width="29" height="30"/>
+        <image name="pouch.png" width="30" height="30"/>
         <image name="reputation.png" width="58" height="58"/>
+        <image name="second" width="30" height="30"/>
+        <image name="shopping-cart.png" width="29" height="30"/>
         <image name="user.png" width="64" height="64"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
