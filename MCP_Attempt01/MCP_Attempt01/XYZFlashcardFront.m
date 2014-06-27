@@ -32,25 +32,32 @@
         [self addSubview:self.frontCoverButton];
         
         
-        self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(210, 15, 35, 25)];
+        
+        self.thumbsDownLabel = [[UILabel alloc] initWithFrame:CGRectMake(230, 21, 28, 27)];
+        UIColor *color2 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_down.jpg"]];
+        self.thumbsDownLabel.backgroundColor = color2;
+        [self addSubview:self.thumbsDownLabel];
+        
+        
+        self.thumbsUpLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 15, 28, 27)];
+        UIColor *color1 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_up.jpg"]];
+        self.thumbsUpLabel.backgroundColor = color1;
+        [self addSubview:self.thumbsUpLabel];
+        
+        
+        self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 19, 35, 25)];
         self.redLabel.textColor = [UIColor redColor];
-        [self.redLabel setFont:[UIFont systemFontOfSize:17]];
-        self.redLabel.text = [NSString stringWithFormat:@"-%i",thumbsDown];
+        [self.redLabel setFont:[UIFont systemFontOfSize:19]];
+        self.redLabel.text = [NSString stringWithFormat:@"%i",thumbsDown];
         self.redLabel.textAlignment = NSTextAlignmentCenter;
-        UIColor *color = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_down.jpg"]];
-        self.redLabel.backgroundColor = color;
         [self addSubview:self.redLabel];
         
-        self.greenLabel = [[UILabel alloc] initWithFrame:CGRectMake(250, 15, 35, 25)];
+        self.greenLabel = [[UILabel alloc] initWithFrame:CGRectMake(255, 19, 35, 25)];
         self.greenLabel.textColor = [UIColor greenColor];
-        [self.greenLabel setFont:[UIFont systemFontOfSize:17]];
-        self.greenLabel.text = [NSString stringWithFormat:@"+%i",thumbsUp];;
+        [self.greenLabel setFont:[UIFont systemFontOfSize:19]];
+        self.greenLabel.text = [NSString stringWithFormat:@"%i",thumbsUp];;
         self.greenLabel.textAlignment = NSTextAlignmentCenter;
-        UIColor *color2 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_up.jpg"]];
-        self.greenLabel.backgroundColor = color2;
         [self addSubview:self.greenLabel];
-        
-        
     }
     return self;
 }
