@@ -15,7 +15,9 @@
     NSMutableArray *courseList;
     NSMutableArray *filterdLectureList;
     NSMutableArray *filteredTagList;
+    NSMutableArray *storeCards;
     NSInteger selectedCourse;
+    NSInteger selectedCourseID;
     BOOL loadLectureList;
     
 }

@@ -32,6 +32,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    
+    // load locally the whole list of cards
+    NSString *storePath = [[NSBundle mainBundle] pathForResource:@"Store"
+                                                           ofType:@"json"];
+    // parse it and load it in an array
+    NSError *error;
+    storeCards = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:storePath] options:NSJSONReadingMutableContainers error:&error];
+    if (error)
+        NSLog(@"JSONObjectWithData error: %@", error);
+    
+    
+    
+    
     selectedCourse=0;
     [self hideColorPickerView:YES];
     self.coursePickerView.layer.cornerRadius = 5.0;
@@ -80,8 +94,27 @@
 
 -(void) loadFilterdLectureList {
     
-    filterdLectureList = [NSMutableArray arrayWithObjects:@"Lecture 1",@"Lecture 2",@"Lecture 3",@"Lecture 4",@"Lecture 5",@"Lecture 6",@"Lecture 7",@"Lecture 8", nil];
     
+    // empty the list
+//    [filterdLectureList removeAllObjects];
+    // temp course object
+    NSDictionary *card;
+    // add the lecture that I can found
+//    for (card  in storeCards) {
+//        if (card[@"course"]==selectedCourseID) {
+//            [filterdLectureList addObject:card[@"lecture"]];
+//            
+//        }
+//    }
+
+    NSArray *filtered = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", [NSString stringWithFormat:@"%d",selectedCourseID]]];
+
+    filterdLectureList = filtered;
+    
+    
+    
+//    filterdLectureList = [NSMutableArray arrayWithObjects:@"Lecture 1",@"Lecture 2",@"Lecture 3",@"Lecture 4",@"Lecture 5",@"Lecture 6",@"Lecture 7",@"Lecture 8", nil];
+//    
 }
 
 -(void) loadFilteredTagList {
@@ -132,6 +165,9 @@
     // The parameter named row and component represents what was selected.
     
     selectedCourse = row;
+  
+    // retrive the id of the course from the course object
+    selectedCourseID = [courseList[row][@"id"] integerValue];
     
 }
 
@@ -149,6 +185,14 @@
     
 }
 
+
+
+
+
+
+
+
+
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     if(loadLectureList)
@@ -162,25 +206,47 @@
     
 }
 
+
+
+
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if(loadLectureList)
     {
-        static NSString *cellIdentifier = @"Lectures";
         
-        UITableViewCell *lectureCell = [tableView dequeueReusableCellWithIdentifier:
-                                        cellIdentifier];
-        if (lectureCell == nil) {
-            lectureCell = [[UITableViewCell alloc]initWithStyle:
-                           UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        }
+//        UITableViewCell *lectureCell = [tableView dequeueReusableCellWithIdentifier:@"StoreCell"];
+//        if (lectureCell == nil) {
+//            lectureCell = [[UITableViewCell alloc]initWithStyle:
+//                           UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+//        }
+//        
+//        NSString *stringForCell;
+//        
+//        stringForCell= [filterdLectureList objectAtIndex:indexPath.row];
+//        
+//        [lectureCell.textLabel setText:stringForCell];
+//        return lectureCell;
         
-        NSString *stringForCell;
         
-        stringForCell= [filterdLectureList objectAtIndex:indexPath.row];
         
-        [lectureCell.textLabel setText:stringForCell];
-        return lectureCell;
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cardCell" forIndexPath:indexPath];
+        
+//        NSString *question = filterdLectureList[indexPath.row][@"id"];
+        
+        
+        
+        // set the question
+        
+        cell.textLabel.text = filterdLectureList[indexPath.row][@"lecture"];
+//        ((UILabel *)[cell viewWithTag:1]).text = question;
+        // set the up/down vote star level (to be changed to whatever we want, just a quick example)
+//        ((UILabel *)[cell viewWithTag:3]).text = @"@@@";
+        
+        
+        
+        return cell;
+        
+        
     }
     else
     {
@@ -267,6 +333,8 @@
     [self.coursePickerView setBackgroundColor:[UIColor whiteColor]];
     
     
+    
+    // Why the if? don't they do the same thing?
     if ([self.selectCourseButton.titleLabel.text isEqualToString:@"Select Course"]) {
         [self.coursePicker selectRow:selectedCourse inComponent:0 animated:YES];
     }
@@ -290,9 +358,9 @@
 - (IBAction)doneButtonTapped:(id)sender {
     
     [self hideColorPickerView:YES];
-    [self.selectCourseButton setTitle:[courseList objectAtIndex:selectedCourse] forState:UIControlStateNormal];
+    [self.selectCourseButton setTitle:[courseList objectAtIndex:selectedCourse][@"title"] forState:UIControlStateNormal];
     
-    
+    [self loadFilterdLectureList];
     
 }
 
@@ -345,6 +413,9 @@
     }
     
 }
+
+
+
 
 
 

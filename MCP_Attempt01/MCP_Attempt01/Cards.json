@@ -68,19 +68,4 @@
     ,   "image"     :   ""
     ,   "certified" :   "False"
     }
-    ,
-    {
-        "id"        :   "6"
-    ,   "title"     :   "AR/VR difference"
-    ,   "course"    :   "4"
-    ,   "lecture"   :   "2"
-    ,   "question"  :   "What is the difference between AR and VR ?"
-    ,   "answer"    :   "Virtual Reality is a complete virtual environment, whereas the Augmented Reality add some virual elements to a real environment"
-    ,   "upvote"    :   "6"
-    ,   "downwote"  :   "5"
-    ,   "createdBy" :   "0"
-    ,   "image"     :   ""
-    ,   "certified" :   "False"
-    }
-
 ]
