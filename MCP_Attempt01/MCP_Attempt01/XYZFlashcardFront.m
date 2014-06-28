@@ -34,13 +34,13 @@
         
         
         self.thumbsDownLabel = [[UILabel alloc] initWithFrame:CGRectMake(230, 21, 28, 27)];
-        UIColor *color2 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_down.jpg"]];
+        UIColor *color2 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_down.png"]];
         self.thumbsDownLabel.backgroundColor = color2;
         [self addSubview:self.thumbsDownLabel];
         
         
         self.thumbsUpLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 15, 28, 27)];
-        UIColor *color1 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_up.jpg"]];
+        UIColor *color1 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_up.png"]];
         self.thumbsUpLabel.backgroundColor = color1;
         [self addSubview:self.thumbsUpLabel];
         self.thumbsUpLabel.opaque=YES;

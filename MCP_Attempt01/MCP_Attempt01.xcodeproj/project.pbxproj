@@ -61,6 +61,8 @@
 		6EEC9C17195CF9FB00B7E980 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C16195CF9FB00B7E980 /* Splash.png */; };
 		6EEC9C1B195CFA9100B7E980 /* Flip-logo-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C1A195CFA9100B7E980 /* Flip-logo-120x120.png */; };
 		6EF76DB4195F06F40012E7B7 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF76DB3195F06F40012E7B7 /* background.png */; };
+		6EF76DB6195F0EFE0012E7B7 /* thumbs_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF76DB5195F0EFE0012E7B7 /* thumbs_up.png */; };
+		6EF76DB8195F0F740012E7B7 /* thumbs_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF76DB7195F0F740012E7B7 /* thumbs_down.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +152,8 @@
 		6EEC9C16195CF9FB00B7E980 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
 		6EEC9C1A195CFA9100B7E980 /* Flip-logo-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flip-logo-120x120.png"; sourceTree = "<group>"; };
 		6EF76DB3195F06F40012E7B7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		6EF76DB5195F0EFE0012E7B7 /* thumbs_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbs_up.png; sourceTree = "<group>"; };
+		6EF76DB7195F0F740012E7B7 /* thumbs_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbs_down.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,12 +223,14 @@
 			children = (
 				6EF76DB3195F06F40012E7B7 /* background.png */,
 				6EEC9C16195CF9FB00B7E980 /* Splash.png */,
+				6EF76DB5195F0EFE0012E7B7 /* thumbs_up.png */,
 				6EEC9C0C195CF3F800B7E980 /* plus-sign.png */,
 				6EEC9C1A195CFA9100B7E980 /* Flip-logo-120x120.png */,
 				6EEC9C0D195CF3F800B7E980 /* graduation-cap.png */,
 				6EEC9C0E195CF3F800B7E980 /* shopping-cart.png */,
 				6EEC9C0A195CF1E700B7E980 /* Flip-logo.png */,
 				6EEC9C01195CBB3A00B7E980 /* thumbs_up.jpg */,
+				6EF76DB7195F0F740012E7B7 /* thumbs_down.png */,
 				6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */,
 				5A6E43281958F82300C03987 /* favouriteSelected.png */,
 				5A6E43291958F82300C03987 /* favouriteNotSelected.png */,
@@ -478,6 +484,7 @@
 				6EEC9C1B195CFA9100B7E980 /* Flip-logo-120x120.png in Resources */,
 				6EEC9C13195CF54200B7E980 /* id-card.png in Resources */,
 				6EEC9C17195CF9FB00B7E980 /* Splash.png in Resources */,
+				6EF76DB6195F0EFE0012E7B7 /* thumbs_up.png in Resources */,
 				6EEC9C10195CF3F800B7E980 /* graduation-cap.png in Resources */,
 				6EEC9C15195CF73100B7E980 /* pouch.png in Resources */,
 				5A6E432A1958F82300C03987 /* favouriteSelected.png in Resources */,
@@ -488,6 +495,7 @@
 				5AE6D3E41946330E006BCF1A /* Main.storyboard in Resources */,
 				5A6E432B1958F82300C03987 /* favouriteNotSelected.png in Resources */,
 				5AB82233194BABE700A2A6FE /* coin.png in Resources */,
+				6EF76DB8195F0F740012E7B7 /* thumbs_down.png in Resources */,
 				35FFA2D3195DB73F0007480E /* Courses.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
