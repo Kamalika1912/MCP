@@ -48,7 +48,6 @@
 		5AE6D41519463F93006BCF1A /* XYZLecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D41419463F93006BCF1A /* XYZLecture.m */; };
 		5AE6D418194640DE006BCF1A /* XYZSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D417194640DE006BCF1A /* XYZSubject.m */; };
 		6E2ED56B195C8DA200016C15 /* XYZCreateCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */; };
-		6E2ED56E195C8DB100016C15 /* XYZPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2ED56D195C8DB100016C15 /* XYZPreviewViewController.m */; };
 		6EEC9BF8195CB23000B7E980 /* XYZCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */; };
 		6EEC9C00195CBB3100B7E980 /* thumbs_down.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */; };
 		6EEC9C02195CBB3A00B7E980 /* thumbs_up.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C01195CBB3A00B7E980 /* thumbs_up.jpg */; };
@@ -135,8 +134,6 @@
 		5AE6D417194640DE006BCF1A /* XYZSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSubject.m; sourceTree = "<group>"; };
 		6E2ED569195C8DA200016C15 /* XYZCreateCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateCardViewController.h; sourceTree = "<group>"; };
 		6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCreateCardViewController.m; sourceTree = "<group>"; };
-		6E2ED56C195C8DB100016C15 /* XYZPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZPreviewViewController.h; sourceTree = "<group>"; };
-		6E2ED56D195C8DB100016C15 /* XYZPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZPreviewViewController.m; sourceTree = "<group>"; };
 		6EEC9BF6195CB23000B7E980 /* XYZCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateViewController.h; sourceTree = "<group>"; };
 		6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCreateViewController.m; sourceTree = "<group>"; };
 		6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumbs_down.jpg; sourceTree = "<group>"; };
@@ -373,8 +370,6 @@
 			children = (
 				6E2ED569195C8DA200016C15 /* XYZCreateCardViewController.h */,
 				6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */,
-				6E2ED56C195C8DB100016C15 /* XYZPreviewViewController.h */,
-				6E2ED56D195C8DB100016C15 /* XYZPreviewViewController.m */,
 				6EEC9BF6195CB23000B7E980 /* XYZCreateViewController.h */,
 				6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */,
 			);
@@ -514,7 +509,6 @@
 				5AE6D41519463F93006BCF1A /* XYZLecture.m in Sources */,
 				5AB821FD1949146900A2A6FE /* DropDownViewCell.m in Sources */,
 				5AB25AA9195735A7000EA6C1 /* XYZBuyCardsViewController.m in Sources */,
-				6E2ED56E195C8DB100016C15 /* XYZPreviewViewController.m in Sources */,
 				5A8E39C319471CDB0020836F /* XYZStartupViewController.m in Sources */,
 				5A8E39C019467DE80020836F /* XYZDBManager.m in Sources */,
 				5AB821FC1949146900A2A6FE /* DropDownListView.m in Sources */,

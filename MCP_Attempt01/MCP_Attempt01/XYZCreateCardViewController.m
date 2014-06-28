@@ -13,7 +13,7 @@
 @end
 
 @implementation XYZCreateCardViewController
-@synthesize QuestionTextView, AnswerTextView, TagTextView;
+//@synthesize QuestionTextView, AnswerTextView, TagTextView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

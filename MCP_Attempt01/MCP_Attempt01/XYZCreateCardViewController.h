@@ -9,10 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface XYZCreateCardViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextView *TagTextView;
-@property (weak, nonatomic) IBOutlet UITextView *QuestionTextView;
-@property (weak, nonatomic) IBOutlet UITextView *AnswerTextView;
-
-- (IBAction)PreviewButtonPressed:(id)sender;
-
 @end

@@ -55,12 +55,23 @@
         UIColor *color2 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_down.jpg"]];
         self.thumbsDownLabel.backgroundColor = color2;
         [self addSubview:self.thumbsDownLabel];
+        self.thumbsDownLabel.userInteractionEnabled=YES;
         
         
         self.thumbsUpLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 15, 28, 27)];
         UIColor *color1 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_up.jpg"]];
         self.thumbsUpLabel.backgroundColor = color1;
         [self addSubview:self.thumbsUpLabel];
+        
+        
+        self.thumbsDownLabel.userInteractionEnabled=YES;
+        UITapGestureRecognizer* downGesture = [[UITapGestureRecognizer alloc]       initWithTarget:self action:@selector(thumbsDownPressed:)];
+        [self.thumbsDownLabel setUserInteractionEnabled:YES];
+        [self.thumbsDownLabel addGestureRecognizer:downGesture];
+        
+        UITapGestureRecognizer* upGesture = [[UITapGestureRecognizer alloc]       initWithTarget:self action:@selector(thumbsUpPressed:)];
+        [self.thumbsUpLabel setUserInteractionEnabled:YES];
+        [self.thumbsUpLabel addGestureRecognizer:upGesture];
         
         
         self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 19, 35, 25)];
@@ -94,5 +105,13 @@
     // Drawing code
 }
 */
+-(void) thumbsDownPressed:(UITapGestureRecognizer *)gestureRecognizer
+{
+    
+}
 
+-(void) thumbsUpPressed:(UITapGestureRecognizer *)gestureRecognizer
+{
+    
+}
 @end
