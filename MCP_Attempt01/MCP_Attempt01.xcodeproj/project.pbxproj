@@ -60,6 +60,7 @@
 		6EEC9C15195CF73100B7E980 /* pouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C14195CF73100B7E980 /* pouch.png */; };
 		6EEC9C17195CF9FB00B7E980 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C16195CF9FB00B7E980 /* Splash.png */; };
 		6EEC9C1B195CFA9100B7E980 /* Flip-logo-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C1A195CFA9100B7E980 /* Flip-logo-120x120.png */; };
+		6EF76DB4195F06F40012E7B7 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF76DB3195F06F40012E7B7 /* background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		6EEC9C14195CF73100B7E980 /* pouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pouch.png; sourceTree = "<group>"; };
 		6EEC9C16195CF9FB00B7E980 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
 		6EEC9C1A195CFA9100B7E980 /* Flip-logo-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flip-logo-120x120.png"; sourceTree = "<group>"; };
+		6EF76DB3195F06F40012E7B7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 		5A8E39C919479B570020836F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6EF76DB3195F06F40012E7B7 /* background.png */,
 				6EEC9C16195CF9FB00B7E980 /* Splash.png */,
 				6EEC9C0C195CF3F800B7E980 /* plus-sign.png */,
 				6EEC9C1A195CFA9100B7E980 /* Flip-logo-120x120.png */,
@@ -463,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB82239194BB71400A2A6FE /* flashcard.png in Resources */,
+				6EF76DB4195F06F40012E7B7 /* background.png in Resources */,
 				6EEC9C02195CBB3A00B7E980 /* thumbs_up.jpg in Resources */,
 				6EEC9C0F195CF3F800B7E980 /* plus-sign.png in Resources */,
 				5A55C32A195606BC00C38DB2 /* drop_down@2x.png in Resources */,

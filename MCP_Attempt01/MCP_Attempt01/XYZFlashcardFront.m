@@ -43,6 +43,7 @@
         UIColor *color1 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_up.jpg"]];
         self.thumbsUpLabel.backgroundColor = color1;
         [self addSubview:self.thumbsUpLabel];
+        self.thumbsUpLabel.opaque=YES;
         self.thumbsUpLabel.userInteractionEnabled=YES;
         
         

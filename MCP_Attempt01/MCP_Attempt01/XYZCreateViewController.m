@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-  //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
+   self.view.backgroundColor = [UIColor clearColor ];
     selectedCourse=0;
     [self hideColorPickerView:YES];
     self.coursePickerView.layer.cornerRadius = 5.0;

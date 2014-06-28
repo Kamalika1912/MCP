@@ -19,6 +19,10 @@
 @property (strong,nonatomic) UILabel *greenLabel;
 @property (strong,nonatomic) UIButton *buy;
 
+@property (strong,nonatomic) UILabel *thumbsUpLabel;
+@property (strong,nonatomic) UILabel *thumbsDownLabel;
+
+
 - (id) initWithFlashcard:(XYZFlashcard *)flashcard andFrame: (CGRect)frame;
 
 @end

@@ -31,8 +31,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
+     self.view.backgroundColor = [UIColor clearColor ];    
     
     // load locally the whole list of cards
     NSString *storePath = [[NSBundle mainBundle] pathForResource:@"Store"

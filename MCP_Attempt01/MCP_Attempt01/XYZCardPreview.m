@@ -41,19 +41,36 @@
         [self addSubview:self.preview];
         
         
-        self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 20, 100, 50)];
+        self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 70, 100, 50)];
         self.redLabel.textColor = [UIColor redColor];
-        [self.redLabel setFont:[UIFont systemFontOfSize:45]];
-        self.redLabel.text = @"-45";
+        [self.redLabel setFont:[UIFont systemFontOfSize:40]];
+        self.redLabel.text = @"45";
         self.redLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.redLabel];
         
-        self.greenLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 70, 100, 50)];
+        self.greenLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 20, 100, 50)];
         self.greenLabel.textColor = [UIColor greenColor];
-        [self.greenLabel setFont:[UIFont systemFontOfSize:45]];
-        self.greenLabel.text = @"+79";
+        [self.greenLabel setFont:[UIFont systemFontOfSize:40]];
+        self.greenLabel.text = @"79";
         self.greenLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.greenLabel];
+        
+        self.thumbsDownLabel = [[UILabel alloc] initWithFrame:CGRectMake(180, 81, 28, 27)];
+        UIColor *color2 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_down.jpg"]];
+        self.thumbsDownLabel.backgroundColor = color2;
+        [self addSubview:self.thumbsDownLabel];
+        
+        
+        self.thumbsUpLabel = [[UILabel alloc] initWithFrame:CGRectMake(180, 28, 28, 27)];
+        UIColor *color1 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_up.jpg"]];
+        self.thumbsUpLabel.backgroundColor = color1;
+        [self addSubview:self.thumbsUpLabel];
+        
+        
+        
+        
+        
+        
         
         self.buy = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         self.buy.frame = CGRectMake(190, 130, 100, 65);

@@ -18,6 +18,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
     if (self) {
         // Custom initialization
     }
@@ -27,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor clearColor ];
     NSArray *result = [[XYZDBManager getSharedInstance] getProfileByProfileID:1];
     [self.username setText:[result objectAtIndex:0]];
     [self.coins setText:[result objectAtIndex:1]];

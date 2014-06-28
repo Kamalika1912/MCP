@@ -15,15 +15,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
-        
-        
-        
-        
-        
-        
-        
-        
+           
     }
     return self;
 }
@@ -88,11 +80,6 @@
         self.greenLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.greenLabel];
         
-        
-        
-        
-        
-        
     }
     return self;
 }
@@ -107,7 +94,7 @@
 */
 -(void) thumbsDownPressed:(UITapGestureRecognizer *)gestureRecognizer
 {
-    
+    self.thumbsDownLabel.shadowColor=[UIColor blueColor];
 }
 
 -(void) thumbsUpPressed:(UITapGestureRecognizer *)gestureRecognizer

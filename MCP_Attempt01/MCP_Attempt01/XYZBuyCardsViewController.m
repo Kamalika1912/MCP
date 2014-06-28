@@ -28,8 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //show the navigation bar as it is hidden by the parent
+     self.view.backgroundColor = [UIColor clearColor ];    //show the navigation bar as it is hidden by the parent
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.BuyList.dataSource = self;
     self.BuyList.delegate = self;

@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+     self.view.backgroundColor = [UIColor clearColor ];
     // Do any additional setup after loading the view.
     //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     selectedCourse=0;
@@ -148,12 +149,14 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+   
     if(loadLectureList)
     {
         static NSString *cellIdentifier = @"Lectures";
         
         UITableViewCell *lectureCell = [tableView dequeueReusableCellWithIdentifier:
                                         cellIdentifier];
+        lectureCell.backgroundColor = [UIColor clearColor];
         if (lectureCell == nil) {
             lectureCell = [[UITableViewCell alloc]initWithStyle:
                            UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
@@ -164,6 +167,7 @@
         stringForCell= [filterdLectureList objectAtIndex:indexPath.row];
         
         [lectureCell.textLabel setText:stringForCell];
+        
         return lectureCell;
     }
     else
@@ -172,6 +176,8 @@
         
         UITableViewCell *tagCell = [tableView dequeueReusableCellWithIdentifier:
                                     cellIdentifierTags];
+        tagCell.backgroundColor= [UIColor clearColor];
+        
         if (tagCell == nil) {
             tagCell = [[UITableViewCell alloc]initWithStyle:
                        UITableViewCellStyleDefault reuseIdentifier:cellIdentifierTags];
@@ -182,6 +188,7 @@
         stringForTags= [filteredTagList objectAtIndex:indexPath.row];
         
         [tagCell.textLabel setText:stringForTags];
+        
         return tagCell;
     }
     
