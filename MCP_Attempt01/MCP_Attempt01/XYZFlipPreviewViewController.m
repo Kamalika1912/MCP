@@ -68,12 +68,9 @@ frontCard.frontCoverButton.tag=sender.tag;
     [super viewWillDisappear:animated];
     
     if ([self isMovingFromParentViewController]) {
-        
         //this is done to remove the navigation bar from the parent screen as it has the drop down and opposite for the tab bar
         [self.navigationController setNavigationBarHidden:YES animated:YES];
         self.tabBarController.tabBar.hidden = NO;
-        
-        
     }
 }
 

@@ -64,13 +64,7 @@
         self.thumbsUpLabel = [[UILabel alloc] initWithFrame:CGRectMake(180, 28, 28, 27)];
         UIColor *color1 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_up.jpg"]];
         self.thumbsUpLabel.backgroundColor = color1;
-        [self addSubview:self.thumbsUpLabel];
-        
-        
-        
-        
-        
-        
+        [self addSubview:self.thumbsUpLabel];        
         
         self.buy = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         self.buy.frame = CGRectMake(190, 130, 100, 65);
