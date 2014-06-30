@@ -7,7 +7,7 @@
 //
 
 #import "XYZCreateViewController.h"
-#import "XYZStartStudyingViewController.h"
+#import "XYZCreateCardViewController.h"
 #import "QuartzCore/QuartzCore.h"
 @interface XYZCreateViewController ()
 
@@ -213,7 +213,7 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [self performSegueWithIdentifier:@"startStudying" sender:self];
+    [self performSegueWithIdentifier:@"createCard" sender:self];
     
 }
 
@@ -237,9 +237,6 @@
     
     
 }
-
-
-
 
 
 - (IBAction)selectCourseButtonTapped:(id)sender {

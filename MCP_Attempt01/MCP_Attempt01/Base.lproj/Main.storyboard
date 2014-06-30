@@ -245,7 +245,6 @@
                         <segue destination="7sj-0z-8e8" kind="relationship" relationship="viewControllers" id="rvs-LR-B2E"/>
                         <segue destination="MQP-UY-b3K" kind="relationship" relationship="viewControllers" id="0ub-RV-P7A"/>
                         <segue destination="6S3-vk-Wc8" kind="relationship" relationship="viewControllers" id="Bo0-7K-uGx"/>
-                        <segue destination="H48-Rd-zgf" kind="relationship" relationship="viewControllers" id="1Jc-Rp-CeK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
@@ -465,7 +464,7 @@
         <!--Store View Controller - Store-->
         <scene sceneID="KRE-Sj-kxs">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" id="wNA-fg-3ex" userLabel="Store View Controller - Store" customClass="XYZStoreViewController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="wNA-fg-3ex" userLabel="Store View Controller - Store" customClass="XYZCreateViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dN3-bq-62g"/>
                         <viewControllerLayoutGuide type="bottom" id="gnj-Be-sDW"/>
@@ -572,11 +571,12 @@
                         <outlet property="filteredTableView" destination="SRF-DP-6GO" id="tuo-jE-Ox1"/>
                         <outlet property="selectCourseButton" destination="OOg-Ta-yGH" id="ZX3-dh-8Rq"/>
                         <outlet property="selectFilter" destination="Gfj-g7-Neg" id="wCy-VR-hvy"/>
+                        <segue destination="Tdc-ee-61r" kind="push" identifier="createCard" id="E74-5m-glE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJC-2Z-eT7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4511" y="2853"/>
+            <point key="canvasLocation" x="-4431" y="2485"/>
         </scene>
         <!--Create Card View Controller-->
         <scene sceneID="PoL-so-Jej">
@@ -652,7 +652,6 @@
                                 </state>
                                 <connections>
                                     <action selector="CheckFields:" destination="Tdc-ee-61r" eventType="touchUpInside" id="yPs-eB-w4u"/>
-                                    <segue destination="33e-hH-j9b" kind="push" identifier="createSegue" id="7fL-zr-AeP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -663,11 +662,12 @@
                         <outlet property="answerField" destination="3Vl-Kt-qdJ" id="KL4-qE-41K"/>
                         <outlet property="labelField" destination="D91-tF-iAH" id="UHD-5N-hMp"/>
                         <outlet property="questionField" destination="PZ8-qL-hdj" id="CYZ-qy-0Th"/>
+                        <segue destination="33e-hH-j9b" kind="push" identifier="previewCard" id="fJh-Dh-weE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5SP-Cn-B3Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3273" y="2485"/>
+            <point key="canvasLocation" x="-3817" y="2485"/>
         </scene>
         <!--Flip Preview View Controller-->
         <scene sceneID="Tj8-Ph-qTB">
@@ -725,7 +725,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XtU-CN-JY5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="3Z5-n2-z4z"/>
             </objects>
-            <point key="canvasLocation" x="-2767" y="2485"/>
+            <point key="canvasLocation" x="-3279" y="2485"/>
         </scene>
         <!--Navigation Controller - Create Card-->
         <scene sceneID="Pvb-0V-AsZ">
@@ -747,25 +747,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDA-Jr-Zdj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4993" y="2485"/>
-        </scene>
-        <!--Navigation Controller - CreateII-->
-        <scene sceneID="1wU-ET-0kv">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H48-Rd-zgf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="CreateII" image="createico.png" id="9mC-Oi-FH3"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4d0-50-hcq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Tdc-ee-61r" kind="relationship" relationship="rootViewController" id="Oze-83-6pr"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="B3f-yQ-O7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3799" y="2485"/>
         </scene>
     </scenes>
     <resources>

@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface XYZCreateViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate,UITableViewDelegate,UITableViewDataSource>
-
-
 {
     NSMutableArray *courseList;
     NSMutableArray *filterdLectureList;
