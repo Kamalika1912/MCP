@@ -94,23 +94,28 @@
 -(void) loadFilterdLectureList {
     
     
-    // empty the list
-//    [filterdLectureList removeAllObjects];
-    // temp course object
-    NSDictionary *card;
-    // add the lecture that I can found
-//    for (card  in storeCards) {
-//        if (card[@"course"]==selectedCourseID) {
-//            [filterdLectureList addObject:card[@"lecture"]];
-//            
-//        }
-//    }
-
-    NSArray *filtered = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", [NSString stringWithFormat:@"%d",selectedCourseID]]];
-
-    filterdLectureList = filtered;
+    NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", [NSString stringWithFormat:@"%d",selectedCourseID]]];
+    // now create the list of lecture of which we have cards
+    
+    NSMutableArray *lectureList = [NSMutableArray array];
+    for (NSDictionary *card in filteredCardsByCourse) {
+        // if not already inserted in the list, insert the lecture
+        NSString *lecture = card[@"lecture"];
+        if(![lectureList containsObject:lecture]) {
+            [lectureList addObject:lecture];
+        }
+    }
     
     
+    
+    
+//    NSArray *sorted = [lectureList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+//        if (obj1[@"lecture"] < obj2[@"lecture"]) return NSOrderedDescending;
+//        else return NSOrderedAscending;
+//    }];
+    
+
+    filterdLectureList = lectureList;
     
 //    filterdLectureList = [NSMutableArray arrayWithObjects:@"Lecture 1",@"Lecture 2",@"Lecture 3",@"Lecture 4",@"Lecture 5",@"Lecture 6",@"Lecture 7",@"Lecture 8", nil];
 //    
@@ -228,7 +233,7 @@
         
         
         
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cardCell" forIndexPath:indexPath];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StoreCourseCell" forIndexPath:indexPath];
         
 //        NSString *question = filterdLectureList[indexPath.row][@"id"];
         
@@ -236,7 +241,7 @@
         
         // set the question
         
-        cell.textLabel.text = filterdLectureList[indexPath.row][@"lecture"];
+        cell.textLabel.text = filterdLectureList[indexPath.row];
 //        ((UILabel *)[cell viewWithTag:1]).text = question;
         // set the up/down vote star level (to be changed to whatever we want, just a quick example)
 //        ((UILabel *)[cell viewWithTag:3]).text = @"@@@";
@@ -361,6 +366,7 @@
     
     [self loadFilterdLectureList];
     
+    [self.filteredTableView reloadData];
 }
 
 - (IBAction)cancelButtonTapped:(id)sender {
