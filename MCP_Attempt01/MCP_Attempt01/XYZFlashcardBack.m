@@ -22,9 +22,11 @@
 
 -(id) initWithAnswer: (NSString *)answer withThumbsUp:(NSInteger)thumbsUp andThumbsDown:(NSInteger)thumbsDown isAddedToFavourites:(BOOL)addedToFavourites withFrame:(CGRect)frame
 {
-    
     self = [super initWithFrame:frame];
-    if (self) {
+
+    UIColor *background=   [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    self.backgroundColor = background;
+        if (self) {
         // Initialization code
         
         

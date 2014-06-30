@@ -14,6 +14,9 @@
 {
     
     self = [super initWithFrame:frame];
+    //self.backgroundColor=[UIColor yellowColor];
+    UIColor *background=   [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    self.backgroundColor = background;
     if (self) {
         // Initialization code
         
