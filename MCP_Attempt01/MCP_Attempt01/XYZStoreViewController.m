@@ -301,7 +301,12 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [self performSegueWithIdentifier:@"buyCards" sender:self];
+    NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", [NSString stringWithFormat:@"%d",selectedCourseID]]];
+
+    _filteredCards = [filteredCardsByCourse filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(lecture == %@)", [NSString stringWithFormat:@"%d",(NSInteger)filterdLectureList[indexPath.row]]]];
+
+    
+    [self performSegueWithIdentifier:@"buyCards" sender:_filteredCards];
     
 }
 

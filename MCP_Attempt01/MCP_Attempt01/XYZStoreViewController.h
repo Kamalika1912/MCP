@@ -16,8 +16,8 @@
     NSMutableArray *filterdLectureList;
     NSMutableArray *filteredTagList;
     NSMutableArray *storeCards;
-    NSInteger selectedCourse;
-    NSInteger selectedCourseID;
+    NSInteger *selectedCourse;
+    NSInteger *selectedCourseID;
     BOOL loadLectureList;
     
 }
@@ -31,6 +31,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *done;
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
 @property (weak, nonatomic) IBOutlet UITableView *filteredTableView;
+
+
+@property NSString *selectedLecture;
+@property NSArray *filteredCards;
 
 
 
