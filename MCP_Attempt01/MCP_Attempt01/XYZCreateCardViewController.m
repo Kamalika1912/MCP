@@ -10,6 +10,7 @@
 #import "XYZFlashcard.h"
 #import "XYZFlashcardFront.h"
 #import "XYZFlashcardBack.h"
+#import "XYZFlipPreviewViewController.h"
 
 @interface XYZCreateCardViewController ()
 
@@ -79,8 +80,32 @@
         
     }
 }
+-(IBAction)CheckFields:(id)sender
+{
+}
 
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+        if([answerField.text isEqualToString:@""] || [questionField.text isEqualToString:@""] || [labelField.text isEqualToString:@""] )
+        {
+            UIAlertView *messageAllert =[[UIAlertView alloc]initWithTitle:@"Failed to Preview" message:@"Fill all the info" delegate:nil    cancelButtonTitle: @"OK" otherButtonTitles: nil];
+            [messageAllert show];
+        }
 
+        if ([segue.identifier isEqualToString:@"createSegue"])
+        {
+
+            NSString *question= questionField.text;
+            NSString *answer=answerField.text;
+            NSString *tag=labelField.text;
+            XYZFlipPreviewViewController *destController= segue.destinationViewController ;
+            destController.question= question;
+            destController.answer=answer;
+            destController.tag=tag;
+         }
+        
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -98,4 +123,16 @@
  }
  */
 
+- (IBAction)TextFieldDismiss:(id)sender {
+    [labelField resignFirstResponder];
+    
+}
+
+- (IBAction)QuestionDismiss:(id)sender {
+    [questionField resignFirstResponder];
+}
+
+- (IBAction)AnswerDismiss:(id)sender {
+    [answerField resignFirstResponder];
+}
 @end

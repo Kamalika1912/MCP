@@ -85,6 +85,31 @@
     }
     return self;
 }
+-(id) initWithQuestionForPreview: (NSString *)answer  {
+    
+    
+    UIColor *background=   [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    self.backgroundColor = background;
+    if (self) {
+        // Initialization code
+        
+        
+        self.backCoverButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        self.backCoverButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        self.backCoverButton.layer.borderWidth = 1.0;
+        self.backCoverButton.frame = CGRectMake(20, 10, 280, 330);
+        //self.preview.backgroundColor = [UIColor blueColor];
+        self.backCoverButton.layer.cornerRadius = 5.0;
+        [self.backCoverButton setTitle:answer forState:UIControlStateNormal];
+        self.backCoverButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        [self.backCoverButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        self.backCoverButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [self.backCoverButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
+        [self addSubview:self.backCoverButton];
+    }
+    return self;
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.

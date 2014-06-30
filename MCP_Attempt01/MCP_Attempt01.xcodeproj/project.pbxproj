@@ -52,6 +52,7 @@
 		6E0661611961915900A6C990 /* studyico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E06615C1961915900A6C990 /* studyico.png */; };
 		6E0661621961915900A6C990 /* userico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E06615D1961915900A6C990 /* userico.png */; };
 		6E0661631961915900A6C990 /* walletico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E06615E1961915900A6C990 /* walletico.png */; };
+		6E0661661961A6FD00A6C990 /* XYZFlipPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0661651961A6FD00A6C990 /* XYZFlipPreviewViewController.m */; };
 		6E2ED56B195C8DA200016C15 /* XYZCreateCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */; };
 		6EEC9BF8195CB23000B7E980 /* XYZCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */; };
 		6EEC9C00195CBB3100B7E980 /* thumbs_down.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */; };
@@ -145,6 +146,8 @@
 		6E06615C1961915900A6C990 /* studyico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = studyico.png; sourceTree = "<group>"; };
 		6E06615D1961915900A6C990 /* userico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userico.png; sourceTree = "<group>"; };
 		6E06615E1961915900A6C990 /* walletico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walletico.png; sourceTree = "<group>"; };
+		6E0661641961A6FD00A6C990 /* XYZFlipPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZFlipPreviewViewController.h; sourceTree = "<group>"; };
+		6E0661651961A6FD00A6C990 /* XYZFlipPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZFlipPreviewViewController.m; sourceTree = "<group>"; };
 		6E2ED569195C8DA200016C15 /* XYZCreateCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateCardViewController.h; sourceTree = "<group>"; };
 		6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCreateCardViewController.m; sourceTree = "<group>"; };
 		6EEC9BF6195CB23000B7E980 /* XYZCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateViewController.h; sourceTree = "<group>"; };
@@ -392,10 +395,12 @@
 		6E2ED563195C888300016C15 /* Create */ = {
 			isa = PBXGroup;
 			children = (
-				6E2ED569195C8DA200016C15 /* XYZCreateCardViewController.h */,
-				6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */,
 				6EEC9BF6195CB23000B7E980 /* XYZCreateViewController.h */,
 				6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */,
+				6E2ED569195C8DA200016C15 /* XYZCreateCardViewController.h */,
+				6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */,
+				6E0661641961A6FD00A6C990 /* XYZFlipPreviewViewController.h */,
+				6E0661651961A6FD00A6C990 /* XYZFlipPreviewViewController.m */,
 			);
 			name = Create;
 			sourceTree = "<group>";
@@ -541,6 +546,7 @@
 				5AE6D41519463F93006BCF1A /* XYZLecture.m in Sources */,
 				5AB821FD1949146900A2A6FE /* DropDownViewCell.m in Sources */,
 				5AB25AA9195735A7000EA6C1 /* XYZBuyCardsViewController.m in Sources */,
+				6E0661661961A6FD00A6C990 /* XYZFlipPreviewViewController.m in Sources */,
 				5A8E39C319471CDB0020836F /* XYZStartupViewController.m in Sources */,
 				5A8E39C019467DE80020836F /* XYZDBManager.m in Sources */,
 				5AB821FC1949146900A2A6FE /* DropDownListView.m in Sources */,
