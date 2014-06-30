@@ -47,6 +47,11 @@
 		5AE6D40A19463644006BCF1A /* XYZFlashcard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D40919463644006BCF1A /* XYZFlashcard.m */; };
 		5AE6D41519463F93006BCF1A /* XYZLecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D41419463F93006BCF1A /* XYZLecture.m */; };
 		5AE6D418194640DE006BCF1A /* XYZSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D417194640DE006BCF1A /* XYZSubject.m */; };
+		6E06615F1961915900A6C990 /* createico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E06615A1961915900A6C990 /* createico.png */; };
+		6E0661601961915900A6C990 /* storeico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E06615B1961915900A6C990 /* storeico.png */; };
+		6E0661611961915900A6C990 /* studyico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E06615C1961915900A6C990 /* studyico.png */; };
+		6E0661621961915900A6C990 /* userico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E06615D1961915900A6C990 /* userico.png */; };
+		6E0661631961915900A6C990 /* walletico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E06615E1961915900A6C990 /* walletico.png */; };
 		6E2ED56B195C8DA200016C15 /* XYZCreateCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */; };
 		6EEC9BF8195CB23000B7E980 /* XYZCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */; };
 		6EEC9C00195CBB3100B7E980 /* thumbs_down.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */; };
@@ -135,6 +140,11 @@
 		5AE6D41419463F93006BCF1A /* XYZLecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZLecture.m; sourceTree = "<group>"; };
 		5AE6D416194640DE006BCF1A /* XYZSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSubject.h; sourceTree = "<group>"; };
 		5AE6D417194640DE006BCF1A /* XYZSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSubject.m; sourceTree = "<group>"; };
+		6E06615A1961915900A6C990 /* createico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createico.png; sourceTree = "<group>"; };
+		6E06615B1961915900A6C990 /* storeico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storeico.png; sourceTree = "<group>"; };
+		6E06615C1961915900A6C990 /* studyico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = studyico.png; sourceTree = "<group>"; };
+		6E06615D1961915900A6C990 /* userico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userico.png; sourceTree = "<group>"; };
+		6E06615E1961915900A6C990 /* walletico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walletico.png; sourceTree = "<group>"; };
 		6E2ED569195C8DA200016C15 /* XYZCreateCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateCardViewController.h; sourceTree = "<group>"; };
 		6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCreateCardViewController.m; sourceTree = "<group>"; };
 		6EEC9BF6195CB23000B7E980 /* XYZCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateViewController.h; sourceTree = "<group>"; };
@@ -221,6 +231,11 @@
 		5A8E39C919479B570020836F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6E06615A1961915900A6C990 /* createico.png */,
+				6E06615B1961915900A6C990 /* storeico.png */,
+				6E06615C1961915900A6C990 /* studyico.png */,
+				6E06615D1961915900A6C990 /* userico.png */,
+				6E06615E1961915900A6C990 /* walletico.png */,
 				6EF76DB3195F06F40012E7B7 /* background.png */,
 				6EEC9C16195CF9FB00B7E980 /* Splash.png */,
 				6EF76DB5195F0EFE0012E7B7 /* thumbs_up.png */,
@@ -474,10 +489,12 @@
 				5AB82239194BB71400A2A6FE /* flashcard.png in Resources */,
 				6EF76DB4195F06F40012E7B7 /* background.png in Resources */,
 				6EEC9C02195CBB3A00B7E980 /* thumbs_up.jpg in Resources */,
+				6E0661601961915900A6C990 /* storeico.png in Resources */,
 				6EEC9C0F195CF3F800B7E980 /* plus-sign.png in Resources */,
 				5A55C32A195606BC00C38DB2 /* drop_down@2x.png in Resources */,
 				5AB82235194BAD7300A2A6FE /* user.png in Resources */,
 				35FFA2D1195DB53D0007480E /* Store.json in Resources */,
+				6E0661621961915900A6C990 /* userico.png in Resources */,
 				6EEC9C00195CBB3100B7E980 /* thumbs_down.jpg in Resources */,
 				6EEC9C0B195CF1E700B7E980 /* Flip-logo.png in Resources */,
 				5AB8222F194B53D900A2A6FE /* filterIcon.png in Resources */,
@@ -486,11 +503,14 @@
 				6EEC9C17195CF9FB00B7E980 /* Splash.png in Resources */,
 				6EF76DB6195F0EFE0012E7B7 /* thumbs_up.png in Resources */,
 				6EEC9C10195CF3F800B7E980 /* graduation-cap.png in Resources */,
+				6E06615F1961915900A6C990 /* createico.png in Resources */,
 				6EEC9C15195CF73100B7E980 /* pouch.png in Resources */,
 				5A6E432A1958F82300C03987 /* favouriteSelected.png in Resources */,
+				6E0661631961915900A6C990 /* walletico.png in Resources */,
 				6EEC9C11195CF3F800B7E980 /* shopping-cart.png in Resources */,
 				5AE6D3EC1946330E006BCF1A /* Images.xcassets in Resources */,
 				5AB8223D194BBD9700A2A6FE /* reputation.png in Resources */,
+				6E0661611961915900A6C990 /* studyico.png in Resources */,
 				5AE6D3DB1946330E006BCF1A /* InfoPlist.strings in Resources */,
 				5AE6D3E41946330E006BCF1A /* Main.storyboard in Resources */,
 				5A6E432B1958F82300C03987 /* favouriteNotSelected.png in Resources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -79,7 +79,7 @@
                             <constraint firstItem="yoU-qe-cVV" firstAttribute="leading" secondItem="uFk-j4-c45" secondAttribute="trailing" constant="-55" id="r7I-3C-lQ5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="id-card.png" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="userico.png" id="u1e-5L-l1D"/>
                     <connections>
                         <outlet property="coins" destination="yoU-qe-cVV" id="MZh-Yv-cRN"/>
                         <outlet property="username" destination="Zhg-ve-WU7" id="lGd-5p-F5D"/>
@@ -264,7 +264,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2S-8Q-APY">
-                                <rect key="frame" x="73" y="20" width="232" height="41"/>
+                                <rect key="frame" x="138" y="20" width="171" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <inset key="contentEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -276,9 +276,11 @@
                                     <action selector="selectCourseButtonTapped:" destination="6mI-e7-5y1" eventType="touchUpInside" id="5f6-8B-t0x"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZDJ-sG-siV">
-                                <rect key="frame" x="16" y="25" width="51" height="31"/>
+                            <switch opaque="NO" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZDJ-sG-siV">
+                                <rect key="frame" x="38" y="25" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" hint="" label="sxds"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.79999999999999982" height="0.79999999999999982"/>
                                 <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="filterValueChanged:" destination="6mI-e7-5y1" eventType="valueChanged" id="WEA-1J-IDt"/>
@@ -311,6 +313,15 @@
                             <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y3h-P1-Vnd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label                Lecture" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asP-LV-zhj">
+                                        <rect key="frame" x="4" y="29" width="150" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQ0-Mz-sTK">
@@ -364,7 +375,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4c-4Z-nJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4443" y="1763"/>
+            <point key="canvasLocation" x="-4441" y="1763"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xQe-bl-mzr">
@@ -425,7 +436,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="oqG-io-u0w">
-                        <barButtonItem key="rightBarButtonItem" image="pouch.png" id="OL8-rE-H10"/>
+                        <barButtonItem key="rightBarButtonItem" image="walletico.png" id="OL8-rE-H10"/>
                     </navigationItem>
                     <connections>
                         <outlet property="BuyList" destination="a81-9I-zi3" id="0et-DS-6mC"/>
@@ -439,7 +450,7 @@
         <scene sceneID="L8F-qz-5B2">
             <objects>
                 <navigationController definesPresentationContext="YES" id="MQP-UY-b3K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Store" image="shopping-cart.png" id="ezB-gn-Jqd"/>
+                    <tabBarItem key="tabBarItem" title="Store" image="storeico.png" id="ezB-gn-Jqd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1GO-6J-mhe">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -478,7 +489,7 @@
         <scene sceneID="gwY-HB-B3I">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7sj-0z-8e8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Flashcards" image="graduation-cap.png" id="SFC-62-7Jd"/>
+                    <tabBarItem key="tabBarItem" title="My Flashcards" image="studyico.png" id="SFC-62-7Jd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0tL-kB-jO6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -521,7 +532,7 @@
         <scene sceneID="iah-S5-7rV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iMu-hk-dTy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Create" image="plus-sign.png" id="vGH-om-9i5"/>
+                    <tabBarItem key="tabBarItem" title="Create" image="createico.png" id="vGH-om-9i5"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5e4-P1-7q1">
@@ -540,16 +551,16 @@
     </scenes>
     <resources>
         <image name="coin.png" width="55" height="55"/>
+        <image name="createico.png" width="40" height="40"/>
         <image name="drop_down.png" width="153" height="27"/>
         <image name="flashcard.png" width="55" height="38"/>
-        <image name="graduation-cap.png" width="30" height="30"/>
-        <image name="id-card.png" width="30" height="30"/>
-        <image name="plus-sign.png" width="29" height="30"/>
-        <image name="pouch.png" width="30" height="30"/>
         <image name="reputation.png" width="58" height="58"/>
         <image name="second" width="30" height="30"/>
-        <image name="shopping-cart.png" width="29" height="30"/>
+        <image name="storeico.png" width="40" height="40"/>
+        <image name="studyico.png" width="40" height="40"/>
         <image name="user.png" width="64" height="64"/>
+        <image name="userico.png" width="40" height="40"/>
+        <image name="walletico.png" width="40" height="40"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
