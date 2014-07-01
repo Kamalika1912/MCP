@@ -29,24 +29,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoU-qe-cVV">
-                                <rect key="frame" x="25" y="181" width="62" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIL-aT-8AS">
                                 <rect key="frame" x="230" y="181" width="64" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="reputation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IEJ-H8-v5p">
                                 <rect key="frame" x="102" y="181" width="116" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -66,6 +59,13 @@
                                 <rect key="frame" x="131" y="121" width="58" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lT7-9u-5hT">
+                                <rect key="frame" x="0.0" y="181" width="116" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -73,15 +73,12 @@
                             <constraint firstAttribute="trailing" secondItem="Zhg-ve-WU7" secondAttribute="trailing" id="Yt0-Qs-qde"/>
                             <constraint firstItem="Zhg-ve-WU7" firstAttribute="top" secondItem="s9W-kb-ARv" secondAttribute="bottom" constant="36" id="a1D-TF-lAC"/>
                             <constraint firstItem="uFk-j4-c45" firstAttribute="top" secondItem="Zhg-ve-WU7" secondAttribute="bottom" constant="20" id="d4k-FR-cbj"/>
-                            <constraint firstItem="yoU-qe-cVV" firstAttribute="top" secondItem="Zhg-ve-WU7" secondAttribute="bottom" constant="80" id="gEu-ec-1sU"/>
                             <constraint firstItem="CxM-LC-XIN" firstAttribute="top" secondItem="s9W-kb-ARv" secondAttribute="bottom" constant="27" id="nOd-Vw-nWv"/>
                             <constraint firstItem="uFk-j4-c45" firstAttribute="leading" secondItem="2VE-Yg-loa" secondAttribute="leading" constant="25" id="o3o-Wf-FiZ"/>
-                            <constraint firstItem="yoU-qe-cVV" firstAttribute="leading" secondItem="uFk-j4-c45" secondAttribute="trailing" constant="-55" id="r7I-3C-lQ5"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="userico.png" id="u1e-5L-l1D"/>
                     <connections>
-                        <outlet property="coins" destination="yoU-qe-cVV" id="MZh-Yv-cRN"/>
                         <outlet property="username" destination="Zhg-ve-WU7" id="lGd-5p-F5D"/>
                     </connections>
                 </viewController>
@@ -444,6 +441,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7sj-0z-8e8" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Flashcards" image="studyico.png" id="SFC-62-7Jd"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="yLx-2N-Jhk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0tL-kB-jO6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -583,7 +581,7 @@
                                 <rect key="frame" x="96" y="78" width="197" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="TextFieldDismiss:" destination="Tdc-ee-61r" eventType="editingDidEndOnExit" id="86s-zK-NeN"/>
                                 </connections>
@@ -619,7 +617,7 @@
                                 <rect key="frame" x="96" y="129" width="197" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="QuestionDismiss:" destination="Tdc-ee-61r" eventType="editingDidEndOnExit" id="TLD-Ni-ddP"/>
                                 </connections>
@@ -687,7 +685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xY-9V-f7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3263" y="2485"/>
+            <point key="canvasLocation" x="-3247" y="2485"/>
         </scene>
         <!--Navigation Controller - Create Card-->
         <scene sceneID="Pvb-0V-AsZ">

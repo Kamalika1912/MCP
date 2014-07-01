@@ -462,6 +462,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Devashish Jasani";
 				TargetAttributes = {
+					5AE6D3CC1946330E006BCF1A = {
+						DevelopmentTeam = W88773838E;
+					};
 					5AE6D3F01946330E006BCF1A = {
 						TestTargetID = 5AE6D3CC1946330E006BCF1A;
 					};
@@ -684,10 +687,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCP_Attempt01/MCP_Attempt01-Prefix.pch";
 				INFOPLIST_FILE = "MCP_Attempt01/MCP_Attempt01-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -696,10 +702,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCP_Attempt01/MCP_Attempt01-Prefix.pch";
 				INFOPLIST_FILE = "MCP_Attempt01/MCP_Attempt01-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
