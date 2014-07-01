@@ -7,15 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XYZFlashcardBack.h"
-#import "XYZFlashcardFront.h"
+#import "XYZMyFlashcardsViewController.h"
 #import "XYZFlashcard.h"
+#import "XYZFlashcardFront.h"
+#import "XYZFlashcardBack.h"
 
 @interface XYZFlipPreviewViewController : UIViewController
 {
     XYZFlashcardBack *backCard;
     XYZFlashcardFront *frontCard;
     XYZFlashcard *flashcard;
+    UIScrollView *horizontalScroll;
 }
 
 @property (strong, nonatomic) IBOutlet UIButton *SubmitButton;

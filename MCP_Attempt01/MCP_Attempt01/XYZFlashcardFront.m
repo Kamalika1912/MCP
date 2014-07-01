@@ -78,9 +78,10 @@
     }
     return self;
 }
--(id) initWithQuestionForPreview: (NSString *)question  {
+-(id) initWithQuestionForPreview: (NSString *)question   withFrame:(CGRect)frame{
     
-    
+    self = [super initWithFrame:frame];
+
         //self.backgroundColor=[UIColor yellowColor];
     UIColor *background=   [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
     self.backgroundColor = background;
