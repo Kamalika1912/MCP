@@ -34,21 +34,32 @@
      self.view.backgroundColor = [UIColor clearColor ];    
     
  
-    // ############## LOAD DATA - Load the course list and the whole cards present on the Srore
+    // ############## LOAD CARD DATA - Load the course list and the whole cards present on the Srore
     // load locally the whole list of cards
-    NSString *storePath = [[NSBundle mainBundle] pathForResource:@"Store" ofType:@"json"];
     NSError *error;
-    storeCards = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:storePath] options:NSJSONReadingMutableContainers error:&error];
-    if (error) NSLog(@"JSONObjectWithData error: %@", error);
+    NSString *path;
+    // STORE
+    path = [[NSBundle mainBundle] pathForResource:@"Store" ofType:@"json"];
+    storeCards = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+    if (error) NSLog(@"JSONObjectWithData error loading CARDS: %@", error);
+    // COURSES
+    path = [[NSBundle mainBundle] pathForResource:@"Courses" ofType:@"json"];
+    courseList = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+    if (error) NSLog(@"JSONObjectWithData error loading COURSES: %@", error);
     
     
-    
+    // ############# LOAD LOCAL SAVED DATA (previously selected course and such)
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    // load the course from the user defaults, if none, then select the first course in the courses array
+    selectedCourseString = ([defaults stringForKey:@"selectedCourse"]) != nil ? [defaults stringForKey:@"selectedCourse"] : courseList[0][@"title"];
     
     
     
     
     
     selectedCourse=0;
+    
+    // programmatical preparation of dropdowmenu
     [self hideColorPickerView:YES];
     self.coursePickerView.layer.cornerRadius = 5.0;
     [self.coursePickerView setAlpha:0];
@@ -56,50 +67,30 @@
     
     
     
-    [self loadCourseList];
     self.coursePicker.dataSource = self;
     self.coursePicker.delegate =self;
     self.filteredTableView.dataSource = self;
     self.filteredTableView.delegate = self;
     
     
-    [self.selectFilter addTarget:self action:@selector(changeFilterAndReloadData) forControlEvents:UIControlEventValueChanged];
-    loadLectureList = YES;
-    [self loadFilterdLectureList];
+//    [self.selectFilter addTarget:self action:@selector(changeFilterAndReloadData) forControlEvents:UIControlEventValueChanged];
+//    loadLectureList = YES;
+//    [self loadFilterdLectureList];
     
     self.navigationController.navigationBarHidden = YES;
     
     
 }
 
--(void) loadCourseList {
-    
-    
-    NSString *coursePath = [[NSBundle mainBundle] pathForResource:@"Courses"
-                                                          ofType:@"json"];
-    
-    
-    // parse it and load it in an array
-    NSError *error;
-    courseList = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:coursePath] options:NSJSONReadingMutableContainers error:&error];
-    if (error)
-        NSLog(@"JSONObjectWithData error: %@", error);
-    
 
-    
-    
-    
-//    courseList = [NSMutableArray arrayWithObjects:@"Designing Interactive Systems 1",@"Designing Interactive Systems 2",@"Media Computing Project",@"Internet Of Things",@"Current topics in HCI",@"Post Desktop User Interfaces", nil];
-    
-    
-}
 
--(void) loadFilterdLectureList {
-    
-    
-    NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", [NSString stringWithFormat:@"%d",selectedCourseID]]];
-    // now create the list of lecture of which we have cards
-    
+
+// return an ascending ordererd list of lecture for wich there are card available for the specified course
+
+-(NSArray *) loadLectureListForCourse:(NSString *)course {
+    // filter all the cards by course
+    NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", course]];
+    // now create the list available lecture for that course
     NSMutableArray *lectureList = [NSMutableArray array];
     for (NSDictionary *card in filteredCardsByCourse) {
         // if not already inserted in the list, insert the lecture
@@ -118,35 +109,26 @@
 //    }];
     
 
-    filterdLectureList = lectureList;
-    
-//    filterdLectureList = [NSMutableArray arrayWithObjects:@"Lecture 1",@"Lecture 2",@"Lecture 3",@"Lecture 4",@"Lecture 5",@"Lecture 6",@"Lecture 7",@"Lecture 8", nil];
+    return [lectureList copy];
+}
+
+//-(void) loadFilteredTagList {
 //    
-}
+//    filteredTagList = [NSMutableArray arrayWithObjects:@"DIA cycle",@"CMN Model",@"Seven Stages",@"Afforandance",@"Constraints",@"Visibility", nil];
+//    
+//}
 
--(void) loadFilteredTagList {
-    
-    filteredTagList = [NSMutableArray arrayWithObjects:@"DIA cycle",@"CMN Model",@"Seven Stages",@"Afforandance",@"Constraints",@"Visibility", nil];
-    
-}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
+
+
+
+
+
+
+
+/
 // The number of columns of data
 - (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -175,7 +157,7 @@
     selectedCourse = row;
   
     // retrive the id of the course from the course object
-    selectedCourseID = [courseList[row][@"id"] integerValue];
+    selectedCourseString = [courseList[row][@"title"] integerValue];
     
 }
 
@@ -221,21 +203,6 @@
     
     if(loadLectureList)
     {
-        
-//        UITableViewCell *lectureCell = [tableView dequeueReusableCellWithIdentifier:@"StoreCell"];
-//        if (lectureCell == nil) {
-//            lectureCell = [[UITableViewCell alloc]initWithStyle:
-//                           UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-//        }
-//        
-//        NSString *stringForCell;
-//        
-//        stringForCell= [filterdLectureList objectAtIndex:indexPath.row];
-//        
-//        [lectureCell.textLabel setText:stringForCell];
-//        return lectureCell;
-        
-        
         
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StoreCourseCell" forIndexPath:indexPath];
         
@@ -283,25 +250,25 @@
     
 }
 
-- (void) changeFilterAndReloadData {
-    
-    if (loadLectureList) {
-        
-        [self loadFilteredTagList];
-        loadLectureList = NO;
-        [self.filteredTableView reloadData];
-        
-        
-    } else {
-        
-        [self loadFilterdLectureList];
-        loadLectureList = YES;
-        [self.filteredTableView reloadData];
-        
-    }
-    
-    
-}
+//- (void) changeFilterAndReloadData {
+//    
+////    if (loadLectureList) {
+//    
+//        [self loadFilteredTagList];
+//        loadLectureList = NO;
+//        [self.filteredTableView reloadData];
+//        
+//        
+//    } else {
+//        
+//        [self loadFilterdLectureList];
+//        loadLectureList = YES;
+//        [self.filteredTableView reloadData];
+//        
+//    }
+//    
+//    
+//}
 
 
 
@@ -465,6 +432,27 @@
 
 
 
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+
+
+// STANDARD STUFF
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 
 @end
