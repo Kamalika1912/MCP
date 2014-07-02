@@ -10,12 +10,12 @@
 
 @interface XYZBuyCardsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 {
-    NSMutableArray *flashCardList;
+//    NSMutableArray *flashCardList;
 }
 
 
 @property (weak, nonatomic) IBOutlet UITableView *BuyList;
 
-
+@property NSArray *flashCardList;
 
 @end

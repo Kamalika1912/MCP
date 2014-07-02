@@ -20,5 +20,5 @@
 -(id) initWithAnswer: (NSString *)answer withThumbsUp:(NSInteger)thumbsUp andThumbsDown:(NSInteger)thumbsDown isAddedToFavourites:(BOOL)addedToFavourites withFrame:(CGRect)frame;
 -(void) thumbsDownPressed:(UITapGestureRecognizer *)gestureRecognizer;
 -(void) thumbsUpPressed:(UITapGestureRecognizer *)gestureRecognizer;
--(id) initWithAnswerForPreview: (NSString *)answer  withFrame:(CGRect)frame ;
+
 @end

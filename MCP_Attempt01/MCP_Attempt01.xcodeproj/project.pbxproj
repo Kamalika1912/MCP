@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3516B836196445C4004DDF94 /* MyCards.json in Resources */ = {isa = PBXBuildFile; fileRef = 3516B835196445C4004DDF94 /* MyCards.json */; };
 		35FFA2D1195DB53D0007480E /* Store.json in Resources */ = {isa = PBXBuildFile; fileRef = 35FFA2D0195DB53D0007480E /* Store.json */; };
 		35FFA2D3195DB73F0007480E /* Courses.json in Resources */ = {isa = PBXBuildFile; fileRef = 35FFA2D2195DB73F0007480E /* Courses.json */; };
 		5A55C32A195606BC00C38DB2 /* drop_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A55C329195606BC00C38DB2 /* drop_down@2x.png */; };
@@ -47,15 +48,6 @@
 		5AE6D40A19463644006BCF1A /* XYZFlashcard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D40919463644006BCF1A /* XYZFlashcard.m */; };
 		5AE6D41519463F93006BCF1A /* XYZLecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D41419463F93006BCF1A /* XYZLecture.m */; };
 		5AE6D418194640DE006BCF1A /* XYZSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D417194640DE006BCF1A /* XYZSubject.m */; };
-		6E06615F1961915900A6C990 /* createico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E06615A1961915900A6C990 /* createico.png */; };
-		6E0661601961915900A6C990 /* storeico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E06615B1961915900A6C990 /* storeico.png */; };
-		6E0661611961915900A6C990 /* studyico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E06615C1961915900A6C990 /* studyico.png */; };
-		6E0661621961915900A6C990 /* userico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E06615D1961915900A6C990 /* userico.png */; };
-		6E0661631961915900A6C990 /* walletico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E06615E1961915900A6C990 /* walletico.png */; };
-		6E0661661961A6FD00A6C990 /* XYZFlipPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0661651961A6FD00A6C990 /* XYZFlipPreviewViewController.m */; };
-		6E0661691962E77E00A6C990 /* L2P-Logo_neu.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E0661671962E77E00A6C990 /* L2P-Logo_neu.png */; };
-		6E06616A1962E77E00A6C990 /* logo_rwth.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E0661681962E77E00A6C990 /* logo_rwth.gif */; };
-		6E06616E1962E8CF00A6C990 /* XYZLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E06616D1962E8CF00A6C990 /* XYZLoginViewController.m */; };
 		6E2ED56B195C8DA200016C15 /* XYZCreateCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */; };
 		6EEC9BF8195CB23000B7E980 /* XYZCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */; };
 		6EEC9C00195CBB3100B7E980 /* thumbs_down.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */; };
@@ -85,6 +77,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3516B835196445C4004DDF94 /* MyCards.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MyCards.json; sourceTree = "<group>"; };
 		35FFA2D0195DB53D0007480E /* Store.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Store.json; path = ../Store.json; sourceTree = "<group>"; };
 		35FFA2D2195DB73F0007480E /* Courses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Courses.json; sourceTree = "<group>"; };
 		5A55C329195606BC00C38DB2 /* drop_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drop_down@2x.png"; sourceTree = "<group>"; };
@@ -144,17 +137,6 @@
 		5AE6D41419463F93006BCF1A /* XYZLecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZLecture.m; sourceTree = "<group>"; };
 		5AE6D416194640DE006BCF1A /* XYZSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSubject.h; sourceTree = "<group>"; };
 		5AE6D417194640DE006BCF1A /* XYZSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSubject.m; sourceTree = "<group>"; };
-		6E06615A1961915900A6C990 /* createico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createico.png; sourceTree = "<group>"; };
-		6E06615B1961915900A6C990 /* storeico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storeico.png; sourceTree = "<group>"; };
-		6E06615C1961915900A6C990 /* studyico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = studyico.png; sourceTree = "<group>"; };
-		6E06615D1961915900A6C990 /* userico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userico.png; sourceTree = "<group>"; };
-		6E06615E1961915900A6C990 /* walletico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walletico.png; sourceTree = "<group>"; };
-		6E0661641961A6FD00A6C990 /* XYZFlipPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZFlipPreviewViewController.h; sourceTree = "<group>"; };
-		6E0661651961A6FD00A6C990 /* XYZFlipPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZFlipPreviewViewController.m; sourceTree = "<group>"; };
-		6E0661671962E77E00A6C990 /* L2P-Logo_neu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "L2P-Logo_neu.png"; sourceTree = "<group>"; };
-		6E0661681962E77E00A6C990 /* logo_rwth.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo_rwth.gif; sourceTree = "<group>"; };
-		6E06616C1962E8CF00A6C990 /* XYZLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZLoginViewController.h; sourceTree = "<group>"; };
-		6E06616D1962E8CF00A6C990 /* XYZLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZLoginViewController.m; sourceTree = "<group>"; };
 		6E2ED569195C8DA200016C15 /* XYZCreateCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateCardViewController.h; sourceTree = "<group>"; };
 		6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCreateCardViewController.m; sourceTree = "<group>"; };
 		6EEC9BF6195CB23000B7E980 /* XYZCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateViewController.h; sourceTree = "<group>"; };
@@ -205,7 +187,6 @@
 		5A8E39C419471D030020836F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6E06616B1962E8BA00A6C990 /* Login */,
 				6EEC9C03195CEE1700B7E980 /* SplashScreen */,
 				6E2ED563195C888300016C15 /* Create */,
 				5AB25AAC19573961000EA6C1 /* Profile */,
@@ -242,13 +223,6 @@
 		5A8E39C919479B570020836F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				6E0661671962E77E00A6C990 /* L2P-Logo_neu.png */,
-				6E0661681962E77E00A6C990 /* logo_rwth.gif */,
-				6E06615A1961915900A6C990 /* createico.png */,
-				6E06615B1961915900A6C990 /* storeico.png */,
-				6E06615C1961915900A6C990 /* studyico.png */,
-				6E06615D1961915900A6C990 /* userico.png */,
-				6E06615E1961915900A6C990 /* walletico.png */,
 				6EF76DB3195F06F40012E7B7 /* background.png */,
 				6EEC9C16195CF9FB00B7E980 /* Splash.png */,
 				6EF76DB5195F0EFE0012E7B7 /* thumbs_up.png */,
@@ -375,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				35FFA2D0195DB53D0007480E /* Store.json */,
+				3516B835196445C4004DDF94 /* MyCards.json */,
 				5AE6D3D81946330E006BCF1A /* MCP_Attempt01-Info.plist */,
 				5AE6D3D91946330E006BCF1A /* InfoPlist.strings */,
 				5AE6D3DC1946330E006BCF1A /* main.m */,
@@ -402,24 +377,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6E06616B1962E8BA00A6C990 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				6E06616C1962E8CF00A6C990 /* XYZLoginViewController.h */,
-				6E06616D1962E8CF00A6C990 /* XYZLoginViewController.m */,
-			);
-			name = Login;
-			sourceTree = "<group>";
-		};
 		6E2ED563195C888300016C15 /* Create */ = {
 			isa = PBXGroup;
 			children = (
-				6EEC9BF6195CB23000B7E980 /* XYZCreateViewController.h */,
-				6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */,
 				6E2ED569195C8DA200016C15 /* XYZCreateCardViewController.h */,
 				6E2ED56A195C8DA200016C15 /* XYZCreateCardViewController.m */,
-				6E0661641961A6FD00A6C990 /* XYZFlipPreviewViewController.h */,
-				6E0661651961A6FD00A6C990 /* XYZFlipPreviewViewController.m */,
+				6EEC9BF6195CB23000B7E980 /* XYZCreateViewController.h */,
+				6EEC9BF7195CB23000B7E980 /* XYZCreateViewController.m */,
 			);
 			name = Create;
 			sourceTree = "<group>";
@@ -481,9 +445,6 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Devashish Jasani";
 				TargetAttributes = {
-					5AE6D3CC1946330E006BCF1A = {
-						DevelopmentTeam = W88773838E;
-					};
 					5AE6D3F01946330E006BCF1A = {
 						TestTargetID = 5AE6D3CC1946330E006BCF1A;
 					};
@@ -516,12 +477,10 @@
 				5AB82239194BB71400A2A6FE /* flashcard.png in Resources */,
 				6EF76DB4195F06F40012E7B7 /* background.png in Resources */,
 				6EEC9C02195CBB3A00B7E980 /* thumbs_up.jpg in Resources */,
-				6E0661601961915900A6C990 /* storeico.png in Resources */,
 				6EEC9C0F195CF3F800B7E980 /* plus-sign.png in Resources */,
 				5A55C32A195606BC00C38DB2 /* drop_down@2x.png in Resources */,
 				5AB82235194BAD7300A2A6FE /* user.png in Resources */,
 				35FFA2D1195DB53D0007480E /* Store.json in Resources */,
-				6E0661621961915900A6C990 /* userico.png in Resources */,
 				6EEC9C00195CBB3100B7E980 /* thumbs_down.jpg in Resources */,
 				6EEC9C0B195CF1E700B7E980 /* Flip-logo.png in Resources */,
 				5AB8222F194B53D900A2A6FE /* filterIcon.png in Resources */,
@@ -530,17 +489,13 @@
 				6EEC9C17195CF9FB00B7E980 /* Splash.png in Resources */,
 				6EF76DB6195F0EFE0012E7B7 /* thumbs_up.png in Resources */,
 				6EEC9C10195CF3F800B7E980 /* graduation-cap.png in Resources */,
-				6E06615F1961915900A6C990 /* createico.png in Resources */,
-				6E06616A1962E77E00A6C990 /* logo_rwth.gif in Resources */,
 				6EEC9C15195CF73100B7E980 /* pouch.png in Resources */,
 				5A6E432A1958F82300C03987 /* favouriteSelected.png in Resources */,
-				6E0661631961915900A6C990 /* walletico.png in Resources */,
 				6EEC9C11195CF3F800B7E980 /* shopping-cart.png in Resources */,
-				6E0661691962E77E00A6C990 /* L2P-Logo_neu.png in Resources */,
 				5AE6D3EC1946330E006BCF1A /* Images.xcassets in Resources */,
 				5AB8223D194BBD9700A2A6FE /* reputation.png in Resources */,
-				6E0661611961915900A6C990 /* studyico.png in Resources */,
 				5AE6D3DB1946330E006BCF1A /* InfoPlist.strings in Resources */,
+				3516B836196445C4004DDF94 /* MyCards.json in Resources */,
 				5AE6D3E41946330E006BCF1A /* Main.storyboard in Resources */,
 				5A6E432B1958F82300C03987 /* favouriteNotSelected.png in Resources */,
 				5AB82233194BABE700A2A6FE /* coin.png in Resources */,
@@ -566,12 +521,10 @@
 			files = (
 				5A6E43311959150300C03987 /* XYZFlashcardBack.m in Sources */,
 				5A6E4320195769CD00C03987 /* XYZStartStudyingViewController.m in Sources */,
-				6E06616E1962E8CF00A6C990 /* XYZLoginViewController.m in Sources */,
 				6EEC9C09195CEE6700B7E980 /* XYZSplashViewController.m in Sources */,
 				5AE6D41519463F93006BCF1A /* XYZLecture.m in Sources */,
 				5AB821FD1949146900A2A6FE /* DropDownViewCell.m in Sources */,
 				5AB25AA9195735A7000EA6C1 /* XYZBuyCardsViewController.m in Sources */,
-				6E0661661961A6FD00A6C990 /* XYZFlipPreviewViewController.m in Sources */,
 				5A8E39C319471CDB0020836F /* XYZStartupViewController.m in Sources */,
 				5A8E39C019467DE80020836F /* XYZDBManager.m in Sources */,
 				5AB821FC1949146900A2A6FE /* DropDownListView.m in Sources */,
@@ -709,13 +662,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCP_Attempt01/MCP_Attempt01-Prefix.pch";
 				INFOPLIST_FILE = "MCP_Attempt01/MCP_Attempt01-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -724,13 +674,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCP_Attempt01/MCP_Attempt01-Prefix.pch";
 				INFOPLIST_FILE = "MCP_Attempt01/MCP_Attempt01-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

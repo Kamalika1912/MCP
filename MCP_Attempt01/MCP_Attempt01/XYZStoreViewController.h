@@ -33,8 +33,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *filteredTableView;
 
 
-@property NSString *selectedLecture;
-@property NSArray *filteredCards;
+//@property NSString *selectedLecture;
+
 
 
 

@@ -31,16 +31,19 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//     self.view.backgroundColor = [UIColor clearColor ];    
+     self.view.backgroundColor = [UIColor clearColor ];    
     
+ 
+    // ############## LOAD DATA - Load the course list and the whole cards present on the Srore
     // load locally the whole list of cards
-    NSString *storePath = [[NSBundle mainBundle] pathForResource:@"Store"
-                                                           ofType:@"json"];
-    // parse it and load it in an array
+    NSString *storePath = [[NSBundle mainBundle] pathForResource:@"Store" ofType:@"json"];
     NSError *error;
     storeCards = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:storePath] options:NSJSONReadingMutableContainers error:&error];
-    if (error)
-        NSLog(@"JSONObjectWithData error: %@", error);
+    if (error) NSLog(@"JSONObjectWithData error: %@", error);
+    
+    
+    
+    
     
     
     
@@ -161,6 +164,7 @@
 {
     return courseList[row][@"title"];
 }
+
 
 // Catpure the picker view selection
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
@@ -299,16 +303,36 @@
     
 }
 
+
+
+
+
+
+
+
+
+
+
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", [NSString stringWithFormat:@"%d",selectedCourseID]]];
-
-    _filteredCards = [filteredCardsByCourse filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(lecture == %@)", [NSString stringWithFormat:@"%d",(NSInteger)filterdLectureList[indexPath.row]]]];
-
+//    NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", [NSString stringWithFormat:@"%d",(int)selectedCourseID]]];
+//    NSUInteger row = [indexPath row];
+//    
+//    NSArray *filteredCards  = [filteredCardsByCourse filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(lecture == %@)", filterdLectureList[row]]];
+//
     
-    [self performSegueWithIdentifier:@"buyCards" sender:_filteredCards];
+    [self performSegueWithIdentifier:@"buyCards" sender:self];
     
 }
+
+
+
+
+
+
+
+
+
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
@@ -318,12 +342,26 @@
 
     if(loadLectureList)
     {
+        NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", [NSString stringWithFormat:@"%d",(int)selectedCourseID]]];
+//        NSUInteger row = [indexPath row];
         selectedItem = [filterdLectureList objectAtIndex: selectedRowIndex.row];
+        NSArray *filteredCards  = [filteredCardsByCourse filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(lecture == %@)", selectedItem]];
+        
+
+        
+        XYZBuyCardsViewController *targetVC = (XYZBuyCardsViewController*)segue.destinationViewController;
+        targetVC.flashCardList= filteredCards;
+        
+        
     }
     else
     {
         selectedItem = [filteredTagList objectAtIndex: selectedRowIndex.row];
     }
+    
+    
+//    NSLog(@"%@",@"Mah");
+    
     
     //XYZBuyCardsViewController *buyCards = [segue destinationViewController];
     //buyCards.loadLectureList = YES;

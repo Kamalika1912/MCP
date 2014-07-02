@@ -23,10 +23,16 @@
 		350DDB7F195AC66D0032E539 /* FLIP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 350DDB7D195AC66D0032E539 /* FLIP.xcdatamodeld */; };
 		350DDB82195ACAFF0032E539 /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 350DDB81195ACAFF0032E539 /* StoreViewController.m */; };
 		350DDB84195AD3BE0032E539 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 350DDB83195AD3BE0032E539 /* CoreData.framework */; };
-		356DA4E7195C53460002C22E /* File in Resources */ = {isa = PBXBuildFile; fileRef = 356DA4E6195C53460002C22E /* File */; };
 		356DA4E9195C56870002C22E /* Store.json in Resources */ = {isa = PBXBuildFile; fileRef = 356DA4E8195C56870002C22E /* Store.json */; };
 		356DA4EC195C673F0002C22E /* MyCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356DA4EB195C673F0002C22E /* MyCardsViewController.m */; };
 		356DA4EF195C675C0002C22E /* MyCardsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356DA4EE195C675C0002C22E /* MyCardsTableViewController.m */; };
+		358DF8531961B1B500B3F3E7 /* create.png in Resources */ = {isa = PBXBuildFile; fileRef = 358DF84E1961B1B500B3F3E7 /* create.png */; };
+		358DF8541961B1B500B3F3E7 /* store.png in Resources */ = {isa = PBXBuildFile; fileRef = 358DF84F1961B1B500B3F3E7 /* store.png */; };
+		358DF8551961B1B500B3F3E7 /* study.png in Resources */ = {isa = PBXBuildFile; fileRef = 358DF8501961B1B500B3F3E7 /* study.png */; };
+		358DF8561961B1B500B3F3E7 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 358DF8511961B1B500B3F3E7 /* user.png */; };
+		358DF8571961B1B500B3F3E7 /* wallet.png in Resources */ = {isa = PBXBuildFile; fileRef = 358DF8521961B1B500B3F3E7 /* wallet.png */; };
+		358DF85A1961B8D100B3F3E7 /* StoreCardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 358DF8591961B8D100B3F3E7 /* StoreCardsViewController.m */; };
+		358DF85C1961BC9D00B3F3E7 /* CardStorePreview.xib in Resources */ = {isa = PBXBuildFile; fileRef = 358DF85B1961BC9D00B3F3E7 /* CardStorePreview.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,12 +67,19 @@
 		350DDB80195ACAFF0032E539 /* StoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
 		350DDB81195ACAFF0032E539 /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		350DDB83195AD3BE0032E539 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		356DA4E6195C53460002C22E /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		356DA4E8195C56870002C22E /* Store.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Store.json; path = ../Store.json; sourceTree = "<group>"; };
 		356DA4EA195C673F0002C22E /* MyCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCardsViewController.h; path = ../MyCardsViewController.h; sourceTree = "<group>"; };
 		356DA4EB195C673F0002C22E /* MyCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCardsViewController.m; path = ../MyCardsViewController.m; sourceTree = "<group>"; };
 		356DA4ED195C675C0002C22E /* MyCardsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyCardsTableViewController.h; path = ../MyCardsTableViewController.h; sourceTree = "<group>"; };
 		356DA4EE195C675C0002C22E /* MyCardsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyCardsTableViewController.m; path = ../MyCardsTableViewController.m; sourceTree = "<group>"; };
+		358DF84E1961B1B500B3F3E7 /* create.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create.png; sourceTree = "<group>"; };
+		358DF84F1961B1B500B3F3E7 /* store.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = store.png; sourceTree = "<group>"; };
+		358DF8501961B1B500B3F3E7 /* study.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = study.png; sourceTree = "<group>"; };
+		358DF8511961B1B500B3F3E7 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		358DF8521961B1B500B3F3E7 /* wallet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wallet.png; sourceTree = "<group>"; };
+		358DF8581961B8D100B3F3E7 /* StoreCardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreCardsViewController.h; sourceTree = "<group>"; };
+		358DF8591961B8D100B3F3E7 /* StoreCardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreCardsViewController.m; sourceTree = "<group>"; };
+		358DF85B1961BC9D00B3F3E7 /* CardStorePreview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardStorePreview.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +110,6 @@
 		350DDB39195AC4C50032E539 = {
 			isa = PBXGroup;
 			children = (
-				356DA4E6195C53460002C22E /* File */,
 				350DDB4B195AC4C50032E539 /* FLIP */,
 				350DDB6D195AC4C60032E539 /* FLIPTests */,
 				350DDB44195AC4C50032E539 /* Frameworks */,
@@ -139,7 +151,11 @@
 				350DDB7D195AC66D0032E539 /* FLIP.xcdatamodeld */,
 				350DDB80195ACAFF0032E539 /* StoreViewController.h */,
 				350DDB81195ACAFF0032E539 /* StoreViewController.m */,
+				358DF85B1961BC9D00B3F3E7 /* CardStorePreview.xib */,
+				358DF8581961B8D100B3F3E7 /* StoreCardsViewController.h */,
+				358DF8591961B8D100B3F3E7 /* StoreCardsViewController.m */,
 				350DDB60195AC4C60032E539 /* Images.xcassets */,
+				358DF84D1961B1B500B3F3E7 /* Flip_Tab_Icons */,
 				350DDB4C195AC4C50032E539 /* Supporting Files */,
 			);
 			path = FLIP;
@@ -173,6 +189,18 @@
 				350DDB70195AC4C60032E539 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		358DF84D1961B1B500B3F3E7 /* Flip_Tab_Icons */ = {
+			isa = PBXGroup;
+			children = (
+				358DF84E1961B1B500B3F3E7 /* create.png */,
+				358DF84F1961B1B500B3F3E7 /* store.png */,
+				358DF8501961B1B500B3F3E7 /* study.png */,
+				358DF8511961B1B500B3F3E7 /* user.png */,
+				358DF8521961B1B500B3F3E7 /* wallet.png */,
+			);
+			path = Flip_Tab_Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,8 +279,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				356DA4E7195C53460002C22E /* File in Resources */,
+				358DF8551961B1B500B3F3E7 /* study.png in Resources */,
+				358DF8571961B1B500B3F3E7 /* wallet.png in Resources */,
 				350DDB61195AC4C60032E539 /* Images.xcassets in Resources */,
+				358DF8561961B1B500B3F3E7 /* user.png in Resources */,
+				358DF8541961B1B500B3F3E7 /* store.png in Resources */,
+				358DF8531961B1B500B3F3E7 /* create.png in Resources */,
+				358DF85C1961BC9D00B3F3E7 /* CardStorePreview.xib in Resources */,
 				356DA4E9195C56870002C22E /* Store.json in Resources */,
 				350DDB50195AC4C50032E539 /* InfoPlist.strings in Resources */,
 				350DDB59195AC4C50032E539 /* Main.storyboard in Resources */,
@@ -276,6 +309,7 @@
 			files = (
 				356DA4EF195C675C0002C22E /* MyCardsTableViewController.m in Sources */,
 				350DDB7F195AC66D0032E539 /* FLIP.xcdatamodeld in Sources */,
+				358DF85A1961B8D100B3F3E7 /* StoreCardsViewController.m in Sources */,
 				350DDB56195AC4C50032E539 /* AppDelegate.m in Sources */,
 				350DDB52195AC4C50032E539 /* main.m in Sources */,
 				350DDB82195ACAFF0032E539 /* StoreViewController.m in Sources */,

@@ -8,14 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XYZCreateCardViewController : UIViewController {
-
-    IBOutlet UITextField *answerField;
-    IBOutlet UITextField *labelField;
-    IBOutlet UITextField *questionField;
-}
-- (IBAction)TextFieldDismiss:(id)sender;
-- (IBAction)QuestionDismiss:(id)sender;
-- (IBAction)AnswerDismiss:(id)sender;
+@interface XYZCreateCardViewController : UIViewController 
 
 @end

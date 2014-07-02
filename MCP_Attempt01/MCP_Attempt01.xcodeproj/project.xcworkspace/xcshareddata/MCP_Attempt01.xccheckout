@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>7A9DBD8A-F77B-41F3-B69B-FA61DD495EA7</string>
+	<string>3B773390-A098-4C28-83CD-566ECD263199</string>
 	<key>IDESourceControlProjectName</key>
 	<string>MCP_Attempt01</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>3689C203-48B3-4CC8-BFD5-627B0AF34D79</key>
-		<string>http://github.com/psylok/MCP</string>
+		<key>36C8E36F-572A-4D36-8C13-1204BC15589E</key>
+		<string>https://github.com/psylok/MCP.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>MCP_Attempt01/MCP_Attempt01.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>3689C203-48B3-4CC8-BFD5-627B0AF34D79</key>
+		<key>36C8E36F-572A-4D36-8C13-1204BC15589E</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>http://github.com/psylok/MCP</string>
+	<string>https://github.com/psylok/MCP.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>3689C203-48B3-4CC8-BFD5-627B0AF34D79</string>
+	<string>36C8E36F-572A-4D36-8C13-1204BC15589E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>3689C203-48B3-4CC8-BFD5-627B0AF34D79</string>
+			<string>36C8E36F-572A-4D36-8C13-1204BC15589E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>MCP</string>
 		</dict>

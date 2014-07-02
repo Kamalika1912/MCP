@@ -10,16 +10,20 @@
 
 @interface StoreViewController ()
 
+//private utility methods
+
+// given an array of cards, extract a list of all available lectures, no duplicates, ordered asc
+- (NSArray *) getAvailableLectureListFromCards:(NSArray *)CardsList;
+
 @end
 
 @implementation StoreViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
     }
     return self;
 }
@@ -27,38 +31,26 @@
 
 
 
-// save a card in the local store
-- (IBAction)buyCard:(id)sender {
-
-}
-
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    
-    //
-    //DATA
-    //
+    // ## LOAD THE DATA FROM THE STORE
     
     // load the FAKE store from the file
-    NSString *storePath = [[NSBundle mainBundle] pathForResource:@"Store"
-                                                          ofType:@"json"];
-    
-    
+    NSString *storePath = [[NSBundle mainBundle] pathForResource:@"Store" ofType:@"json"];
     // parse it and load it in an array
     NSError *error;
     _storeCards = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:storePath] options:NSJSONReadingMutableContainers error:&error];
+    // if error just log it for  now and do not manage it
     if (error)
         NSLog(@"JSONObjectWithData error: %@", error);
     
-    // data ready to use from here on
+    // ## END DATA LOADING
     
-    
-    
-    
+    // ## PARSE DATA
+    // use the cards from the store to already get all available courses to be studied
     
     
     
@@ -70,42 +62,32 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+// ## TABLE VIEW MANAGEMENT METHOD
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     return [_storeCards count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cardCell" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"lectureCell" forIndexPath:indexPath];
     
     NSString *question = _storeCards[indexPath.row][@"question"];
     
-    
-    
     // set the question
     ((UILabel *)[cell viewWithTag:1]).text = question;
-    // set the up/down vote star level (to be changed to whatever we want, just a quick example)
-    ((UILabel *)[cell viewWithTag:3]).text = @"@@@";
-
+    
+    
     
     
     return cell;
@@ -113,55 +95,34 @@
 
 
 
+// ##### PICKER MANAGEMENT METHODS
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+// The number of columns of data
+- (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return 1;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+// The number of rows of data
+- (int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    return _storeCards;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+
+
+
+
+
+
+// ## STANDARD iOS METHOD
+
+- (void)didReceiveMemoryWarning
 {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+- (IBAction)showCoursePicker:(UIButton *)sender {
 }
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

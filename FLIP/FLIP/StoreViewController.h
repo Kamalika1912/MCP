@@ -8,11 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StoreViewController : UITableViewController
+@interface StoreViewController : UIViewController<UITableViewDataSource,UITableViewDataSource,UIPickerViewDataSource,UIPickerViewDelegate>
 
+// top right button to select the current course through a picker
+@property (weak, nonatomic) IBOutlet UIButton *pickCourseButton;
 
-
-// Array in which the data from the stores will be loaded
+// Array in which the cards from the store will be loaded
 @property NSMutableArray *storeCards;
+
+
+// METHODS
+
+- (void)loadCourses;
+
+- (IBAction)showCoursePicker:(UIButton *)sender;
+
 
 @end

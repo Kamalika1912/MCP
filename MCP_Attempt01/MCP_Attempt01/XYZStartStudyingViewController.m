@@ -37,7 +37,7 @@
     // parent screen hides the navigation bar but it is required here and opposite for the tab bar. Tab bar is not required in the studying mode
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.tabBarController.tabBar.hidden = YES;
-//     self.view.backgroundColor = [UIColor clearColor ];
+     self.view.backgroundColor = [UIColor clearColor ];
     [self loadMyCardList];
 
     

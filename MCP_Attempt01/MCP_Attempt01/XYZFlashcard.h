@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface XYZFlashcard : NSObject
+@interface XYZFlashcard : NSDictionary
 
 @property NSInteger flashcardID;
 @property NSString *question;
