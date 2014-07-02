@@ -16,8 +16,8 @@
     NSMutableArray *filterdLectureList;
     NSMutableArray *filteredTagList;
     NSMutableArray *storeCards;
-    NSInteger *selectedCourse;
-    NSSTring *selectedCourseString;
+    NSInteger selectedCourseRowInPicker;
+    NSString *selectedCourseString;
     BOOL loadLectureList;
     
 }

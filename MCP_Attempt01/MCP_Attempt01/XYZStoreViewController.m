@@ -52,13 +52,19 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     // load the course from the user defaults, if none, then select the first course in the courses array
     selectedCourseString = ([defaults stringForKey:@"selectedCourse"]) != nil ? [defaults stringForKey:@"selectedCourse"] : courseList[0][@"title"];
+    selectedCourseRowInPicker= [defaults integerForKey:@"selectedCourseRowInPicker"];
+    
+    
+    [self.selectCourseButton setTitle:selectedCourseString forState:UIControlStateNormal];
+
     
     
     
     
     
-    selectedCourse=0;
     
+    
+
     // programmatical preparation of dropdowmenu
     [self hideColorPickerView:YES];
     self.coursePickerView.layer.cornerRadius = 5.0;
@@ -87,7 +93,7 @@
 
 // return an ascending ordererd list of lecture for wich there are card available for the specified course
 
--(NSArray *) loadLectureListForCourse:(NSString *)course {
+-(NSMutableArray *) loadLectureListForCourse:(NSString *)course {
     // filter all the cards by course
     NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", course]];
     // now create the list available lecture for that course
@@ -101,22 +107,15 @@
     }
     
     
-    
-    
 //    NSArray *sorted = [lectureList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
 //        if (obj1[@"lecture"] < obj2[@"lecture"]) return NSOrderedDescending;
 //        else return NSOrderedAscending;
 //    }];
     
 
-    return [lectureList copy];
+    return lectureList;
 }
 
-//-(void) loadFilteredTagList {
-//    
-//    filteredTagList = [NSMutableArray arrayWithObjects:@"DIA cycle",@"CMN Model",@"Seven Stages",@"Afforandance",@"Constraints",@"Visibility", nil];
-//    
-//}
 
 
 
@@ -125,10 +124,9 @@
 
 
 
+// ################ PICKER METHOD
 
 
-
-/
 // The number of columns of data
 - (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
@@ -151,14 +149,7 @@
 // Catpure the picker view selection
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    // This method is triggered whenever the user makes a change to the picker selection.
-    // The parameter named row and component represents what was selected.
-    
-    selectedCourse = row;
-  
-    // retrive the id of the course from the course object
-    selectedCourseString = [courseList[row][@"title"] integerValue];
-    
+     selectedCourseString = courseList[row][@"title"];
 }
 
 -(UIView *) pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
@@ -178,203 +169,12 @@
 
 
 
-
-
-
-
-
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    if(loadLectureList)
-    {
-        return [filterdLectureList count];
-    }
-    else
-    {
-        return [filteredTagList count];
-    }
-    
-}
-
-
-
-
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if(loadLectureList)
-    {
-        
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StoreCourseCell" forIndexPath:indexPath];
-        
-//        NSString *question = filterdLectureList[indexPath.row][@"id"];
-        
-        
-        
-        // set the question
-        
-        cell.textLabel.text = filterdLectureList[indexPath.row];
-//        ((UILabel *)[cell viewWithTag:1]).text = question;
-        // set the up/down vote star level (to be changed to whatever we want, just a quick example)
-//        ((UILabel *)[cell viewWithTag:3]).text = @"@@@";
-        
-        
-        
-        return cell;
-        
-        
-    }
-    else
-    {
-        static NSString *cellIdentifierTags = @"Tags";
-        
-        UITableViewCell *tagCell = [tableView dequeueReusableCellWithIdentifier:
-                                    cellIdentifierTags];
-        if (tagCell == nil) {
-            tagCell = [[UITableViewCell alloc]initWithStyle:
-                       UITableViewCellStyleDefault reuseIdentifier:cellIdentifierTags];
-        }
-        
-        NSString *stringForTags;
-        
-        stringForTags= [filteredTagList objectAtIndex:indexPath.row];
-        
-        [tagCell.textLabel setText:stringForTags];
-        return tagCell;
-    }
-    
-}
-
-- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 1;
-    
-}
-
-//- (void) changeFilterAndReloadData {
-//    
-////    if (loadLectureList) {
-//    
-//        [self loadFilteredTagList];
-//        loadLectureList = NO;
-//        [self.filteredTableView reloadData];
-//        
-//        
-//    } else {
-//        
-//        [self loadFilterdLectureList];
-//        loadLectureList = YES;
-//        [self.filteredTableView reloadData];
-//        
-//    }
-//    
-//    
-//}
-
-
-
-
-
-
-
-
-
-
-
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", [NSString stringWithFormat:@"%d",(int)selectedCourseID]]];
-//    NSUInteger row = [indexPath row];
-//    
-//    NSArray *filteredCards  = [filteredCardsByCourse filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(lecture == %@)", filterdLectureList[row]]];
-//
-    
-    [self performSegueWithIdentifier:@"buyCards" sender:self];
-    
-}
-
-
-
-
-
-
-
-
-
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    NSIndexPath *selectedRowIndex = [self.filteredTableView indexPathForSelectedRow];
-    NSString *selectedItem;
-
-
-    if(loadLectureList)
-    {
-        NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", [NSString stringWithFormat:@"%d",(int)selectedCourseID]]];
-//        NSUInteger row = [indexPath row];
-        selectedItem = [filterdLectureList objectAtIndex: selectedRowIndex.row];
-        NSArray *filteredCards  = [filteredCardsByCourse filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(lecture == %@)", selectedItem]];
-        
-
-        
-        XYZBuyCardsViewController *targetVC = (XYZBuyCardsViewController*)segue.destinationViewController;
-        targetVC.flashCardList= filteredCards;
-        
-        
-    }
-    else
-    {
-        selectedItem = [filteredTagList objectAtIndex: selectedRowIndex.row];
-    }
-    
-    
-//    NSLog(@"%@",@"Mah");
-    
-    
-    //XYZBuyCardsViewController *buyCards = [segue destinationViewController];
-    //buyCards.loadLectureList = YES;
-    //buyCards.selectedRow = selectedItem;
-    
-    
-}
-
-
-
-
-
-- (IBAction)selectCourseButtonTapped:(id)sender {
-    
-    [self hideColorPickerView:NO];
-    [self.coursePickerView setBackgroundColor:[UIColor whiteColor]];
-    
-    
-    
-    // Why the if? don't they do the same thing?
-    if ([self.selectCourseButton.titleLabel.text isEqualToString:@"Select Course"]) {
-        [self.coursePicker selectRow:selectedCourse inComponent:0 animated:YES];
-    }
-    else {
-        
-        
-        [self.coursePicker selectRow:selectedCourse inComponent:0 animated:YES];
-        
-    }
-    
-    [self.filteredTableView deselectRowAtIndexPath:[self.filteredTableView indexPathForSelectedRow] animated:YES];
-    
-    
-}
-
-
-
-- (IBAction)filterValueChanged:(id)sender {
-}
-
 - (IBAction)doneButtonTapped:(id)sender {
     
     [self hideColorPickerView:YES];
-    [self.selectCourseButton setTitle:[courseList objectAtIndex:selectedCourse][@"title"] forState:UIControlStateNormal];
+    [self.selectCourseButton setTitle:[courseList objectAtIndex:selectedCourseRowInPicker][@"title"] forState:UIControlStateNormal];
     
-    [self loadFilterdLectureList];
+    filterdLectureList = [self loadLectureListForCourse:[courseList objectAtIndex:selectedCourseRowInPicker][@"title"]];
     
     [self.filteredTableView reloadData];
 }
@@ -383,7 +183,7 @@
     
     [self hideColorPickerView:YES];
     if (![self.selectCourseButton.titleLabel.text isEqualToString:@"Select Course"]) {
-        selectedCourse = [courseList indexOfObject:self.selectCourseButton.titleLabel.text];
+        selectedCourseRowInPicker = [courseList indexOfObject:self.selectCourseButton.titleLabel.text];
     }
     
 }
@@ -428,6 +228,106 @@
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+// ################ TABLE VIEW METHODS
+
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [filterdLectureList count];
+}
+
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StoreCourseCell" forIndexPath:indexPath];
+        cell.textLabel.text = filterdLectureList[indexPath.row];
+        return cell;
+}
+
+
+
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+//    NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", [NSString stringWithFormat:@"%d",(int)selectedCourseID]]];
+//    NSUInteger row = [indexPath row];
+//    
+//    NSArray *filteredCards  = [filteredCardsByCourse filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(lecture == %@)", filterdLectureList[row]]];
+//
+    
+    [self performSegueWithIdentifier:@"buyCards" sender:self];
+    
+}
+
+
+
+// ###### STUFF TO DO BEFORE SHOWING THE LIST OF CARDS (preparing and sending the list)
+
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    NSIndexPath *selectedRowIndex = [self.filteredTableView indexPathForSelectedRow];
+    NSString *selectedItem;
+
+    NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", selectedCourseString]];
+//        NSUInteger row = [indexPath row];
+    selectedItem = [filterdLectureList objectAtIndex: selectedRowIndex.row];
+    NSArray *filteredCards  = [filteredCardsByCourse filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(lecture == %@)", selectedItem]];
+
+    // pass the array of cards to next view
+    XYZBuyCardsViewController *targetVC = (XYZBuyCardsViewController*)segue.destinationViewController;
+    targetVC.flashCardList= filteredCards;
+    
+//    NSLog(@"%@",@"Mah");
+}
+
+
+
+
+
+
+
+- (IBAction)selectCourseButtonTapped:(id)sender {
+    
+    [self hideColorPickerView:NO];
+    [self.coursePickerView setBackgroundColor:[UIColor darkGrayColor]];
+    
+//    
+//    
+//    // Why the if? don't they do the same thing?
+//    if ([self.selectCourseButton.titleLabel.text isEqualToString:@"Select Course"]) {
+        [self.coursePicker selectRow:selectedCourseRowInPicker inComponent:0 animated:YES];
+//    }
+//    else {
+//        
+//        
+//        [self.coursePicker selectRow:selectedCourseRowInPicker inComponent:0 animated:YES];
+    
+//    }
+    
+    [self.filteredTableView deselectRowAtIndexPath:[self.filteredTableView indexPathForSelectedRow] animated:YES];
+    
+    
+}
+
+
+
+- (IBAction)filterValueChanged:(id)sender {
+}
+
+
+
 
 
 
