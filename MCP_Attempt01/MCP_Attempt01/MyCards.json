@@ -26,33 +26,4 @@
  ,   "image"     :   ""
  ,   "certified" :   "False"
  }
- ,
- {
- "id"        :   "3"
- ,   "title"     :   "7 stages of action"
- ,   "course"    :   "DIS 1"
- ,   "lecture"   :   "Lecture # Lecture # 2"
- ,   "question"  :   "What are the 7 stages of action?"
- ,   "answer"    :   "1) Goal 2) Intention 3) Action 4) Execution 5) Perception 6) Interpretation 7) Evaluation"
- ,   "upvote"    :   "29"
- ,   "downVote"  :   "0"
- ,   "createdBy" :   "Card Master"
- ,   "image"     :   ""
- ,   "certified" :   "False"
- }
- ,
- {
-    "id"        :   "4"
- ,   "title"     :   "Design Principle"
- ,   "course"    :   "DIS 1"
- ,   "lecture"   :   "Lecture # 2"
- ,   "question"  :   "Which are the Design principle according to Norman?"
- ,   "answer"    :   "1) Consistency 2) Visibility 3) Affordance 4) Mapping 5) Constraints"
- ,   "upVote"    :   "9"
- ,   "downVote"  :   "5"
- ,   "createdBy" :   "BlackSmith of Cards"
- ,   "image"     :   ""
- ,   "certified" :   "False"
- }
- ,
  ]

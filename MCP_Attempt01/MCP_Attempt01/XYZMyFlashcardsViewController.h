@@ -14,10 +14,9 @@
 {
     NSMutableArray *courseList;
     NSMutableArray *filterdLectureList;
-    NSMutableArray *filteredTagList;
-    NSInteger selectedCourse;
-    BOOL loadLectureList;
-    
+    NSMutableArray *myCards;
+    NSInteger selectedCourseRowInPicker;
+    NSString *selectedCourseString;
 }
 
 
@@ -33,13 +32,9 @@
 
 
 - (IBAction)selectCourseButtonTapped:(id)sender;
-- (IBAction)filterValueChanged:(id)sender;
 - (IBAction)doneButtonTapped:(id)sender;
 - (IBAction)cancelButtonTapped:(id)sender;
 
 
-
-
-- (void) loadCourseList;
 
 @end

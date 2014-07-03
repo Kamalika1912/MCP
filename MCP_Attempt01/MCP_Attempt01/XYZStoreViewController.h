@@ -14,12 +14,9 @@
 {
     NSMutableArray *courseList;
     NSMutableArray *filterdLectureList;
-    NSMutableArray *filteredTagList;
     NSMutableArray *storeCards;
     NSInteger selectedCourseRowInPicker;
-    NSString *selectedCourseString;
-    BOOL loadLectureList;
-    
+    NSString *selectedCourseString;    
 }
 
 
@@ -33,19 +30,14 @@
 @property (weak, nonatomic) IBOutlet UITableView *filteredTableView;
 
 
-//@property NSString *selectedLecture;
-
 
 
 
 - (IBAction)selectCourseButtonTapped:(id)sender;
-- (IBAction)filterValueChanged:(id)sender;
+
 - (IBAction)doneButtonTapped:(id)sender;
 - (IBAction)cancelButtonTapped:(id)sender;
 
 
-
-
-- (void) loadCourseList;
 
 @end

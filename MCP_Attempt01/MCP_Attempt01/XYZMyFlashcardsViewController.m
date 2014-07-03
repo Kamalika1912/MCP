@@ -30,7 +30,45 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   //  self.view.backgroundColor = [UIColor clearColor ];
+   
+    // ############## LOAD CARD DATA - Load the course list and the whole cards present on my decks
+    // load locally the whole list of cards
+    NSError *error;
+    NSString *path;
+    // STORE
+    path = [[NSBundle mainBundle] pathForResource:@"MyCards" ofType:@"json"];
+    myCards = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+    if (error) NSLog(@"JSONObjectWithData error loading CARDS: %@", error);
+    // COURSES
+    path = [[NSBundle mainBundle] pathForResource:@"Courses" ofType:@"json"];
+    courseList = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+    if (error) NSLog(@"JSONObjectWithData error loading COURSES: %@", error);
+    
+    
+    // ############# LOAD LOCAL SAVED DATA (previously selected course and such)
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    // load the course from the user defaults, if none, then select the first course in the courses array
+    selectedCourseString = ([defaults stringForKey:@"selectedCourse"]) != nil ? [defaults stringForKey:@"selectedCourse"] : courseList[0][@"title"];
+    selectedCourseRowInPicker= [defaults integerForKey:@"selectedCourseRowInPicker"];
+    
+    // set the course title in the fake dropdown button
+    [self.selectCourseButton setTitle:selectedCourseString forState:UIControlStateNormal];
+    
+    
+    
+    //LOAD THE DATA IN THE TABLE ARRAY
+    filterdLectureList = [self loadLectureListForCourse:selectedCourseString ];
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //  self.view.backgroundColor = [UIColor clearColor ];
     // Do any additional setup after loading the view.
     //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
     selectedCourse=0;
@@ -49,48 +87,32 @@
     self.filteredTableView.delegate = self;
     
     
-    [self.selectFilter addTarget:self action:@selector(changeFilterAndReloadData) forControlEvents:UIControlEventValueChanged];
-    loadLectureList = YES;
-    [self loadFilterdLectureList];
-    
     
 }
 
--(void) loadCourseList {
-    
-    courseList = [NSMutableArray arrayWithObjects:@"Designing Interactive Systems 1",@"Designing Interactive Systems 2",@"Media Computing Project",@"Internet Of Things",@"Current topics in HCI",@"Post Desktop User Interfaces", nil];
-    
-    
+
+
+
+
+// return a list of Topics (not numbered lectures anymore) for wich there are card available for the specified course
+-(NSMutableArray *) loadLectureListForCourse:(NSString *)course {
+    // filter all the cards by course
+    NSArray *filteredCardsByCourse = [myCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", course]];
+    // now create the list available topic for that course
+    NSMutableArray *lectureList = [NSMutableArray array];
+    for (NSDictionary *card in filteredCardsByCourse) {
+        // if not already inserted in the list, insert the topic
+        NSString *lecture = card[@"title"];
+        if(![lectureList containsObject:lecture]) {
+            [lectureList addObject:lecture];
+        }
+    }
+    return lectureList;
 }
 
--(void) loadFilterdLectureList {
-    
-    filterdLectureList = [NSMutableArray arrayWithObjects:@"Lecture 1",@"Lecture 2",@"Lecture 3",@"Lecture 4",@"Lecture 5",@"Lecture 6",@"Lecture 7",@"Lecture 8", nil];
-    
-}
 
--(void) loadFilteredTagList {
-    
-    filteredTagList = [NSMutableArray arrayWithObjects:@"DIA cycle",@"CMN Model",@"Seven Stages",@"Afforandance",@"Constraints",@"Visibility", nil];
-    
-}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 // The number of columns of data
 - (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -200,25 +222,6 @@
     
 }
 
-- (void) changeFilterAndReloadData {
-    
-    if (loadLectureList) {
-        
-        [self loadFilteredTagList];
-        loadLectureList = NO;
-        [self.filteredTableView reloadData];
-        
-        
-    } else {
-        
-        [self loadFilterdLectureList];
-        loadLectureList = YES;
-        [self.filteredTableView reloadData];
-        
-    }
-    
-    
-}
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -226,27 +229,24 @@
     
 }
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    NSIndexPath *selectedRowIndex = [self.filteredTableView indexPathForSelectedRow];
-    NSString *selectedItem;
-    
-    
-    if(loadLectureList)
-    {
-        selectedItem = [filterdLectureList objectAtIndex: selectedRowIndex.row];
-    }
-    else
-    {
-        selectedItem = [filteredTagList objectAtIndex: selectedRowIndex.row];
-    }
-    
-    //buyCards.loadLectureList = YES;
-    //buyCards.selectedRow = selectedItem;
-    
-    
-}
 
+
+
+//- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    
+//    NSIndexPath *selectedRowIndex = [self.filteredTableView indexPathForSelectedRow];
+//    NSString *selectedItem;
+//    
+//    
+//         selectedItem = [filterdLectureList objectAtIndex: selectedRowIndex.row];
+//    }
+//    else
+//    {
+//        selectedItem = [filteredTagList objectAtIndex: selectedRowIndex.row];
+//    }
+//    
+//}
+//
 
 
 
@@ -302,7 +302,6 @@
 -(void) hideColorPickerView:(BOOL)hidden{
     
     if(hidden) {
-        
         [self.coursePickerView setAlpha:0];
         [self.coursePickerViewBorder setAlpha:0];
         [self.coursePickerViewBorder setHidden:YES];
@@ -311,13 +310,8 @@
         self.done.hidden = YES;
         self.cancel.hidden = YES;
         self.tabBarController.tabBar.hidden=NO;
-        
-        
-        
     }
     else {
-        
-        
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationDuration:0.75];
         [self.coursePickerView setAlpha:1];
@@ -330,12 +324,18 @@
         self.done.hidden = NO;
         self.cancel.hidden = NO;
         self.tabBarController.tabBar.hidden=YES;
-        
-        
     }
     
 }
 
+
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 
 @end

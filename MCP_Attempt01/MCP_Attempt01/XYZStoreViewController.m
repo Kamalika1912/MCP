@@ -80,8 +80,7 @@
 
 
 
-// return an ascending ordererd list of Topics for wich there are card available for the specified course
-
+// return a list of Topics (not numbered lectures anymore) for wich there are card available for the specified course
 -(NSMutableArray *) loadLectureListForCourse:(NSString *)course {
     // filter all the cards by course
     NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", course]];
@@ -94,14 +93,6 @@
             [lectureList addObject:lecture];
         }
     }
-    
-    
-//    NSArray *sorted = [lectureList sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-//        if (obj1[@"lecture"] < obj2[@"lecture"]) return NSOrderedDescending;
-//        else return NSOrderedAscending;
-//    }];
-    
-
     return lectureList;
 }
 
