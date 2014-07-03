@@ -35,7 +35,7 @@
     NSError *error;
     NSString *path;
     // STORE
-    path = [[NSBundle mainBundle] pathForResource:@"Store" ofType:@"json"];
+    path = [[NSBundle mainBundle] pathForResource:@"MyCards" ofType:@"json"];
     _myCardList = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
     if (error) NSLog(@"JSONObjectWithData error loading CARDS: %@", error);
 
