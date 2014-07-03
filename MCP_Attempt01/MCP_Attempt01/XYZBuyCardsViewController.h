@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *BuyList;
 
 @property NSArray *flashCardList;
+@property NSArray *myCardList;
 
 @end
