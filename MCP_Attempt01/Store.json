@@ -5,7 +5,7 @@
     ,   "course"    :   "DIS 1"
     ,   "lecture"   :   "Lecture # 1"
     ,   "question"  :   "What does D, I, A, stands for in DIA Cycle? "
-    ,   "answer"    :   "Design,Implementation,Analysis "
+    ,   "answer"    :   "Design \r Implementation \r Analysis"
     ,   "upVote"    :   "15"
     ,   "downVote"  :   "10"
     ,   "createdBy" :   "Card Master"

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XYZFlashcard.h"
 
 @interface XYZFlashcardFront : UIView
 
@@ -17,7 +18,7 @@
 @property (strong,nonatomic) UILabel *thumbsUpLabel;
 @property (strong,nonatomic) UILabel *thumbsDownLabel;
 
--(id) initWithQuestion: (NSString *)question withThumbsUp:(NSInteger)thumbsUp andThumbsDown:(NSInteger)thumbsDown isAddedToFavourites:(BOOL)addedToFavourites withFrame:(CGRect)frame;
+-(id) initWithFlashcard:(XYZFlashcard *)card withFrame:(CGRect)frame;
 -(void) thumbsDownPressed:(UITapGestureRecognizer *)gestureRecognizer;
 -(void) thumbsUpPressed:(UITapGestureRecognizer *)gestureRecognizer;
 @end

@@ -224,7 +224,7 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    [self performSegueWithIdentifier:@"startStudying" sender:self];
+    [self performSegueWithIdentifier:@"startStudying" sender:self];
     
 }
 
@@ -236,8 +236,13 @@
     NSIndexPath *selectedRowIndex = [self.filteredTableView indexPathForSelectedRow];
     NSString *selectedItem;
     
-    
+    NSArray *filteredCardsByCourse = [myCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", selectedCourseString]];
     selectedItem = [filterdLectureList objectAtIndex: selectedRowIndex.row];
+    NSArray *filteredCards  = [filteredCardsByCourse filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(title == %@)", selectedItem]];
+    
+    // pass the array of cards to next view
+    XYZStartStudyingViewController *targetVC = (XYZStartStudyingViewController  *)segue.destinationViewController;
+    targetVC.myCards= filteredCards;
 }
 
 

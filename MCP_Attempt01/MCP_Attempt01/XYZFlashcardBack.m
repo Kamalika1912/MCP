@@ -7,6 +7,7 @@
 //
 
 #import "XYZFlashcardBack.h"
+#import "XYZFlashcard.h"
 
 @implementation XYZFlashcardBack
 
@@ -20,7 +21,7 @@
     return self;
 }
 
--(id) initWithAnswer: (NSString *)answer withThumbsUp:(NSInteger)thumbsUp andThumbsDown:(NSInteger)thumbsDown isAddedToFavourites:(BOOL)addedToFavourites withFrame:(CGRect)frame
+-(id) initWithFlashcard:(XYZFlashcard *)card withFrame:(CGRect)frame
 {
     
     self = [super initWithFrame:frame];
@@ -29,16 +30,17 @@
         
         
         self.backCoverButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        self.backCoverButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
-        self.backCoverButton.layer.borderWidth = 1.0;
+        self.backCoverButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+        self.backCoverButton.layer.backgroundColor = [UIColor yellowColor].CGColor;
+        self.backCoverButton.layer.borderWidth = 2.0;
         self.backCoverButton.frame = CGRectMake(20, 10, 280, 330);
         //self.preview.backgroundColor = [UIColor blueColor];
         self.backCoverButton.layer.cornerRadius = 5.0;
-        [self.backCoverButton setTitle:answer forState:UIControlStateNormal];
+        [self.backCoverButton setTitle:card[@"answer"] forState:UIControlStateNormal];
         self.backCoverButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        [self.backCoverButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [self.backCoverButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         self.backCoverButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self.backCoverButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
+        [self.backCoverButton.titleLabel setFont:[UIFont systemFontOfSize:20]];
         [self addSubview:self.backCoverButton];
         
         
@@ -69,14 +71,14 @@
         self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 19, 35, 25)];
         self.redLabel.textColor = [UIColor redColor];
         [self.redLabel setFont:[UIFont systemFontOfSize:19]];
-        self.redLabel.text = [NSString stringWithFormat:@"%i",thumbsDown];
+        self.redLabel.text = card[@"downVote"];
         self.redLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.redLabel];
         
         self.greenLabel = [[UILabel alloc] initWithFrame:CGRectMake(255, 19, 35, 25)];
         self.greenLabel.textColor = [UIColor greenColor];
         [self.greenLabel setFont:[UIFont systemFontOfSize:19]];
-        self.greenLabel.text = [NSString stringWithFormat:@"%i",thumbsUp];;
+        self.redLabel.text = card[@"upVote"];
         self.greenLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.greenLabel];
         

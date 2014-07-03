@@ -11,14 +11,16 @@
 @interface XYZStartStudyingViewController : UIViewController<UIScrollViewDelegate>
 {
 
-    NSMutableArray *myCardsList;
+//    NSMutableArray *myCardsList;
 }
 
 
 @property (strong, nonatomic) IBOutlet UIButton *favouriteButton;
-
 @property (strong, nonatomic) UIScrollView *horizontalScroll;
 @property (strong, nonatomic) IBOutlet UILabel *cardNumber;
+
+
+@property NSArray *myCards;
 
 
 - (IBAction)favouriteButtonClicked:(id)sender;
