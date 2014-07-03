@@ -61,6 +61,16 @@
 		6EEC9C15195CF73100B7E980 /* pouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C14195CF73100B7E980 /* pouch.png */; };
 		6EEC9C17195CF9FB00B7E980 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C16195CF9FB00B7E980 /* Splash.png */; };
 		6EEC9C1B195CFA9100B7E980 /* Flip-logo-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C1A195CFA9100B7E980 /* Flip-logo-120x120.png */; };
+		6EF02FCA196592AA006F0838 /* Images-3.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EF02FC9196592AA006F0838 /* Images-3.xcassets */; };
+		6EF0FCA419657E6100B94C12 /* createico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF0FC9F19657E6100B94C12 /* createico.png */; };
+		6EF0FCA519657E6100B94C12 /* storeico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF0FCA019657E6100B94C12 /* storeico.png */; };
+		6EF0FCA619657E6100B94C12 /* studyico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF0FCA119657E6100B94C12 /* studyico.png */; };
+		6EF0FCA719657E6100B94C12 /* userico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF0FCA219657E6100B94C12 /* userico.png */; };
+		6EF0FCA819657E6100B94C12 /* walletico.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF0FCA319657E6100B94C12 /* walletico.png */; };
+		6EF0FCAC19657FBF00B94C12 /* XYZLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF0FCAB19657FBF00B94C12 /* XYZLoginViewController.m */; };
+		6EF0FCAE19658ED000B94C12 /* logo-rwth-klein-quadr.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EF0FCAD19658ED000B94C12 /* logo-rwth-klein-quadr.jpg */; };
+		6EF0FCB019658F0800B94C12 /* L2P-Logo_neu.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF0FCAF19658F0800B94C12 /* L2P-Logo_neu.png */; };
+		6EF0FCB219658F7900B94C12 /* logo_rwth.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6EF0FCB119658F7900B94C12 /* logo_rwth.gif */; };
 		6EF76DB4195F06F40012E7B7 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF76DB3195F06F40012E7B7 /* background.png */; };
 		6EF76DB6195F0EFE0012E7B7 /* thumbs_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF76DB5195F0EFE0012E7B7 /* thumbs_up.png */; };
 		6EF76DB8195F0F740012E7B7 /* thumbs_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EF76DB7195F0F740012E7B7 /* thumbs_down.png */; };
@@ -153,6 +163,17 @@
 		6EEC9C14195CF73100B7E980 /* pouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pouch.png; sourceTree = "<group>"; };
 		6EEC9C16195CF9FB00B7E980 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
 		6EEC9C1A195CFA9100B7E980 /* Flip-logo-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Flip-logo-120x120.png"; sourceTree = "<group>"; };
+		6EF02FC9196592AA006F0838 /* Images-3.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-3.xcassets"; sourceTree = "<group>"; };
+		6EF0FC9F19657E6100B94C12 /* createico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createico.png; sourceTree = "<group>"; };
+		6EF0FCA019657E6100B94C12 /* storeico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = storeico.png; sourceTree = "<group>"; };
+		6EF0FCA119657E6100B94C12 /* studyico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = studyico.png; sourceTree = "<group>"; };
+		6EF0FCA219657E6100B94C12 /* userico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userico.png; sourceTree = "<group>"; };
+		6EF0FCA319657E6100B94C12 /* walletico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walletico.png; sourceTree = "<group>"; };
+		6EF0FCAA19657FBF00B94C12 /* XYZLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZLoginViewController.h; sourceTree = "<group>"; };
+		6EF0FCAB19657FBF00B94C12 /* XYZLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZLoginViewController.m; sourceTree = "<group>"; };
+		6EF0FCAD19658ED000B94C12 /* logo-rwth-klein-quadr.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "logo-rwth-klein-quadr.jpg"; sourceTree = "<group>"; };
+		6EF0FCAF19658F0800B94C12 /* L2P-Logo_neu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "L2P-Logo_neu.png"; sourceTree = "<group>"; };
+		6EF0FCB119658F7900B94C12 /* logo_rwth.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo_rwth.gif; sourceTree = "<group>"; };
 		6EF76DB3195F06F40012E7B7 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		6EF76DB5195F0EFE0012E7B7 /* thumbs_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbs_up.png; sourceTree = "<group>"; };
 		6EF76DB7195F0F740012E7B7 /* thumbs_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbs_down.png; sourceTree = "<group>"; };
@@ -187,6 +208,7 @@
 		5A8E39C419471D030020836F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				6EF0FCA919657FA600B94C12 /* LoginScreen */,
 				6EEC9C03195CEE1700B7E980 /* SplashScreen */,
 				6E2ED563195C888300016C15 /* Create */,
 				5AB25AAC19573961000EA6C1 /* Profile */,
@@ -223,6 +245,14 @@
 		5A8E39C919479B570020836F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6EF0FCB119658F7900B94C12 /* logo_rwth.gif */,
+				6EF0FCAF19658F0800B94C12 /* L2P-Logo_neu.png */,
+				6EF0FCAD19658ED000B94C12 /* logo-rwth-klein-quadr.jpg */,
+				6EF0FC9F19657E6100B94C12 /* createico.png */,
+				6EF0FCA019657E6100B94C12 /* storeico.png */,
+				6EF0FCA119657E6100B94C12 /* studyico.png */,
+				6EF0FCA219657E6100B94C12 /* userico.png */,
+				6EF0FCA319657E6100B94C12 /* walletico.png */,
 				6EF76DB3195F06F40012E7B7 /* background.png */,
 				6EEC9C16195CF9FB00B7E980 /* Splash.png */,
 				6EF76DB5195F0EFE0012E7B7 /* thumbs_up.png */,
@@ -340,6 +370,7 @@
 				5AE6D3E01946330E006BCF1A /* XYZAppDelegate.m */,
 				5AE6D3E21946330E006BCF1A /* Main.storyboard */,
 				5AE6D3EB1946330E006BCF1A /* Images.xcassets */,
+				6EF02FC9196592AA006F0838 /* Images-3.xcassets */,
 				5AE6D3D71946330E006BCF1A /* Supporting Files */,
 			);
 			path = MCP_Attempt01;
@@ -395,6 +426,15 @@
 				6EEC9C08195CEE6700B7E980 /* XYZSplashViewController.m */,
 			);
 			name = SplashScreen;
+			sourceTree = "<group>";
+		};
+		6EF0FCA919657FA600B94C12 /* LoginScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6EF0FCAA19657FBF00B94C12 /* XYZLoginViewController.h */,
+				6EF0FCAB19657FBF00B94C12 /* XYZLoginViewController.m */,
+			);
+			name = LoginScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,7 +516,9 @@
 			files = (
 				5AB82239194BB71400A2A6FE /* flashcard.png in Resources */,
 				6EF76DB4195F06F40012E7B7 /* background.png in Resources */,
+				6EF0FCA519657E6100B94C12 /* storeico.png in Resources */,
 				6EEC9C02195CBB3A00B7E980 /* thumbs_up.jpg in Resources */,
+				6EF0FCA819657E6100B94C12 /* walletico.png in Resources */,
 				6EEC9C0F195CF3F800B7E980 /* plus-sign.png in Resources */,
 				5A55C32A195606BC00C38DB2 /* drop_down@2x.png in Resources */,
 				5AB82235194BAD7300A2A6FE /* user.png in Resources */,
@@ -484,23 +526,30 @@
 				6EEC9C00195CBB3100B7E980 /* thumbs_down.jpg in Resources */,
 				6EEC9C0B195CF1E700B7E980 /* Flip-logo.png in Resources */,
 				5AB8222F194B53D900A2A6FE /* filterIcon.png in Resources */,
+				6EF0FCA719657E6100B94C12 /* userico.png in Resources */,
 				6EEC9C1B195CFA9100B7E980 /* Flip-logo-120x120.png in Resources */,
 				6EEC9C13195CF54200B7E980 /* id-card.png in Resources */,
 				6EEC9C17195CF9FB00B7E980 /* Splash.png in Resources */,
 				6EF76DB6195F0EFE0012E7B7 /* thumbs_up.png in Resources */,
 				6EEC9C10195CF3F800B7E980 /* graduation-cap.png in Resources */,
 				6EEC9C15195CF73100B7E980 /* pouch.png in Resources */,
+				6EF02FCA196592AA006F0838 /* Images-3.xcassets in Resources */,
+				6EF0FCB219658F7900B94C12 /* logo_rwth.gif in Resources */,
 				5A6E432A1958F82300C03987 /* favouriteSelected.png in Resources */,
 				6EEC9C11195CF3F800B7E980 /* shopping-cart.png in Resources */,
+				6EF0FCA619657E6100B94C12 /* studyico.png in Resources */,
 				5AE6D3EC1946330E006BCF1A /* Images.xcassets in Resources */,
 				5AB8223D194BBD9700A2A6FE /* reputation.png in Resources */,
 				5AE6D3DB1946330E006BCF1A /* InfoPlist.strings in Resources */,
 				3516B836196445C4004DDF94 /* MyCards.json in Resources */,
+				6EF0FCAE19658ED000B94C12 /* logo-rwth-klein-quadr.jpg in Resources */,
 				5AE6D3E41946330E006BCF1A /* Main.storyboard in Resources */,
+				6EF0FCB019658F0800B94C12 /* L2P-Logo_neu.png in Resources */,
 				5A6E432B1958F82300C03987 /* favouriteNotSelected.png in Resources */,
 				5AB82233194BABE700A2A6FE /* coin.png in Resources */,
 				6EF76DB8195F0F740012E7B7 /* thumbs_down.png in Resources */,
 				35FFA2D3195DB73F0007480E /* Courses.json in Resources */,
+				6EF0FCA419657E6100B94C12 /* createico.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +571,7 @@
 				5A6E43311959150300C03987 /* XYZFlashcardBack.m in Sources */,
 				5A6E4320195769CD00C03987 /* XYZStartStudyingViewController.m in Sources */,
 				6EEC9C09195CEE6700B7E980 /* XYZSplashViewController.m in Sources */,
+				6EF0FCAC19657FBF00B94C12 /* XYZLoginViewController.m in Sources */,
 				5AE6D41519463F93006BCF1A /* XYZLecture.m in Sources */,
 				5AB821FD1949146900A2A6FE /* DropDownViewCell.m in Sources */,
 				5AB25AA9195735A7000EA6C1 /* XYZBuyCardsViewController.m in Sources */,
@@ -661,6 +711,8 @@
 		5AE6D4031946330E006BCF1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCP_Attempt01/MCP_Attempt01-Prefix.pch";
@@ -673,6 +725,8 @@
 		5AE6D4041946330E006BCF1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MCP_Attempt01/MCP_Attempt01-Prefix.pch";
