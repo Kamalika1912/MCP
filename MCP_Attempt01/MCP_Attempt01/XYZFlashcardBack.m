@@ -40,7 +40,9 @@
         self.backCoverButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         [self.backCoverButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         self.backCoverButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self.backCoverButton.titleLabel setFont:[UIFont systemFontOfSize:20]];
+        [self.backCoverButton.titleLabel setFont:[UIFont systemFontOfSize:25]];
+        [self.backCoverButton setTitleEdgeInsets:UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)]; // PADDING
+
         [self addSubview:self.backCoverButton];
         
         
