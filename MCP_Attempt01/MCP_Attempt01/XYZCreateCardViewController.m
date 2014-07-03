@@ -31,7 +31,7 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.tabBarController.tabBar.hidden = YES;
-    self.view.backgroundColor = [UIColor clearColor ];
+    //self.view.backgroundColor = [UIColor clearColor ];
 }
 
 -(void)flipCardToBackAtPos:(UIButton *)sender {

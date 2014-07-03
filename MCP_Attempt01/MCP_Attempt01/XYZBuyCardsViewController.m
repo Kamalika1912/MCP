@@ -45,7 +45,7 @@
     
     
     
-    self.view.backgroundColor = [UIColor clearColor ];    //show the navigation bar as it is hidden by the parent
+  //   self.view.backgroundColor = [UIColor clearColor ];    //show the navigation bar as it is hidden by the parent
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.BuyList.dataSource = self;
     self.BuyList.delegate = self;
@@ -77,10 +77,14 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *tagCell = [tableView dequeueReusableCellWithIdentifier:@"StoreBuyCell" forIndexPath:indexPath];
     XYZCardPreview *cardPreview = [[XYZCardPreview alloc] initWithFlashcard:_flashCardList[indexPath.row] andFrame:CGRectMake(5, 5, 160 , 320)];
-    
-    if (
-        [_flashCardList indexOfObject:  ] )
-    
+    // check if I already OWN that card and disable buying option in that case
+    if ([_myCardList indexOfObject:_flashCardList[indexPath.row]  ] != NSNotFound ) {
+        
+        //TODO UI TEAM! GO CRAZY HERE. do what you want to a card that we already own. change background, whatever. as standard i change label and disable the button but that's pretty ugly
+        
+        [cardPreview.buy setTitle:@"Got it" forState:UIControlStateNormal];
+        cardPreview.buy.enabled = NO;
+    }
         [tagCell.contentView addSubview:cardPreview];
     //tagCell.selectionStyle = UITableViewCellSelectionStyleNone;
     

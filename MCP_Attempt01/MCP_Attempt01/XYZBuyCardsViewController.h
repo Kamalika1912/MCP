@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XYZBuyCardsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface XYZBuyCardsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
 {
 //    NSMutableArray *flashCardList;
 }

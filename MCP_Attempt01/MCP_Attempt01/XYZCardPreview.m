@@ -29,6 +29,7 @@
         
         self.preview = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         self.preview.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        self.preview.layer.backgroundColor = [UIColor yellowColor].CGColor;
         self.preview.layer.borderWidth = 1.0;
         self.preview.frame = CGRectMake(10, 10, 160, 200);
         //self.preview.backgroundColor = [UIColor blueColor];
@@ -41,16 +42,16 @@
         [self addSubview:self.preview];
         
         
-        self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 70, 100, 50)];
+        self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 30, 100, 50)];
         self.redLabel.textColor = [UIColor redColor];
-        [self.redLabel setFont:[UIFont systemFontOfSize:40]];
+        [self.redLabel setFont:[UIFont systemFontOfSize:30]];
         self.redLabel.text = flashcardPreview[@"downVote"];
         self.redLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.redLabel];
         
         self.greenLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 20, 100, 50)];
         self.greenLabel.textColor = [UIColor greenColor];
-        [self.greenLabel setFont:[UIFont systemFontOfSize:40]];
+        [self.greenLabel setFont:[UIFont systemFontOfSize:30]];
         self.greenLabel.text = flashcardPreview[@"upVote"];
         self.greenLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.greenLabel];

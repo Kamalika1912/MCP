@@ -1,86 +1,58 @@
- [
-  {
-  "id"        :   "1"
-  ,   "title"     :   "DIA definition"
-  ,   "course"    :   "1"
-  ,   "lecture"   :   "1"
-  ,   "question"  :   "What does D, I, A, stands for in DIA Cycle? "
-  ,   "answer"    :   "Design,Implementation,Analysis "
-  ,   "upvote"    :   "15"
-  ,   "downVote"  :   "10"
-  ,   "createdBy" :   "17"
-  ,   "image"     :   ""
-  ,   "certified" :   "False"
-  }
-  ,
-  {
-  "id"        :   "2"
-  ,   "title"     :   "gulfs"
-  ,   "course"    :   "1"
-  ,   "lecture"   :   "2"
-  ,   "question"  :   "What are gulfs?"
-  ,   "answer"    :   "problems that arise bewteen action and execution"
-  ,   "upvote"    :   "1"
-  ,   "downVote"  :   "3"
-  ,   "createdBy" :   "17"
-  ,   "image"     :   ""
-  ,   "certified" :   "False"
-  }
-  ,
-  {
-  "id"        :   "3"
-  ,   "title"     :   "7 stages"
-  ,   "course"    :   "1"
-  ,   "lecture"   :   "2"
-  ,   "question"  :   "What are the 7 stages of action?"
-  ,   "answer"    :   "1) Goal 2) Intention 3) Action 4) Execution 5) Perception 6) Interpretation 7) Evaluation"
-  ,   "upvote"    :   "29"
-  ,   "downVote"  :   "0"
-  ,   "createdBy" :   "17"
-  ,   "image"     :   ""
-  ,   "certified" :   "False"
-  }
-  ,
-  {
-  "id"        :   "4"
-  ,   "title"     :   "Design Principle"
-  ,   "course"    :   "1"
-  ,   "lecture"   :   "2"
-  ,   "question"  :   "Which are the Design principle according to Norman?"
-  ,   "answer"    :   "1) Consistency 2) Visibility 3) Affordance 4) Mapping 5) Constraints"
-  ,   "upVote"    :   "9"
-  ,   "downVote"  :   "5"
-  ,   "createdBy" :   "7"
-  ,   "image"     :   ""
-  ,   "certified" :   "False"
-  }
-  ,
-  {
-  "id"        :   "5"
-  ,   "title"     :   "Knowledge Head/World"
-  ,   "course"    :   "1"
-  ,   "lecture"   :   "3"
-  ,   "question"  :   "What is the difference between knowledge in the world and knolewdge in the head ?"
-  ,   "answer"    :   "Knowledge in the world means the user do not consiuscly know how to operate something, until it get in front of it. Instead knowledge in the head means the user memorize and know at any time what to do in a certain situation"
-  ,   "upvote"    :   "6"
-  ,   "downVote"  :   "15"
-  ,   "createdBy" :   "7"
-  ,   "image"     :   ""
-  ,   "certified" :   "False"
-  }
-  ,
-  {
-  "id"        :   "6"
-  ,   "title"     :   "AR/VR difference"
-  ,   "course"    :   "4"
-  ,   "lecture"   :   "2"
-  ,   "question"  :   "What is the difference between AR and VR ?"
-  ,   "answer"    :   "Virtual Reality is a complete virtual environment, whereas the Augmented Reality add some virual elements to a real environment"
-  ,   "upvote"    :   "6"
-  ,   "downVote"  :   "5"
-  ,   "createdBy" :   "0"
-  ,   "image"     :   ""
-  ,   "certified" :   "False"
-  }
-  
-  ]
+[
+ {
+ "id"        :   "1"
+ ,   "title"     :   "DIA"
+ ,   "course"    :   "DIS 1"
+ ,   "lecture"   :   "Lecture # 1"
+ ,   "question"  :   "What does D, I, A, stands for in DIA Cycle? "
+ ,   "answer"    :   "Design,Implementation,Analysis "
+ ,   "upvote"    :   "15"
+ ,   "downVote"  :   "10"
+ ,   "createdBy" :   "Card Master"
+ ,   "image"     :   ""
+ ,   "certified" :   "False"
+ }
+ ,
+ {
+  "id"        :   "11"
+ ,   "title"     :   "DIA"
+ ,   "course"    :   "DIS 1"
+ ,   "lecture"   :   "Lecture # 1"
+ ,   "question"  :   "What was used before DIA? "
+ ,   "answer"    :   "Waterfall Model"
+ ,   "upvote"    :   "15"
+ ,   "downVote"  :   "10"
+ ,   "createdBy" :   "Card Master"
+ ,   "image"     :   ""
+ ,   "certified" :   "False"
+ }
+ ,
+ {
+ "id"        :   "3"
+ ,   "title"     :   "7 stages of action"
+ ,   "course"    :   "DIS 1"
+ ,   "lecture"   :   "Lecture # Lecture # 2"
+ ,   "question"  :   "What are the 7 stages of action?"
+ ,   "answer"    :   "1) Goal 2) Intention 3) Action 4) Execution 5) Perception 6) Interpretation 7) Evaluation"
+ ,   "upvote"    :   "29"
+ ,   "downVote"  :   "0"
+ ,   "createdBy" :   "Card Master"
+ ,   "image"     :   ""
+ ,   "certified" :   "False"
+ }
+ ,
+ {
+    "id"        :   "4"
+ ,   "title"     :   "Design Principle"
+ ,   "course"    :   "DIS 1"
+ ,   "lecture"   :   "Lecture # 2"
+ ,   "question"  :   "Which are the Design principle according to Norman?"
+ ,   "answer"    :   "1) Consistency 2) Visibility 3) Affordance 4) Mapping 5) Constraints"
+ ,   "upVote"    :   "9"
+ ,   "downVote"  :   "5"
+ ,   "createdBy" :   "BlackSmith of Cards"
+ ,   "image"     :   ""
+ ,   "certified" :   "False"
+ }
+ ,
+ ]
