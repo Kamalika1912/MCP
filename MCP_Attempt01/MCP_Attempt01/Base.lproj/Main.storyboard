@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="8YX-ce-x5E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gzb-8p-Y2E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -79,7 +79,7 @@
                             <constraint firstItem="yoU-qe-cVV" firstAttribute="leading" secondItem="uFk-j4-c45" secondAttribute="trailing" constant="-55" id="r7I-3C-lQ5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="id-card.png" id="u1e-5L-l1D"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="userico.png" id="u1e-5L-l1D"/>
                     <connections>
                         <outlet property="coins" destination="yoU-qe-cVV" id="MZh-Yv-cRN"/>
                         <outlet property="username" destination="Zhg-ve-WU7" id="lGd-5p-F5D"/>
@@ -222,6 +222,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJB-j4-jON" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3867" y="1030"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="fgd-7F-9mC">
+            <objects>
+                <viewController id="Gzb-8p-Y2E" customClass="XYZLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OAq-YB-C37"/>
+                        <viewControllerLayoutGuide type="bottom" id="lid-UJ-IBI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JMi-yI-Vl5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzu-hP-exz">
+                                <rect key="frame" x="252" y="243" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8YX-ce-x5E" kind="modal" id="tEu-SA-YkH"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="L2P-Logo_neu.png" translatesAutoresizingMaskIntoConstraints="NO" id="0yf-7e-4EJ">
+                                <rect key="frame" x="-13" y="136" width="119" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_rwth.gif" translatesAutoresizingMaskIntoConstraints="NO" id="bV0-3A-sx4">
+                                <rect key="frame" x="14" y="33" width="293" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQX-mg-bIH">
+                                <rect key="frame" x="87" y="163" width="84" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGy-YB-fZc">
+                                <rect key="frame" x="87" y="203" width="81" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cEy-RT-COW">
+                                <rect key="frame" x="180" y="159" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hTW-3B-JAo">
+                                <rect key="frame" x="180" y="199" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S6g-mi-mqO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6759" y="1394"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Vex-rW-GRa">
@@ -404,7 +468,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="oqG-io-u0w">
-                        <barButtonItem key="rightBarButtonItem" image="pouch.png" id="OL8-rE-H10"/>
+                        <barButtonItem key="rightBarButtonItem" image="walletico.png" id="OL8-rE-H10"/>
                     </navigationItem>
                     <connections>
                         <outlet property="BuyList" destination="a81-9I-zi3" id="0et-DS-6mC"/>
@@ -418,7 +482,7 @@
         <scene sceneID="L8F-qz-5B2">
             <objects>
                 <navigationController definesPresentationContext="YES" id="MQP-UY-b3K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Store" image="shopping-cart.png" id="ezB-gn-Jqd"/>
+                    <tabBarItem key="tabBarItem" title="Store" image="storeico.png" id="ezB-gn-Jqd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1GO-6J-mhe">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -457,7 +521,7 @@
         <scene sceneID="gwY-HB-B3I">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7sj-0z-8e8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Flashcards" image="graduation-cap.png" id="SFC-62-7Jd"/>
+                    <tabBarItem key="tabBarItem" title="My Flashcards" image="studyico.png" id="SFC-62-7Jd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0tL-kB-jO6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -480,7 +544,7 @@
         <scene sceneID="iah-S5-7rV">
             <objects>
                 <navigationController definesPresentationContext="YES" id="iMu-hk-dTy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Create" image="plus-sign.png" id="vGH-om-9i5"/>
+                    <tabBarItem key="tabBarItem" title="Create" image="createico.png" id="vGH-om-9i5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5e4-P1-7q1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -501,16 +565,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="L2P-Logo_neu.png" width="355" height="355"/>
         <image name="coin.png" width="55" height="55"/>
+        <image name="createico.png" width="40" height="40"/>
         <image name="drop_down.png" width="153" height="27"/>
         <image name="flashcard.png" width="55" height="38"/>
-        <image name="graduation-cap.png" width="30" height="30"/>
-        <image name="id-card.png" width="30" height="30"/>
-        <image name="plus-sign.png" width="29" height="30"/>
-        <image name="pouch.png" width="30" height="30"/>
+        <image name="logo_rwth.gif" width="554" height="150"/>
         <image name="reputation.png" width="58" height="58"/>
-        <image name="shopping-cart.png" width="29" height="30"/>
+        <image name="storeico.png" width="40" height="40"/>
+        <image name="studyico.png" width="40" height="40"/>
         <image name="user.png" width="64" height="64"/>
+        <image name="userico.png" width="40" height="40"/>
+        <image name="walletico.png" width="40" height="40"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
