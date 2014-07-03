@@ -28,6 +28,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    // ############## LOAD CARD DATA - Load the card that I have ALREADY BOUGHT, so to not show the buy button for them
+    // load locally the whole list of cards
+    NSError *error;
+    NSString *path;
+    // STORE
+    path = [[NSBundle mainBundle] pathForResource:@"Store" ofType:@"json"];
+    storeCards = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+    if (error) NSLog(@"JSONObjectWithData error loading CARDS: %@", error);
+
+    
+    
+    
+    
+    
+    
+    
      self.view.backgroundColor = [UIColor clearColor ];    //show the navigation bar as it is hidden by the parent
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.BuyList.dataSource = self;

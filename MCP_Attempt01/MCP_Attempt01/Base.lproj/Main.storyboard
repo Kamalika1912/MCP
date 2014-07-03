@@ -127,11 +127,6 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <view alpha="0.49999999999999961" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sPg-Ka-cHm">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CdD-IH-ryU">
                                 <rect key="frame" x="20" y="126" width="280" height="232"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -172,7 +167,6 @@
                         <outlet property="cancel" destination="lRt-Gd-vfs" id="ik6-Mq-Mn2"/>
                         <outlet property="coursePicker" destination="GQF-UF-v8x" id="FLJ-Fs-axF"/>
                         <outlet property="coursePickerView" destination="CdD-IH-ryU" id="bbG-Oh-b0h"/>
-                        <outlet property="coursePickerViewBorder" destination="sPg-Ka-cHm" id="Dcs-rv-hy1"/>
                         <outlet property="done" destination="r7q-FI-M3y" id="sys-v5-ZOv"/>
                         <outlet property="filteredTableView" destination="Znq-mC-gKN" id="tRq-CR-rFo"/>
                         <outlet property="selectCourseButton" destination="K54-N3-7tw" id="nXo-pc-YZ3"/>
@@ -182,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0m2-CM-ooD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4459" y="1040"/>
+            <point key="canvasLocation" x="-4495" y="1040"/>
         </scene>
         <!--Start Studying View Controller-->
         <scene sceneID="uZy-4n-0Wb">
@@ -293,10 +287,11 @@
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D1Q-oF-YF7" id="IuD-Kx-K8E">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Puv-mz-rrG">
-                                                    <rect key="frame" x="-15" y="0.0" width="30" height="0.0"/>
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

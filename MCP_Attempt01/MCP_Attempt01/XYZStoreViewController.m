@@ -212,6 +212,14 @@
     
 }
 
+// show the picker
+- (IBAction)selectCourseButtonTapped:(id)sender {
+    [self hideColorPickerView:NO];
+    [self.coursePickerView setBackgroundColor:[UIColor darkGrayColor]];
+    [self.coursePicker selectRow:selectedCourseRowInPicker inComponent:0 animated:YES];
+    [self.filteredTableView deselectRowAtIndexPath:[self.filteredTableView indexPathForSelectedRow] animated:YES];
+}
+
 
 
 
@@ -255,6 +263,12 @@
 
 
 
+
+
+
+
+
+
 // ###### STUFF TO DO BEFORE SHOWING THE LIST OF CARDS (preparing and sending the list)
 
 
@@ -264,9 +278,8 @@
     NSString *selectedItem;
 
     NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", selectedCourseString]];
-//        NSUInteger row = [indexPath row];
     selectedItem = [filterdLectureList objectAtIndex: selectedRowIndex.row];
-    NSArray *filteredCards  = [filteredCardsByCourse filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(lecture == %@)", selectedItem]];
+    NSArray *filteredCards  = [filteredCardsByCourse filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(title == %@)", selectedItem]];
 
     // pass the array of cards to next view
     XYZBuyCardsViewController *targetVC = (XYZBuyCardsViewController*)segue.destinationViewController;
@@ -278,36 +291,6 @@
 
 
 
-
-
-
-- (IBAction)selectCourseButtonTapped:(id)sender {
-    
-    [self hideColorPickerView:NO];
-    [self.coursePickerView setBackgroundColor:[UIColor darkGrayColor]];
-    
-//    
-//    
-//    // Why the if? don't they do the same thing?
-//    if ([self.selectCourseButton.titleLabel.text isEqualToString:@"Select Course"]) {
-        [self.coursePicker selectRow:selectedCourseRowInPicker inComponent:0 animated:YES];
-//    }
-//    else {
-//        
-//        
-//        [self.coursePicker selectRow:selectedCourseRowInPicker inComponent:0 animated:YES];
-    
-//    }
-    
-    [self.filteredTableView deselectRowAtIndexPath:[self.filteredTableView indexPathForSelectedRow] animated:YES];
-    
-    
-}
-
-
-
-- (IBAction)filterValueChanged:(id)sender {
-}
 
 
 
