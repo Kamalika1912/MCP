@@ -22,7 +22,6 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *coursePicker;
 @property (weak, nonatomic) IBOutlet UIButton *selectCourseButton;
-@property (weak, nonatomic) IBOutlet UISwitch *selectFilter;
 @property (weak, nonatomic) IBOutlet UIView *coursePickerView;
 @property (weak, nonatomic) IBOutlet UIView *coursePickerViewBorder;
 @property (weak, nonatomic) IBOutlet UIButton *done;

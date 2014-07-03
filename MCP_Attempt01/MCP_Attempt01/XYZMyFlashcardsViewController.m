@@ -131,7 +131,7 @@
     label = [[UILabel alloc] init];
     label.font= [UIFont systemFontOfSize:16];
     label.textColor = [UIColor whiteColor];
-    label.text= [courseList objectAtIndex:row];
+    label.text= [courseList objectAtIndex:row][@"title"];
     label.textAlignment = NSTextAlignmentCenter;
     
     return label;
@@ -226,7 +226,7 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [self performSegueWithIdentifier:@"startStudying" sender:self];
+//    [self performSegueWithIdentifier:@"startStudying" sender:self];
     
 }
 
