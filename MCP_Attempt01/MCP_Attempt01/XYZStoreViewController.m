@@ -147,8 +147,6 @@
     UILabel *label = (id)view;
     label = [[UILabel alloc] init];
     label.font= [UIFont systemFontOfSize:16];
-    
-    
     label.text= [courseList objectAtIndex:row][@"title"];
     label.textAlignment = NSTextAlignmentCenter;
     
@@ -167,6 +165,12 @@
     filterdLectureList = [self loadLectureListForCourse:[courseList objectAtIndex:selectedCourseRowInPicker][@"title"]];
     
     [self.filteredTableView reloadData];
+    
+    // save the selected course for other tab use and future uses
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:selectedCourseString forKey:@"selectedCourse"];
+    [defaults setInteger:selectedCourseRowInPicker forKey:@"selectedCourseRowInPicker"];
+    [defaults synchronize];
 }
 
 - (IBAction)cancelButtonTapped:(id)sender {
