@@ -54,36 +54,27 @@
     selectedCourseString = ([defaults stringForKey:@"selectedCourse"]) != nil ? [defaults stringForKey:@"selectedCourse"] : courseList[0][@"title"];
     selectedCourseRowInPicker= [defaults integerForKey:@"selectedCourseRowInPicker"];
     
-    
+    // set the course title in the fake dropdown button
     [self.selectCourseButton setTitle:selectedCourseString forState:UIControlStateNormal];
-
     
     
     
-    
-    
-    
+    //LOAD THE DATA IN THE TABLE ARRAY
+    filterdLectureList = [self loadLectureListForCourse:selectedCourseString ];
     
 
+    // STUFF done previosyly by devashish, it would be better to have all these things done in a xib file instead of programmatically
+    
     // programmatical preparation of dropdowmenu
     [self hideColorPickerView:YES];
     self.coursePickerView.layer.cornerRadius = 5.0;
     [self.coursePickerView setAlpha:0];
     [self.coursePickerViewBorder setAlpha:0];
-    
-    
-    
     self.coursePicker.dataSource = self;
     self.coursePicker.delegate =self;
     self.filteredTableView.dataSource = self;
     self.filteredTableView.delegate = self;
-    
-    
-//    [self loadFilterdLectureList];
-    
     self.navigationController.navigationBarHidden = YES;
-    
-    
 }
 
 
