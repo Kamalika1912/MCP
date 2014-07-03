@@ -45,62 +45,50 @@
     
     
     
-    
-     self.view.backgroundColor = [UIColor clearColor ];    //show the navigation bar as it is hidden by the parent
+    self.view.backgroundColor = [UIColor clearColor ];    //show the navigation bar as it is hidden by the parent
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.BuyList.dataSource = self;
     self.BuyList.delegate = self;
     
-//    [self.BuyList reloadData];
-    
     
 }
 
+
+
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
     if ([self isMovingFromParentViewController]) {
-        
         //this is done to remove the navigation bar from the parent screen as it has the drop down
         [self.navigationController setNavigationBarHidden:YES animated:YES];
-        
-        
     }
 }
 
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
 
+//#################### TABLE VIEW METHODS
+
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_flashCardList count];
-//    return 10;
-    
-    
 }
 
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-    
-    UITableViewCell *tagCell = [tableView dequeueReusableCellWithIdentifier:@"StoreBuyCell" forIndexPath:indexPath];
 
-    
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *tagCell = [tableView dequeueReusableCellWithIdentifier:@"StoreBuyCell" forIndexPath:indexPath];
     XYZCardPreview *cardPreview = [[XYZCardPreview alloc] initWithFlashcard:_flashCardList[indexPath.row] andFrame:CGRectMake(5, 5, 160 , 320)];
     
+    if (
+        [_flashCardList indexOfObject:  ] )
     
-    
-    [tagCell.contentView addSubview:cardPreview];
+        [tagCell.contentView addSubview:cardPreview];
     //tagCell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return tagCell;
-    
-    
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-    
     return 1;
-    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -110,6 +98,11 @@
 
 
 
+
+
+
+
+//###### SYSTEMS STANDARD STUFF
 
 - (void)didReceiveMemoryWarning
 {
