@@ -181,7 +181,6 @@
         [self.coursePicker setHidden:YES];
         self.done.hidden = YES;
         self.cancel.hidden = YES;
-        self.tabBarController.tabBar.hidden=NO;
     }
     else {
         [UIView beginAnimations:nil context:NULL];
@@ -195,7 +194,6 @@
         [self.coursePicker setHidden:NO];
         self.done.hidden = NO;
         self.cancel.hidden = NO;
-        self.tabBarController.tabBar.hidden=YES;
     }
     
 }
@@ -233,21 +231,15 @@
 
 
 
-//- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    
-//    NSIndexPath *selectedRowIndex = [self.filteredTableView indexPathForSelectedRow];
-//    NSString *selectedItem;
-//    
-//    
-//         selectedItem = [filterdLectureList objectAtIndex: selectedRowIndex.row];
-//    }
-//    else
-//    {
-//        selectedItem = [filteredTagList objectAtIndex: selectedRowIndex.row];
-//    }
-//    
-//}
-//
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    NSIndexPath *selectedRowIndex = [self.filteredTableView indexPathForSelectedRow];
+    NSString *selectedItem;
+    
+    
+    selectedItem = [filterdLectureList objectAtIndex: selectedRowIndex.row];
+}
+
 
 
 
