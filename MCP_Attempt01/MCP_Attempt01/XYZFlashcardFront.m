@@ -30,7 +30,9 @@
         self.frontCoverButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         [self.frontCoverButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         self.frontCoverButton.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self.frontCoverButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
+        [self.frontCoverButton.titleLabel setFont:[UIFont systemFontOfSize:25]];
+        [self.frontCoverButton setTitleEdgeInsets:UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)]; // PADDING
+
         [self addSubview:self.frontCoverButton];
         
         
