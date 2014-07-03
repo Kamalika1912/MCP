@@ -79,8 +79,6 @@
     self.filteredTableView.delegate = self;
     
     
-//    [self.selectFilter addTarget:self action:@selector(changeFilterAndReloadData) forControlEvents:UIControlEventValueChanged];
-//    loadLectureList = YES;
 //    [self loadFilterdLectureList];
     
     self.navigationController.navigationBarHidden = YES;
@@ -91,16 +89,16 @@
 
 
 
-// return an ascending ordererd list of lecture for wich there are card available for the specified course
+// return an ascending ordererd list of Topics for wich there are card available for the specified course
 
 -(NSMutableArray *) loadLectureListForCourse:(NSString *)course {
     // filter all the cards by course
     NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", course]];
-    // now create the list available lecture for that course
+    // now create the list available topic for that course
     NSMutableArray *lectureList = [NSMutableArray array];
     for (NSDictionary *card in filteredCardsByCourse) {
-        // if not already inserted in the list, insert the lecture
-        NSString *lecture = card[@"lecture"];
+        // if not already inserted in the list, insert the topic
+        NSString *lecture = card[@"title"];
         if(![lectureList containsObject:lecture]) {
             [lectureList addObject:lecture];
         }
@@ -149,7 +147,8 @@
 // Catpure the picker view selection
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-     selectedCourseString = courseList[row][@"title"];
+    selectedCourseString = courseList[row][@"title"];
+    selectedCourseRowInPicker = row;
 }
 
 -(UIView *) pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
@@ -191,7 +190,7 @@
 
 
 
-
+// Toggle the Course Picker Visibility
 -(void) hideColorPickerView:(BOOL)hidden{
     
     if(hidden) {
@@ -204,13 +203,8 @@
         self.done.hidden = YES;
         self.cancel.hidden = YES;
         self.tabBarController.tabBar.hidden=NO;
-        
-        
-        
     }
     else {
-        
-        
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationDuration:0.75];
         [self.coursePickerView setAlpha:1];
@@ -223,8 +217,6 @@
         self.done.hidden = NO;
         self.cancel.hidden = NO;
         self.tabBarController.tabBar.hidden=YES;
-        
-        
     }
     
 }

@@ -15,7 +15,7 @@
     ,
     {
         "id"        :   "2"
-    ,   "title"     :   "gulfs"
+    ,   "title"     :   "7 stages of action"
     ,   "course"    :   "DIS 1"
     ,   "lecture"   :   "Lecture # 2"
     ,   "question"  :   "What are gulfs?"
@@ -29,7 +29,7 @@
     ,
     {
         "id"        :   "3"
-    ,   "title"     :   "7 stages"
+    ,   "title"     :   "7 stages of action"
     ,   "course"    :   "DIS 1"
     ,   "lecture"   :   "Lecture # Lecture # 2"
     ,   "question"  :   "What are the 7 stages of action?"
@@ -60,14 +60,29 @@
     ,   "title"     :   "Knowledge Head/World"
     ,   "course"    :   "DIS 1"
     ,   "lecture"   :   "Lecture # 3"
-    ,   "question"  :   "What is the difference between knowledge in the world and knolewdge in the head ?"
-    ,   "answer"    :   "Knowledge in the world means the user do not consiuscly know how to operate something, until it get in front of it. Instead knowledge in the head means the user memorize and know at any time what to do in a certain situation"
+    ,   "question"  :   "What is the knowledge in the world "
+    ,   "answer"    :   "Knowledge in the world means the user do not consiuscly know how to operate something, until it get in front of it."
     ,   "upvote"    :   "6"
     ,   "downVote"  :   "15"
     ,   "createdBy" :   "BlackSmith of Cards"
     ,   "image"     :   ""
     ,   "certified" :   "False"
     }
+    ,
+    {
+        "id"        :   "5"
+    ,   "title"     :   "Knowledge Head/World"
+    ,   "course"    :   "DIS 1"
+    ,   "lecture"   :   "Lecture # 3"
+    ,   "question"  :   "What is the knolewdge in the head ?"
+    ,   "answer"    :   "Knowledge in the head means the user memorize and know at any time what to do in a certain situation"
+    ,   "upvote"    :   "6"
+    ,   "downVote"  :   "15"
+    ,   "createdBy" :   "BlackSmith of Cards"
+    ,   "image"     :   ""
+    ,   "certified" :   "False"
+    }
+
     ,
     {
         "id"        :   "6"
