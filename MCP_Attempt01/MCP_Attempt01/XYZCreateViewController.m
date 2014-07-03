@@ -7,8 +7,9 @@
 //
 
 #import "XYZCreateViewController.h"
-#import "XYZStartStudyingViewController.h"
+#import "XYZCreateCardViewController.h"
 #import "QuartzCore/QuartzCore.h"
+#import "XYZFlashcardFront.h"
 @interface XYZCreateViewController ()
 
 @end
@@ -29,7 +30,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-   self.view.backgroundColor = [UIColor clearColor ];
+//   self.view.backgroundColor = [UIColor clearColor ];
     selectedCourse=0;
     [self hideColorPickerView:YES];
     self.coursePickerView.layer.cornerRadius = 5.0;
@@ -50,8 +51,21 @@
     loadLectureList = YES;
     [self loadFilterdLectureList];
     
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 }
+
+
 
 -(void) loadCourseList {
     
@@ -213,7 +227,7 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [self performSegueWithIdentifier:@"startStudying" sender:self];
+    [self performSegueWithIdentifier:@"createCard" sender:self];
     
 }
 
@@ -237,9 +251,6 @@
     
     
 }
-
-
-
 
 
 - (IBAction)selectCourseButtonTapped:(id)sender {

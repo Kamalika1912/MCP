@@ -7,17 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XYZFlashcard.h"
 
 @interface XYZCreateViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate,UITableViewDelegate,UITableViewDataSource>
-
-
 {
     NSMutableArray *courseList;
     NSMutableArray *filterdLectureList;
     NSMutableArray *filteredTagList;
     NSInteger selectedCourse;
     BOOL loadLectureList;
-    
+
 }
 
 

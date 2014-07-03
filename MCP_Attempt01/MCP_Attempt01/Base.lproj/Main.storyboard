@@ -102,7 +102,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K54-N3-7tw">
-                                <rect key="frame" x="73" y="20" width="232" height="41"/>
+                                <rect key="frame" x="20" y="20" width="285" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <inset key="contentEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -114,25 +114,17 @@
                                     <action selector="selectCourseButtonTapped:" destination="4ei-en-UMi" eventType="touchUpInside" id="sPJ-aQ-WPh"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3bQ-Jk-4as">
-                                <rect key="frame" x="16" y="25" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="filterValueChanged:" destination="4ei-en-UMi" eventType="valueChanged" id="4U5-nO-cHh"/>
-                                </connections>
-                            </switch>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Znq-mC-gKN">
                                 <rect key="frame" x="0.0" y="68" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CdD-IH-ryU">
-                                <rect key="frame" x="20" y="126" width="280" height="232"/>
+                                <rect key="frame" x="22" y="59" width="280" height="232"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GQF-UF-v8x">
-                                        <rect key="frame" x="5" y="-12" width="270" height="162"/>
+                                        <rect key="frame" x="3" y="13" width="270" height="162"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7q-FI-M3y">
@@ -170,7 +162,6 @@
                         <outlet property="done" destination="r7q-FI-M3y" id="sys-v5-ZOv"/>
                         <outlet property="filteredTableView" destination="Znq-mC-gKN" id="tRq-CR-rFo"/>
                         <outlet property="selectCourseButton" destination="K54-N3-7tw" id="nXo-pc-YZ3"/>
-                        <outlet property="selectFilter" destination="3bQ-Jk-4as" id="Rwz-wD-A1V"/>
                         <segue destination="1a2-d0-dpv" kind="push" identifier="startStudying" id="vTj-S9-WF6"/>
                     </connections>
                 </viewController>
@@ -277,7 +268,7 @@
                                 <rect key="frame" x="180" y="199" width="120" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -302,7 +293,7 @@
                         <segue destination="CZ4-MO-1fc" kind="relationship" relationship="viewControllers" id="SUk-Ux-ee1"/>
                         <segue destination="7sj-0z-8e8" kind="relationship" relationship="viewControllers" id="rvs-LR-B2E"/>
                         <segue destination="MQP-UY-b3K" kind="relationship" relationship="viewControllers" id="0ub-RV-P7A"/>
-                        <segue destination="iMu-hk-dTy" kind="relationship" relationship="viewControllers" id="rPv-s9-qtX"/>
+                        <segue destination="VgV-RT-5rc" kind="relationship" relationship="viewControllers" id="k3Z-mN-Ki3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNP-y4-bzi" sceneMemberID="firstResponder"/>
@@ -322,7 +313,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2S-8Q-APY">
-                                <rect key="frame" x="73" y="20" width="232" height="41"/>
+                                <rect key="frame" x="20" y="20" width="285" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <inset key="contentEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -334,14 +325,6 @@
                                     <action selector="selectCourseButtonTapped:" destination="6mI-e7-5y1" eventType="touchUpInside" id="5f6-8B-t0x"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZDJ-sG-siV">
-                                <rect key="frame" x="16" y="25" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="filterValueChanged:" destination="6mI-e7-5y1" eventType="valueChanged" id="WEA-1J-IDt"/>
-                                </connections>
-                            </switch>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="q4s-8c-O3S">
                                 <rect key="frame" x="0.0" y="68" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -367,15 +350,15 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQ0-Mz-sTK">
-                                <rect key="frame" x="73" y="63" width="232" height="206"/>
+                                <rect key="frame" x="0.0" y="66" width="275" height="206"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rl-dk-U0t">
-                                        <rect key="frame" x="-29" y="-14" width="270" height="162"/>
+                                        <rect key="frame" x="5" y="-9" width="270" height="162"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhw-BX-8t3">
-                                        <rect key="frame" x="0.0" y="156" width="75" height="30"/>
+                                        <rect key="frame" x="53" y="156" width="75" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Done">
@@ -386,7 +369,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvU-wv-iAY">
-                                        <rect key="frame" x="137" y="156" width="75" height="30"/>
+                                        <rect key="frame" x="190" y="156" width="75" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Cancel">
@@ -410,32 +393,12 @@
                         <outlet property="done" destination="dhw-BX-8t3" id="4Vs-0Z-Ubn"/>
                         <outlet property="filteredTableView" destination="q4s-8c-O3S" id="XCK-AZ-0j0"/>
                         <outlet property="selectCourseButton" destination="L2S-8Q-APY" id="n6d-ct-CHa"/>
-                        <outlet property="selectFilter" destination="ZDJ-sG-siV" id="btY-3P-i0e"/>
                         <segue destination="0Wy-6e-MyC" kind="push" identifier="buyCards" id="P4h-6Y-0jH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4c-4Z-nJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-4443" y="1763"/>
-        </scene>
-        <!--Create Card View Controller-->
-        <scene sceneID="xQe-bl-mzr">
-            <objects>
-                <viewController id="EON-9m-4YN" customClass="XYZCreateCardViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dEa-RP-Vxj"/>
-                        <viewControllerLayoutGuide type="bottom" id="HeU-Z4-mxc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kZh-2X-IBa">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="FMT-Y1-Vqk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wVZ-wn-lbU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-4443" y="2384"/>
         </scene>
         <!--Buy Cards View Controller-->
         <scene sceneID="YLU-vQ-ufb">
@@ -498,25 +461,6 @@
             </objects>
             <point key="canvasLocation" x="-4985" y="1763"/>
         </scene>
-        <!--Create Card View Controller-->
-        <scene sceneID="glu-MS-FW6">
-            <objects>
-                <viewController id="jkW-Py-OU4" customClass="XYZCreateCardViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nad-xR-hTZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="qGZ-Q1-qwB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Efu-KA-wDp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="tAz-kO-Bdb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1rk-H5-9Ph" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3857" y="2412"/>
-        </scene>
         <!--Navigation Controller - My Flashcards-->
         <scene sceneID="gwY-HB-B3I">
             <objects>
@@ -540,28 +484,44 @@
             </objects>
             <point key="canvasLocation" x="-4985" y="1040"/>
         </scene>
-        <!--Navigation Controller - Create-->
-        <scene sceneID="iah-S5-7rV">
+        <!--View Controller-->
+        <scene sceneID="r9H-zj-Hlk">
             <objects>
-                <navigationController definesPresentationContext="YES" id="iMu-hk-dTy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Create" image="createico.png" id="vGH-om-9i5"/>
+                <viewController id="PaF-i5-qaH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aBG-Fp-irS"/>
+                        <viewControllerLayoutGuide type="bottom" id="DWp-AA-TLH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XnZ-N4-sD0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jCk-Nm-J6U"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I4i-RE-x1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4428" y="2352"/>
+        </scene>
+        <!--Navigation Controller - Create Card-->
+        <scene sceneID="Rxn-3N-Bjx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VgV-RT-5rc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Create Card" image="createico.png" id="vEc-fJ-xyQ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5e4-P1-7q1">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OeX-mZ-hJb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="zi2-2L-81A">
-                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
-                        <segue destination="EON-9m-4YN" kind="relationship" relationship="rootViewController" id="dUU-OH-41c"/>
+                        <segue destination="PaF-i5-qaH" kind="relationship" relationship="rootViewController" id="Bnu-e1-5sR"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qpc-63-iwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y10-es-qx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4971" y="2384"/>
+            <point key="canvasLocation" x="-4990" y="2352"/>
         </scene>
     </scenes>
     <resources>

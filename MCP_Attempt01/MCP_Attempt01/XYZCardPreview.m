@@ -34,7 +34,7 @@
         self.preview.frame = CGRectMake(10, 10, 160, 200);
         //self.preview.backgroundColor = [UIColor blueColor];
         self.preview.layer.cornerRadius = 5.0;
-        [self.preview setTitle:flashcardPreview[@"question"] forState:UIControlStateNormal];
+        [self.preview setTitle:@"Flashcards are awesome to study and it comes in pretty handy" forState:UIControlStateNormal];
         self.preview.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         [self.preview setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         self.preview.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -44,6 +44,7 @@
         
         self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 30, 100, 50)];
         self.redLabel.textColor = [UIColor redColor];
+
         [self.redLabel setFont:[UIFont systemFontOfSize:30]];
         self.redLabel.text = flashcardPreview[@"downVote"];
         self.redLabel.textAlignment = NSTextAlignmentCenter;
@@ -65,13 +66,7 @@
         self.thumbsUpLabel = [[UILabel alloc] initWithFrame:CGRectMake(180, 28, 28, 27)];
         UIColor *color1 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_up.jpg"]];
         self.thumbsUpLabel.backgroundColor = color1;
-        [self addSubview:self.thumbsUpLabel];
-        
-        
-        
-        
-        
-        
+        [self addSubview:self.thumbsUpLabel];        
         
         self.buy = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         self.buy.frame = CGRectMake(190, 130, 100, 65);
