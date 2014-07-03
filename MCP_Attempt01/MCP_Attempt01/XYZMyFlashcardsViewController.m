@@ -27,6 +27,8 @@
 }
 
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -54,40 +56,25 @@
     // set the course title in the fake dropdown button
     [self.selectCourseButton setTitle:selectedCourseString forState:UIControlStateNormal];
     
-    
-    
     //LOAD THE DATA IN THE TABLE ARRAY
     filterdLectureList = [self loadLectureListForCourse:selectedCourseString ];
-
+ 
     
     
     
-    
-    
-    
-    
-    
-    
-    //  self.view.backgroundColor = [UIColor clearColor ];
-    // Do any additional setup after loading the view.
-    //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.jpg"]];
-    selectedCourse=0;
+    // some stuff
     [self hideColorPickerView:YES];
     self.coursePickerView.layer.cornerRadius = 5.0;
     [self.coursePickerView setAlpha:0];
     [self.coursePickerViewBorder setAlpha:0];
     self.navigationController.navigationBarHidden = YES;
-    
-    
-    
-    [self loadCourseList];
+
     self.coursePicker.dataSource = self;
     self.coursePicker.delegate = self;
     self.filteredTableView.dataSource = self;
     self.filteredTableView.delegate = self;
     
-    
-    
+ 
 }
 
 
@@ -112,7 +99,7 @@
 
 
 
-
+//######## PICKER STUFF
 
 // The number of columns of data
 - (int)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -135,11 +122,7 @@
 // Catpure the picker view selection
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    // This method is triggered whenever the user makes a change to the picker selection.
-    // The parameter named row and component represents what was selected.
-    
-    selectedCourse = row;
-    
+    selectedCourseRowInPicker = row;
 }
 
 -(UIView *) pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
@@ -147,157 +130,46 @@
     UILabel *label = (id)view;
     label = [[UILabel alloc] init];
     label.font= [UIFont systemFontOfSize:16];
-    
-    
+    label.textColor = [UIColor whiteColor];
     label.text= [courseList objectAtIndex:row];
     label.textAlignment = NSTextAlignmentCenter;
     
     return label;
-    
 }
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    if(loadLectureList)
-    {
-        return [filterdLectureList count];
-    }
-    else
-    {
-        return [filteredTagList count];
-    }
-    
-}
-
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-   
-    if(loadLectureList)
-    {
-        static NSString *cellIdentifier = @"Lectures";
-        
-        UITableViewCell *lectureCell = [tableView dequeueReusableCellWithIdentifier:
-                                        cellIdentifier];
-        lectureCell.backgroundColor = [UIColor clearColor];
-        if (lectureCell == nil) {
-            lectureCell = [[UITableViewCell alloc]initWithStyle:
-                           UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        }
-        
-        NSString *stringForCell;
-        
-        stringForCell= [filterdLectureList objectAtIndex:indexPath.row];
-        
-        [lectureCell.textLabel setText:stringForCell];
-        
-        return lectureCell;
-    }
-    else
-    {
-        static NSString *cellIdentifierTags = @"Tags";
-        
-        UITableViewCell *tagCell = [tableView dequeueReusableCellWithIdentifier:
-                                    cellIdentifierTags];
-        tagCell.backgroundColor= [UIColor clearColor];
-        
-        if (tagCell == nil) {
-            tagCell = [[UITableViewCell alloc]initWithStyle:
-                       UITableViewCellStyleDefault reuseIdentifier:cellIdentifierTags];
-        }
-        
-        NSString *stringForTags;
-        
-        stringForTags= [filteredTagList objectAtIndex:indexPath.row];
-        
-        [tagCell.textLabel setText:stringForTags];
-        
-        return tagCell;
-    }
-    
-}
-
-- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-    
-    return 1;
-    
-}
-
-
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    [self performSegueWithIdentifier:@"startStudying" sender:self];
-    
-}
-
-
-
-
-//- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    
-//    NSIndexPath *selectedRowIndex = [self.filteredTableView indexPathForSelectedRow];
-//    NSString *selectedItem;
-//    
-//    
-//         selectedItem = [filterdLectureList objectAtIndex: selectedRowIndex.row];
-//    }
-//    else
-//    {
-//        selectedItem = [filteredTagList objectAtIndex: selectedRowIndex.row];
-//    }
-//    
-//}
-//
-
-
-
-
+// show the picker
 - (IBAction)selectCourseButtonTapped:(id)sender {
-    
     [self hideColorPickerView:NO];
-    [self.coursePickerView setBackgroundColor:[UIColor whiteColor]];
-    
-    
-    if ([self.selectCourseButton.titleLabel.text isEqualToString:@"Select Course"]) {
-        [self.coursePicker selectRow:selectedCourse inComponent:0 animated:YES];
-    }
-    else {
-        
-        
-        [self.coursePicker selectRow:selectedCourse inComponent:0 animated:YES];
-        
-    }
-    
+    [self.coursePickerView setBackgroundColor:[UIColor darkGrayColor]];
+    [self.coursePicker selectRow:selectedCourseRowInPicker inComponent:0 animated:YES];
     [self.filteredTableView deselectRowAtIndexPath:[self.filteredTableView indexPathForSelectedRow] animated:YES];
-    
-    
-    
 }
 
-
-
-- (IBAction)filterValueChanged:(id)sender {
-}
 
 - (IBAction)doneButtonTapped:(id)sender {
     
     [self hideColorPickerView:YES];
-    [self.selectCourseButton setTitle:[courseList objectAtIndex:selectedCourse] forState:UIControlStateNormal];
+    [self.selectCourseButton setTitle:[courseList objectAtIndex:selectedCourseRowInPicker][@"title"] forState:UIControlStateNormal];
     
+    filterdLectureList = [self loadLectureListForCourse:[courseList objectAtIndex:selectedCourseRowInPicker][@"title"]];
     
+    [self.filteredTableView reloadData];
+    
+    // save the selected course for other tab use and future uses
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setValue:selectedCourseString forKey:@"selectedCourse"];
+    [defaults setInteger:selectedCourseRowInPicker forKey:@"selectedCourseRowInPicker"];
+    [defaults synchronize];
 }
 
 - (IBAction)cancelButtonTapped:(id)sender {
     
     [self hideColorPickerView:YES];
     if (![self.selectCourseButton.titleLabel.text isEqualToString:@"Select Course"]) {
-        selectedCourse = [courseList indexOfObject:self.selectCourseButton.titleLabel.text];
+        selectedCourseRowInPicker = [courseList indexOfObject:self.selectCourseButton.titleLabel.text];
     }
     
 }
-
-
-
-
 
 -(void) hideColorPickerView:(BOOL)hidden{
     
@@ -327,6 +199,59 @@
     }
     
 }
+
+
+
+
+
+
+
+
+
+//#### TABLE VIEW STUFF
+
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [filterdLectureList count];
+}
+
+- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"topicCell" forIndexPath:indexPath];
+    cell.textLabel.text = filterdLectureList[indexPath.row];
+    return cell;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self performSegueWithIdentifier:@"startStudying" sender:self];
+    
+}
+
+
+
+
+//- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    
+//    NSIndexPath *selectedRowIndex = [self.filteredTableView indexPathForSelectedRow];
+//    NSString *selectedItem;
+//    
+//    
+//         selectedItem = [filterdLectureList objectAtIndex: selectedRowIndex.row];
+//    }
+//    else
+//    {
+//        selectedItem = [filteredTagList objectAtIndex: selectedRowIndex.row];
+//    }
+//    
+//}
+//
+
+
+
+
 
 
 

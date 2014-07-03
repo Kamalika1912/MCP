@@ -12,11 +12,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-   sleep(1);
-   // UIColor *background=   [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
-   //self.window.backgroundColor = background;
- //  [self.window setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]]];
     return YES;
 }
 							

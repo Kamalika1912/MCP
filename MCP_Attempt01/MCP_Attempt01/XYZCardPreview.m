@@ -28,17 +28,17 @@
 
         
         self.preview = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        self.preview.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        self.preview.layer.borderColor = [UIColor darkGrayColor].CGColor;
         self.preview.layer.backgroundColor = [UIColor yellowColor].CGColor;
-        self.preview.layer.borderWidth = 1.0;
+        self.preview.layer.borderWidth = 2.0;
         self.preview.frame = CGRectMake(10, 10, 160, 200);
         //self.preview.backgroundColor = [UIColor blueColor];
         self.preview.layer.cornerRadius = 5.0;
-        [self.preview setTitle:@"Flashcards are awesome to study and it comes in pretty handy" forState:UIControlStateNormal];
+        [self.preview setTitle:flashcardPreview[@"question"] forState:UIControlStateNormal];
         self.preview.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        [self.preview setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        [self.preview setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         self.preview.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self.preview.titleLabel setFont:[UIFont systemFontOfSize:15]];
+        [self.preview.titleLabel setFont:[UIFont systemFontOfSize:18]];
         [self addSubview:self.preview];
         
         

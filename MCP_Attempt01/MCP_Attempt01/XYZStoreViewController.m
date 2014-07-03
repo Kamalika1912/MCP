@@ -138,6 +138,7 @@
     UILabel *label = (id)view;
     label = [[UILabel alloc] init];
     label.font= [UIFont systemFontOfSize:16];
+    label.textColor = [UIColor whiteColor];
     label.text= [courseList objectAtIndex:row][@"title"];
     label.textAlignment = NSTextAlignmentCenter;
     
