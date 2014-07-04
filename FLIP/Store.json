@@ -77,7 +77,7 @@
   ,   "question"  :   "What is the difference between AR and VR ?"
   ,   "answer"    :   "Virtual Reality is a complete virtual environment, whereas the Augmented Reality add some virual elements to a real environment"
   ,   "upvote"    :   "6"
-  ,   "downVote"  :   "5"
+  ,   "downVote"  :   "25"
   ,   "createdBy" :   "0"
   ,   "image"     :   ""
   ,   "certified" :   "False"
@@ -122,5 +122,33 @@
   ,   "createdBy" :   "7"
   ,   "image"     :   ""
   ,   "certified" :   "True"
+  }
+  ,
+  {
+  "id"        :   "10"
+  ,   "title"     :   "Events"
+  ,   "course"    :   "MCP 14"
+  ,   "lecture"   :   "2"
+  ,   "question"  :   "What are the different types of Events?"
+  ,   "answer"    :   "Multitouch events, Accelerometer Events, Remote Control Events"
+  ,   "upvote"    :   "6"
+  ,   "downVote"  :   "10"
+  ,   "createdBy" :   "10"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "11"
+  ,   "title"     :   "Events"
+  ,   "course"    :   "MCP 14"
+  ,   "lecture"   :   "3"
+  ,   "question"  :   "What is the First Responder?"
+  ,   "answer"    :   "The first responder is a responder (event handling) object that first receives many kinds of events in an application."
+  ,   "upvote"    :   "28"
+  ,   "downVote"  :   "4"
+  ,   "createdBy" :   "10"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
   }
   ]
