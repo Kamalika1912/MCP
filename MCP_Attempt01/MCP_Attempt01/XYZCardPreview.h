@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "XYZFlashcard.h"
 
+
 @interface XYZCardPreview : UIView
 {
     XYZFlashcard *flashcardPreview;
@@ -21,8 +22,8 @@
 
 @property (strong,nonatomic) UILabel *thumbsUpLabel;
 @property (strong,nonatomic) UILabel *thumbsDownLabel;
+@property BOOL bought;
 
-
-- (id) initWithFlashcard:(XYZFlashcard *)flashcard andFrame: (CGRect)frame;
+- (id) initWithFlashcard:(XYZFlashcard *)flashcard andBought:(BOOL )bought andFrame: (CGRect)frame;
 
 @end

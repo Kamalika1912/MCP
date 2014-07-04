@@ -34,33 +34,34 @@
    //  self.view.backgroundColor = [UIColor clearColor ];
     
  
-    // ############## LOAD CARD DATA - Load the course list and the whole cards present on the Srore
-    // load locally the whole list of cards
-    NSError *error;
-    NSString *path;
-    // STORE
-    path = [[NSBundle mainBundle] pathForResource:@"Store" ofType:@"json"];
-    storeCards = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
-    if (error) NSLog(@"JSONObjectWithData error loading CARDS: %@", error);
-    // COURSES
-    path = [[NSBundle mainBundle] pathForResource:@"Courses" ofType:@"json"];
-    courseList = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
-    if (error) NSLog(@"JSONObjectWithData error loading COURSES: %@", error);
-    
-    
-    // ############# LOAD LOCAL SAVED DATA (previously selected course and such)
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    // load the course from the user defaults, if none, then select the first course in the courses array
-    selectedCourseString = ([defaults stringForKey:@"selectedCourse"]) != nil ? [defaults stringForKey:@"selectedCourse"] : courseList[0][@"title"];
-    selectedCourseRowInPicker= [defaults integerForKey:@"selectedCourseRowInPicker"];
-    
-    // set the course title in the fake dropdown button
-    [self.selectCourseButton setTitle:selectedCourseString forState:UIControlStateNormal];
-    
-    
-    
-    //LOAD THE DATA IN THE TABLE ARRAY
-    filterdLectureList = [self loadLectureListForCourse:selectedCourseString ];
+//    // ############## LOAD CARD DATA - Load the course list and the whole cards present on the Srore
+//    // load locally the whole list of cards
+//    NSError *error;
+//    NSString *path;
+//    // STORE
+//    path = [[NSBundle mainBundle] pathForResource:@"Store" ofType:@"json"];
+//    storeCards = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+//    if (error) NSLog(@"JSONObjectWithData error loading CARDS: %@", error);
+//    
+//    // COURSES
+//    path = [[NSBundle mainBundle] pathForResource:@"Courses" ofType:@"json"];
+//    courseList = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+//    if (error) NSLog(@"JSONObjectWithData error loading COURSES: %@", error);
+//    
+//    
+//    // ############# LOAD LOCAL SAVED DATA (previously selected course and such)
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    // load the course from the user defaults, if none, then select the first course in the courses array
+//    selectedCourseString = ([defaults stringForKey:@"selectedCourse"]) != nil ? [defaults stringForKey:@"selectedCourse"] : courseList[0][@"title"];
+//    selectedCourseRowInPicker= [defaults integerForKey:@"selectedCourseRowInPicker"];
+//    
+//    // set the course title in the fake dropdown button
+//    [self.selectCourseButton setTitle:selectedCourseString forState:UIControlStateNormal];
+//    
+//    
+//    
+//    //LOAD THE DATA IN THE TABLE ARRAY
+//    filterdLectureList = [self loadLectureListForCourse:selectedCourseString ];
     
 
     // STUFF done previosyly by devashish, it would be better to have all these things done in a xib file instead of programmatically
@@ -76,6 +77,48 @@
     self.filteredTableView.delegate = self;
     self.navigationController.navigationBarHidden = YES;
 }
+
+
+
+-(void)viewDidAppear:(BOOL)animated {
+    // ############## LOAD CARD DATA - Load the course list and the whole cards present on the Srore
+    // load locally the whole list of cards
+    NSError *error;
+    NSString *path;
+    // STORE
+    path = [[NSBundle mainBundle] pathForResource:@"Store" ofType:@"json"];
+    storeCards = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+    if (error) NSLog(@"JSONObjectWithData error loading CARDS: %@", error);
+    
+    // COURSES
+    path = [[NSBundle mainBundle] pathForResource:@"Courses" ofType:@"json"];
+    courseList = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+    if (error) NSLog(@"JSONObjectWithData error loading COURSES: %@", error);
+    
+    
+    // ############# LOAD LOCAL SAVED DATA (previously selected course and such)
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    // load the course from the user defaults, if none, then select the first course in the courses array
+    selectedCourseString = ([defaults stringForKey:@"selectedCourse"]) != nil ? [defaults stringForKey:@"selectedCourse"] : courseList[0][@"title"];
+    selectedCourseRowInPicker= [defaults integerForKey:@"selectedCourseRowInPicker"];
+    
+    // set the course title in the fake dropdown button
+    [self.selectCourseButton setTitle:selectedCourseString forState:UIControlStateNormal];
+    
+    //LOAD THE DATA IN THE TABLE ARRAY
+    filterdLectureList = [self loadLectureListForCourse:selectedCourseString ];
+
+    [_coursePicker reloadAllComponents];
+    [_filteredTableView reloadData];
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -168,9 +211,6 @@
 - (IBAction)cancelButtonTapped:(id)sender {
     
     [self hideColorPickerView:YES];
-    if (![self.selectCourseButton.titleLabel.text isEqualToString:@"Select Course"]) {
-        selectedCourseRowInPicker = [courseList indexOfObject:self.selectCourseButton.titleLabel.text];
-    }
     
 }
 
@@ -192,7 +232,7 @@
     }
     else {
         [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:0.75];
+        [UIView setAnimationDuration:0.5];
         [self.coursePickerView setAlpha:1];
         [self.coursePickerViewBorder setAlpha:1];
         [UIView commitAnimations];
@@ -241,18 +281,8 @@
 }
 
 
-
-
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    NSArray *filteredCardsByCourse = [storeCards filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(course == %@)", [NSString stringWithFormat:@"%d",(int)selectedCourseID]]];
-//    NSUInteger row = [indexPath row];
-//    
-//    NSArray *filteredCards  = [filteredCardsByCourse filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(lecture == %@)", filterdLectureList[row]]];
-//
-    
     [self performSegueWithIdentifier:@"buyCards" sender:self];
-    
 }
 
 
@@ -278,8 +308,6 @@
     // pass the array of cards to next view
     XYZBuyCardsViewController *targetVC = (XYZBuyCardsViewController*)segue.destinationViewController;
     targetVC.flashCardList= filteredCards;
-    
-//    NSLog(@"%@",@"Mah");
 }
 
 

@@ -11,8 +11,9 @@
 
 @implementation XYZCardPreview
 
-- (id) initWithFlashcard:(XYZFlashcard *)flashcard andFrame: (CGRect)frame
+- (id) initWithFlashcard:(XYZFlashcard *)flashcard andBought:(BOOL )b andFrame: (CGRect)frame
 {
+    _bought = b;
     flashcardPreview = flashcard;
     return [self initWithFrame:frame];
 }
@@ -22,10 +23,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        
-        
-        
 
+        
         
         self.preview = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         self.preview.layer.borderColor = [UIColor darkGrayColor].CGColor;
@@ -66,19 +65,32 @@
         self.thumbsUpLabel = [[UILabel alloc] initWithFrame:CGRectMake(180, 28, 28, 27)];
         UIColor *color1 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_up.jpg"]];
         self.thumbsUpLabel.backgroundColor = color1;
-        [self addSubview:self.thumbsUpLabel];        
+        [self addSubview:self.thumbsUpLabel];
+        
         
         self.buy = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        self.buy.frame = CGRectMake(190, 130, 100, 65);
-        self.buy.backgroundColor = [UIColor colorWithRed:0.0 green:0.6 blue:1.0 alpha:1.0];
+        self.buy.layer.backgroundColor = [UIColor whiteColor].CGColor;
+        self.buy.layer.borderWidth = 2.0;
+        self.buy.frame = CGRectMake(200, 170, 100, 40);
+        //self.preview.backgroundColor = [UIColor blueColor];
         self.buy.layer.cornerRadius = 5.0;
-        [self.buy setTitle:@"Buy" forState:UIControlStateNormal];
-        [self.buy setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.buy setTitleColor:[UIColor colorWithRed:0.0 green:0.6 blue:1.0 alpha:1.0] forState:UIControlStateNormal];
         self.buy.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self.buy.titleLabel setFont:[UIFont systemFontOfSize:45]];
+        [self.buy.titleLabel setFont:[UIFont systemFontOfSize:30]];
+        
+        if (_bought) {
+            [self.buy setTitle:@"Bought" forState:UIControlStateNormal];
+            [self.buy setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+            self.buy.layer.borderColor = [UIColor grayColor].CGColor;
+            self.buy.enabled = FALSE;
+        } else {
+            [self.buy setTitle:@"Buy" forState:UIControlStateNormal];
+            [self.buy setTitleColor:[UIColor colorWithRed:0.0 green:0.6 blue:1.0 alpha:1.0] forState:UIControlStateNormal];
+            self.buy.layer.borderColor = [UIColor colorWithRed:0.0 green:0.6 blue:1.0 alpha:1.0].CGColor;
+        }
+
         [self addSubview:self.buy];
-        
-        
+
         
     }
     return self;

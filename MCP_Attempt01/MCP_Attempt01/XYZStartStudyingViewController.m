@@ -42,7 +42,7 @@
     
 //    [[self.favouriteButton imageView] setContentMode: UIViewContentModeScaleAspectFit];
     
-    XYZFlashcard *first = [_myCards objectAtIndex:0];
+//    XYZFlashcard *first = [_myCards objectAtIndex:0];
     
 //    if(first.addedToFavourites)
 //    {

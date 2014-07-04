@@ -32,15 +32,45 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    
+    // some stuff
+    [self hideColorPickerView:YES];
+    self.coursePickerView.layer.cornerRadius = 5.0;
+    [self.coursePickerView setAlpha:0];
+    [self.coursePickerViewBorder setAlpha:0];
+    self.navigationController.navigationBarHidden = YES;
+
+    self.coursePicker.dataSource = self;
+    self.coursePicker.delegate = self;
+    self.filteredTableView.dataSource = self;
+    self.filteredTableView.delegate = self;
+    
+ 
+}
+
+
+// put loading of data here, so they ger reloaded in between tab switches.
+-(void)viewDidAppear:(BOOL)animated {
     // ############## LOAD CARD DATA - Load the course list and the whole cards present on my decks
     // load locally the whole list of cards
     NSError *error;
     NSString *path;
-    // STORE
-    path = [[NSBundle mainBundle] pathForResource:@"MyCards" ofType:@"json"];
-    myCards = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+    // MyCARDS
+    // load the directory or create it
+    // load the directory or create it
+    NSString *d = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) lastObject];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:d isDirectory:NULL]) {
+        // if directory do not exist, load from the provided bundle
+//        path = [[NSBundle mainBundle] pathForResource:@"MyCards" ofType:@"json"];
+//        myCards = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
+        myCards = [NSMutableArray array];
+
+    } else {  // else load the previously saved one
+        path = [d stringByAppendingPathComponent:@"MyCards.json"];
+        myCards = [NSArray arrayWithContentsOfFile:path];
+    }
     if (error) NSLog(@"JSONObjectWithData error loading CARDS: %@", error);
+    
     // COURSES
     path = [[NSBundle mainBundle] pathForResource:@"Courses" ofType:@"json"];
     courseList = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingMutableContainers error:&error];
@@ -58,24 +88,30 @@
     
     //LOAD THE DATA IN THE TABLE ARRAY
     filterdLectureList = [self loadLectureListForCourse:selectedCourseString ];
- 
     
-    
-    
-    // some stuff
-    [self hideColorPickerView:YES];
-    self.coursePickerView.layer.cornerRadius = 5.0;
-    [self.coursePickerView setAlpha:0];
-    [self.coursePickerViewBorder setAlpha:0];
-    self.navigationController.navigationBarHidden = YES;
-
-    self.coursePicker.dataSource = self;
-    self.coursePicker.delegate = self;
-    self.filteredTableView.dataSource = self;
-    self.filteredTableView.delegate = self;
-    
- 
+    [_filteredTableView reloadData];
+    [_coursePicker reloadAllComponents];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -122,6 +158,7 @@
 // Catpure the picker view selection
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+    selectedCourseString = courseList[row][@"title"];
     selectedCourseRowInPicker = row;
 }
 
@@ -163,12 +200,7 @@
 }
 
 - (IBAction)cancelButtonTapped:(id)sender {
-    
     [self hideColorPickerView:YES];
-    if (![self.selectCourseButton.titleLabel.text isEqualToString:@"Select Course"]) {
-        selectedCourseRowInPicker = [courseList indexOfObject:self.selectCourseButton.titleLabel.text];
-    }
-    
 }
 
 -(void) hideColorPickerView:(BOOL)hidden{
@@ -184,7 +216,7 @@
     }
     else {
         [UIView beginAnimations:nil context:NULL];
-        [UIView setAnimationDuration:0.75];
+        [UIView setAnimationDuration:0.5];
         [self.coursePickerView setAlpha:1];
         [self.coursePickerViewBorder setAlpha:1];
         [UIView commitAnimations];

@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "XYZCardPreview.h"
 
 @interface XYZBuyCardsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIAlertViewDelegate>
 {
-//    NSMutableArray *flashCardList;
+    NSInteger money;
 }
 
 
 @property (weak, nonatomic) IBOutlet UITableView *BuyList;
 
 @property NSArray *flashCardList;
-@property NSArray *myCardList;
+@property NSMutableArray *myCardList;
 
 @end
