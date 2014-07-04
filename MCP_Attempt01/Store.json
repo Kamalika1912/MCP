@@ -6,25 +6,25 @@
   ,   "lecture"   :   "1"
   ,   "question"  :   "What do D, I, A, stand for in DIA Cycle? "
   ,   "answer"    :   "Design, Implementation, Analysis"
-  ,   "upvote"    :   "15"
+  ,   "upVote"    :   "15"
   ,   "downVote"  :   "6"
   ,   "createdBy" :   "17"
   ,   "image"     :   ""
   ,   "certified" :   "False"
   }
   ,
-  {
+   {
   "id"        :   "2"
-  ,   "title"     :   "gulfs"
+  ,   "title"     :   "Fitts Law vs. Welford’s Law"
   ,   "course"    :   "DIS 1"
-  ,   "lecture"   :   "2"
-  ,   "question"  :   "What are gulfs?"
-  ,   "answer"    :   "problems that arise bewteen action and execution"
-  ,   "upvote"    :   "1"
-  ,   "downVote"  :   "10"
-  ,   "createdBy" :   "17"
+  ,   "lecture"   :   "4"
+  ,   "question"  :   "What are the difference between Fitts Law and Welford’s Law and how does one improve on the other?"
+  ,   "answer"    :   "Fitts: ID = log(2D/W), Welford: ID = log(D/W + 0.5). Welford has better curve fit, no NAN when D/W = 0"
+  ,   "upVote"    :   "37"
+  ,   "downVote"  :   "5"
+  ,   "createdBy" :   "6"
   ,   "image"     :   ""
-  ,   "certified" :   "False"
+  ,   "certified" :   "True"
   }
   ,
   {
@@ -34,7 +34,7 @@
   ,   "lecture"   :   "2"
   ,   "question"  :   "What are the 7 stages of action?"
   ,   "answer"    :   "1) Goal 2) Intention 3) Action 4) Execution 5) Perception 6) Interpretation 7) Evaluation"
-  ,   "upvote"    :   "29"
+  ,   "upVote"    :   "29"
   ,   "downVote"  :   "0"
   ,   "createdBy" :   "17"
   ,   "image"     :   ""
@@ -60,36 +60,51 @@
   ,   "title"     :   "Knowledge Head/World"
   ,   "course"    :   "DIS 1"
   ,   "lecture"   :   "3"
-  ,   "question"  :   "What is the difference between knowledge in the world and knolewdge in the head ?"
-  ,   "answer"    :   "Knowledge in the world means the user do not consiuscly know how to operate something, until it get in front of it. Instead knowledge in the head means the user memorize and know at any time what to do in a certain situation"
-  ,   "upvote"    :   "6"
+  ,   "question"  :   "What is the difference between knowledge in the world and knowledge in the head ?"
+  ,   "answer"    :   "Knowledge in the world means the user do not consciously know how to operate something, until it get in front of it. Instead knowledge in the head means the user memorize and know at any time what to do in a certain situation"
+  ,   "upVote"    :   "6"
   ,   "downVote"  :   "15"
   ,   "createdBy" :   "7"
   ,   "image"     :   ""
   ,   "certified" :   "False"
   }
   ,
-  {
+    {
   "id"        :   "6"
-  ,   "title"     :   "AR/VR difference"
-  ,   "course"    :   "MCP 14"
+  ,   "title"     :   "Difference between CLI and GUI"
+  ,   "course"    :   "DIS 1"
+  ,   "lecture"   :   "6"
+  ,   "question"  :   "Explain, with examples, the difference between command-line and graphical user interfaces with respect to knowledge in the world and knowledge in the head?"
+  ,   "answer"    :   "CLI: all in the head: efficient for pros, saves screen space, long learning curve. GUI: commands all visible (especially before trying them out), more screen space, good for beginners, high learning curve (spatial memory)"
+  ,   "upVote"    :   "40"
+  ,   "downVote"  :   "0"
+  ,   "createdBy" :   "7"
+  ,   "image"     :   ""
+  ,   "certified" :   "True"
+  }
+  ,
+ {
+  "id"        :   "7"
+  ,   "title"     :   "gulfs"
+  ,   "course"    :   "DIS 1"
   ,   "lecture"   :   "2"
-  ,   "question"  :   "What is the difference between AR and VR ?"
-  ,   "answer"    :   "Virtual Reality is a complete virtual environment, whereas the Augmented Reality add some virual elements to a real environment"
-  ,   "upvote"    :   "6"
-  ,   "downVote"  :   "25"
-  ,   "createdBy" :   "0"
+  ,   "question"  :   "What are gulfs?"
+  ,   "answer"    :   "problems that arise between action and execution"
+  ,   "upVote"    :   "1"
+  ,   "downVote"  :   "10"
+  ,   "createdBy" :   "17"
   ,   "image"     :   ""
   ,   "certified" :   "False"
   }
+  ,
   {
-  "id"        :   "7"
+  "id"        :   "8"
   ,   "title"     :   "Composition Operators"
   ,   "course"    :   "DIS 2"
   ,   "lecture"   :   "1"
   ,   "question"  :   "What are the different Composition Operators?"
-  ,   "answer"    :   "Merge: Combination of Input Devides such that result is a Cartesian Product of the input domains, Layout: Collocation of two devices, Connect: Outut domain of one is mapped to input domain of another"
-  ,   "upvote"    :   "46"
+  ,   "answer"    :   "Merge: Combination of Input Devices such that result is a Cartesian Product of the input domains, Layout: Collocation of two devices, Connect: Outut domain of one is mapped to input domain of another"
+  ,   "upVote"    :   "46"
   ,   "downVote"  :   "10"
   ,   "createdBy" :   "7"
   ,   "image"     :   ""
@@ -97,13 +112,13 @@
   }
   ,
   {
-  "id"        :   "8"
+  "id"        :   "9"
   ,   "title"     :   "Late Refinement"
   ,   "course"    :   "DIS 2"
   ,   "lecture"   :   "3"
   ,   "question"  :   "What is Late Refinement? What are it's levels?"
-  ,   "answer"    :   " App developer provides defaults that can be changed by user and Attributes must be publicized as configurable, with possible values. Levels: Per session for all users, Per application for all users, Per application per user, Per application per launch"
-  ,   "upvote"    :   "19"
+  ,   "answer"    :   "App developer provides defaults that can be changed by user and Attributes must be publicized as configurable, with possible values. Levels: Per session for all users, Per application for all users, Per application per user, Per application per launch"
+  ,   "upVote"    :   "19"
   ,   "downVote"  :   "8"
   ,   "createdBy" :   "7"
   ,   "image"     :   ""
@@ -111,13 +126,13 @@
   }
   ,
   {
-  "id"        :   "9"
+  "id"        :   "10"
   ,   "title"     :   "Primitive Movement Input Device Representation"
   ,   "course"    :   "DIS 2"
   ,   "lecture"   :   "1"
   ,   "question"  :   "How is an input device represented?"
   ,   "answer"    :   "An input device is represented as a 6-tuple. <M, In, S, R, Out, W> Manipulation operator, Input domain, Device State, Resolution function In->Out, Output domain, work properties"
-  ,   "upvote"    :   "24"
+  ,   "upVote"    :   "24"
   ,   "downVote"  :   "6"
   ,   "createdBy" :   "7"
   ,   "image"     :   ""
@@ -125,13 +140,41 @@
   }
   ,
   {
-  "id"        :   "10"
-  ,   "title"     :   "Events"
+  "id"        :   "11"
+  ,   "title"     :   "X: UITK"
+  ,   "course"    :   "DIS 2"
+  ,   "lecture"   :   "4"
+  ,   "question"  :   "X programming support consists of 3 layers. What are they?"
+  ,   "answer"    :   "Xlib, X Toolkit Intrinsics, Widget Set"
+  ,   "upVote"    :   "15"
+  ,   "downVote"  :   "10"
+  ,   "createdBy" :   "2"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "12"
+  ,   "title"     :   "Java UI Programs"
+  ,   "course"    :   "DIS 2"
+  ,   "lecture"   :   "6"
+  ,   "question"  :   "What are the two kinds of UI programs offered by Java?"
+  ,   "answer"    :   "1. Applets: un inside a web browser (or AppletViewer) embedded in HTML source. 2. Applications: run as standalone, (almost) full OS access."
+  ,   "upVote"    :   "55"
+  ,   "downVote"  :   "1"
+  ,   "createdBy" :   "5"
+  ,   "image"     :   ""
+  ,   "certified" :   "True"
+  }
+  ,
+  {
+  "id"        :   "13"
+  ,   "title"     :   "Types of Events on an iPhone"
   ,   "course"    :   "MCP 14"
   ,   "lecture"   :   "2"
   ,   "question"  :   "What are the different types of Events?"
   ,   "answer"    :   "Multitouch events, Accelerometer Events, Remote Control Events"
-  ,   "upvote"    :   "6"
+  ,   "upVote"    :   "6"
   ,   "downVote"  :   "10"
   ,   "createdBy" :   "10"
   ,   "image"     :   ""
@@ -139,16 +182,86 @@
   }
   ,
   {
-  "id"        :   "11"
-  ,   "title"     :   "Events"
+  "id"        :   "14"
+  ,   "title"     :   "First Responder"
   ,   "course"    :   "MCP 14"
   ,   "lecture"   :   "3"
   ,   "question"  :   "What is the First Responder?"
   ,   "answer"    :   "The first responder is a responder (event handling) object that first receives many kinds of events in an application."
-  ,   "upvote"    :   "28"
+  ,   "upVote"    :   "28"
   ,   "downVote"  :   "4"
   ,   "createdBy" :   "10"
   ,   "image"     :   ""
   ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "15"
+  ,   "title"     :   "AR/VR difference"
+  ,   "course"    :   "MCP 14"
+  ,   "lecture"   :   "2"
+  ,   "question"  :   "What is the difference between AR and VR ?"
+  ,   "answer"    :   "Virtual Reality is a complete virtual environment, whereas the Augmented Reality add some virual elements to a real environment"
+  ,   "upVote"    :   "6"
+  ,   "downVote"  :   "25"
+  ,   "createdBy" :   "0"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "16"
+  ,   "title"     :   "HCI Research Approaches"
+  ,   "course"    :   "CTHCI"
+  ,   "lecture"   :   "1"
+  ,   "question"  :   "What are the three approaches to research in HCI?"
+  ,   "answer"    :   "1. Empirical Science 2. Ethnography 3. Engineering and Design"
+  ,   "upVote"    :   "16"
+  ,   "downVote"  :   "2"
+  ,   "createdBy" :   "0"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "17"
+  ,   "title"     :   "Third variable Problem"
+  ,   "course"    :   "CTHCI"
+  ,   "lecture"   :   "2"
+  ,   "question"  :   "What is the Third variable problem?"
+  ,   "answer"    :   "Third variable problem is a limitation of Relational Research in which an unidentified variable controls the correlated variables."
+  ,   "upVote"    :   "28"
+  ,   "downVote"  :   "0"
+  ,   "createdBy" :   "0"
+  ,   "image"     :   ""
+  ,   "certified" :   "True"
+  }
+  ,
+  {
+  "id"        :   "18"
+  ,   "title"     :   "SLAP Widgets: Unidirectional Interaction"
+  ,   "course"    :   "CTHCI"
+  ,   "lecture"   :   "5"
+  ,   "question"  :   "What is the Unidirectional Interaction problem in SLAP widgets?"
+  ,   "answer"    :   "Software cannot change physical UI. Physical-visual inconsistencies. SLAP Widgets require exclusive access to parameters. Software should be able to change physical UI"
+  ,   "upVote"    :   "16"
+  ,   "downVote"  :   "6"
+  ,   "createdBy" :   "0"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "19"
+  ,   "title"     :   "Tracking Challenges in AR"
+  ,   "course"    :   "CTHCI"
+  ,   "lecture"   :   "6"
+  ,   "question"  :   "What are the challenges in tracking in Augmented Reality?"
+  ,   "answer"    :   "1.Environment Sensing 2.Low Latency 3.Calibration 4.Choice of tracking technology depends on AR System (fixed/mobile, indoor/outdoor)"
+  ,   "upVote"    :   "12"
+  ,   "downVote"  :   "3"
+  ,   "createdBy" :   "0"
+  ,   "image"     :   ""
+  ,   "certified" :   "True"
   }
   ]
