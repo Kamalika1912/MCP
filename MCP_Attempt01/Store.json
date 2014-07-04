@@ -1,114 +1,154 @@
-[
-    {
-        "id"        :   "1"
-    ,   "title"     :   "DIA"
-    ,   "course"    :   "DIS 1"
-    ,   "lecture"   :   "Lecture # 1"
-    ,   "question"  :   "What does D, I, A, stands for in DIA Cycle? "
-    ,   "answer"    :   "Design \r Implementation \r Analysis"
-    ,   "upVote"    :   "15"
-    ,   "downVote"  :   "10"
-    ,   "createdBy" :   "Card Master"
-    ,   "image"     :   ""
-    ,   "certified" :   "False"
-    }
-    ,{
-        "id"        :   "11"
-    ,   "title"     :   "DIA"
-    ,   "course"    :   "DIS 1"
-    ,   "lecture"   :   "Lecture # 1"
-    ,   "question"  :   "What was used before DIA? "
-    ,   "answer"    :   "Waterfall Model"
-    ,   "upVote"    :   "15"
-    ,   "downVote"  :   "10"
-    ,   "createdBy" :   "Card Master"
-    ,   "image"     :   ""
-    ,   "certified" :   "False"
-    }
-    ,
-    {
-        "id"        :   "2"
-    ,   "title"     :   "7 stages of action"
-    ,   "course"    :   "DIS 1"
-    ,   "lecture"   :   "Lecture # 2"
-    ,   "question"  :   "What are gulfs?"
-    ,   "answer"    :   "problems that arise bewteen action and execution"
-    ,   "upVote"    :   "1"
-    ,   "downVote"  :   "3"
-    ,   "createdBy" :   "Card Master"
-    ,   "image"     :   ""
-    ,   "certified" :   "False"
-    }
-    ,
-    {
-        "id"        :   "3"
-    ,   "title"     :   "7 stages of action"
-    ,   "course"    :   "DIS 1"
-    ,   "lecture"   :   "Lecture # Lecture # 2"
-    ,   "question"  :   "What are the 7 stages of action?"
-    ,   "answer"    :   "1) Goal 2) Intention 3) Action 4) Execution 5) Perception 6) Interpretation 7) Evaluation"
-    ,   "upVote"    :   "29"
-    ,   "downVote"  :   "0"
-    ,   "createdBy" :   "Card Master"
-    ,   "image"     :   ""
-    ,   "certified" :   "False"
-    }
-    ,
-    {
-        "id"        :   "4"
-    ,   "title"     :   "Design Principle"
-    ,   "course"    :   "DIS 1"
-    ,   "lecture"   :   "Lecture # 2"
-    ,   "question"  :   "Which are the Design principle according to Norman?"
-    ,   "answer"    :   "1) Consistency 2) Visibility 3) Affordance 4) Mapping 5) Constraints"
-    ,   "upVote"    :   "9"
-    ,   "downVote"  :   "5"
-    ,   "createdBy" :   "BlackSmith of Cards"
-    ,   "image"     :   ""
-    ,   "certified" :   "False"
-    }
-    ,
-    {
-        "id"        :   "5"
-    ,   "title"     :   "Knowledge Head/World"
-    ,   "course"    :   "DIS 1"
-    ,   "lecture"   :   "Lecture # 3"
-    ,   "question"  :   "What is the knowledge in the world "
-    ,   "answer"    :   "Knowledge in the world means the user do not consiuscly know how to operate something, until it get in front of it."
-    ,   "upVote"    :   "6"
-    ,   "downVote"  :   "15"
-    ,   "createdBy" :   "BlackSmith of Cards"
-    ,   "image"     :   ""
-    ,   "certified" :   "False"
-    }
-    ,
-    {
-        "id"        :   "51"
-    ,   "title"     :   "Knowledge Head/World"
-    ,   "course"    :   "DIS 1"
-    ,   "lecture"   :   "Lecture # 3"
-    ,   "question"  :   "What is the knolewdge in the head ?"
-    ,   "answer"    :   "Knowledge in the head means the user memorize and know at any time what to do in a certain situation"
-    ,   "upVote"    :   "6"
-    ,   "downVote"  :   "15"
-    ,   "createdBy" :   "BlackSmith of Cards"
-    ,   "image"     :   ""
-    ,   "certified" :   "False"
-    }
-
-    ,
-    {
-        "id"        :   "6"
-    ,   "title"     :   "AR/VR difference"
-    ,   "course"    :   "CTHCI"
-    ,   "lecture"   :   "Lecture # 2"
-    ,   "question"  :   "What is the difference between AR and VR ?"
-    ,   "answer"    :   "Virtual Reality is a complete virtual environment, whereas the Augmented Reality add some virual elements to a real environment"
-    ,   "upVote"    :   "6"
-    ,   "downVote"  :   "5"
-    ,   "createdBy" :   "0"
-    ,   "image"     :   ""
-    ,   "certified" :   "False"
-    }
-
-]
+ [
+  {
+  "id"        :   "1"
+  ,   "title"     :   "DIA definition"
+  ,   "course"    :   "DIS I"
+  ,   "lecture"   :   "1"
+  ,   "question"  :   "What do D, I, A, stand for in DIA Cycle? "
+  ,   "answer"    :   "Design, Implementation, Analysis"
+  ,   "upvote"    :   "15"
+  ,   "downVote"  :   "6"
+  ,   "createdBy" :   "17"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "2"
+  ,   "title"     :   "gulfs"
+  ,   "course"    :   "DIS I"
+  ,   "lecture"   :   "2"
+  ,   "question"  :   "What are gulfs?"
+  ,   "answer"    :   "problems that arise bewteen action and execution"
+  ,   "upvote"    :   "1"
+  ,   "downVote"  :   "10"
+  ,   "createdBy" :   "17"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "3"
+  ,   "title"     :   "7 stages"
+  ,   "course"    :   "DIS I"
+  ,   "lecture"   :   "2"
+  ,   "question"  :   "What are the 7 stages of action?"
+  ,   "answer"    :   "1) Goal 2) Intention 3) Action 4) Execution 5) Perception 6) Interpretation 7) Evaluation"
+  ,   "upvote"    :   "29"
+  ,   "downVote"  :   "0"
+  ,   "createdBy" :   "17"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "4"
+  ,   "title"     :   "Design Principle"
+  ,   "course"    :   "DIS I"
+  ,   "lecture"   :   "2"
+  ,   "question"  :   "What are the Design principle according to Norman?"
+  ,   "answer"    :   "1) Consistency 2) Visibility 3) Affordance 4) Mapping 5) Constraints"
+  ,   "upVote"    :   "9"
+  ,   "downVote"  :   "5"
+  ,   "createdBy" :   "7"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "5"
+  ,   "title"     :   "Knowledge Head/World"
+  ,   "course"    :   "DIS I"
+  ,   "lecture"   :   "3"
+  ,   "question"  :   "What is the difference between knowledge in the world and knolewdge in the head ?"
+  ,   "answer"    :   "Knowledge in the world means the user do not consiuscly know how to operate something, until it get in front of it. Instead knowledge in the head means the user memorize and know at any time what to do in a certain situation"
+  ,   "upvote"    :   "6"
+  ,   "downVote"  :   "15"
+  ,   "createdBy" :   "7"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "6"
+  ,   "title"     :   "AR/VR difference"
+  ,   "course"    :   "MCP 14"
+  ,   "lecture"   :   "2"
+  ,   "question"  :   "What is the difference between AR and VR ?"
+  ,   "answer"    :   "Virtual Reality is a complete virtual environment, whereas the Augmented Reality add some virual elements to a real environment"
+  ,   "upvote"    :   "6"
+  ,   "downVote"  :   "25"
+  ,   "createdBy" :   "0"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  {
+  "id"        :   "7"
+  ,   "title"     :   "Composition Operators"
+  ,   "course"    :   "DIS II"
+  ,   "lecture"   :   "1"
+  ,   "question"  :   "What are the different Composition Operators?"
+  ,   "answer"    :   "Merge: Combination of Input Devides such that result is a Cartesian Product of the input domains, Layout: Collocation of two devices, Connect: Outut domain of one is mapped to input domain of another"
+  ,   "upvote"    :   "46"
+  ,   "downVote"  :   "10"
+  ,   "createdBy" :   "7"
+  ,   "image"     :   ""
+  ,   "certified" :   "True"
+  }
+  ,
+  {
+  "id"        :   "8"
+  ,   "title"     :   "Late Refinement"
+  ,   "course"    :   "DIS II"
+  ,   "lecture"   :   "3"
+  ,   "question"  :   "What is Late Refinement? What are it's levels?"
+  ,   "answer"    :   " App developer provides defaults that can be changed by user and Attributes must be publicized as configurable, with possible values. Levels: Per session for all users, Per application for all users, Per application per user, Per application per launch"
+  ,   "upvote"    :   "19"
+  ,   "downVote"  :   "8"
+  ,   "createdBy" :   "7"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "9"
+  ,   "title"     :   "Primitive Movement Input Device Representation"
+  ,   "course"    :   "DIS II"
+  ,   "lecture"   :   "1"
+  ,   "question"  :   "How is an input device represented?"
+  ,   "answer"    :   "An input device is represented as a 6-tuple. <M, In, S, R, Out, W> Manipulation operator, Input domain, Device State, Resolution function In->Out, Output domain, work properties"
+  ,   "upvote"    :   "24"
+  ,   "downVote"  :   "6"
+  ,   "createdBy" :   "7"
+  ,   "image"     :   ""
+  ,   "certified" :   "True"
+  }
+  ,
+  {
+  "id"        :   "10"
+  ,   "title"     :   "Events"
+  ,   "course"    :   "MCP 14"
+  ,   "lecture"   :   "2"
+  ,   "question"  :   "What are the different types of Events?"
+  ,   "answer"    :   "Multitouch events, Accelerometer Events, Remote Control Events"
+  ,   "upvote"    :   "6"
+  ,   "downVote"  :   "10"
+  ,   "createdBy" :   "10"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "11"
+  ,   "title"     :   "Events"
+  ,   "course"    :   "MCP 14"
+  ,   "lecture"   :   "3"
+  ,   "question"  :   "What is the First Responder?"
+  ,   "answer"    :   "The first responder is a responder (event handling) object that first receives many kinds of events in an application."
+  ,   "upvote"    :   "28"
+  ,   "downVote"  :   "4"
+  ,   "createdBy" :   "10"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ]
