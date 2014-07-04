@@ -4,10 +4,10 @@
   ,   "title"     :   "DIA definition"
   ,   "course"    :   "DIS I"
   ,   "lecture"   :   "1"
-  ,   "question"  :   "What does D, I, A, stands for in DIA Cycle? "
-  ,   "answer"    :   "Design,Implementation,Analysis "
+  ,   "question"  :   "What do D, I, A, stand for in DIA Cycle? "
+  ,   "answer"    :   "Design, Implementation, Analysis"
   ,   "upvote"    :   "15"
-  ,   "downVote"  :   "10"
+  ,   "downVote"  :   "6"
   ,   "createdBy" :   "17"
   ,   "image"     :   ""
   ,   "certified" :   "False"
@@ -21,7 +21,7 @@
   ,   "question"  :   "What are gulfs?"
   ,   "answer"    :   "problems that arise bewteen action and execution"
   ,   "upvote"    :   "1"
-  ,   "downVote"  :   "3"
+  ,   "downVote"  :   "10"
   ,   "createdBy" :   "17"
   ,   "image"     :   ""
   ,   "certified" :   "False"
@@ -46,7 +46,7 @@
   ,   "title"     :   "Design Principle"
   ,   "course"    :   "DIS I"
   ,   "lecture"   :   "2"
-  ,   "question"  :   "Which are the Design principle according to Norman?"
+  ,   "question"  :   "What are the Design principle according to Norman?"
   ,   "answer"    :   "1) Consistency 2) Visibility 3) Affordance 4) Mapping 5) Constraints"
   ,   "upVote"    :   "9"
   ,   "downVote"  :   "5"
@@ -82,5 +82,45 @@
   ,   "image"     :   ""
   ,   "certified" :   "False"
   }
-  
+  {
+  "id"        :   "7"
+  ,   "title"     :   "Composition Operators"
+  ,   "course"    :   "DIS II"
+  ,   "lecture"   :   "1"
+  ,   "question"  :   "What are the different Composition Operators?"
+  ,   "answer"    :   "Merge: Combination of Input Devides such that result is a Cartesian Product of the input domains, Layout: Collocation of two devices, Connect: Outut domain of one is mapped to input domain of another"
+  ,   "upvote"    :   "46"
+  ,   "downVote"  :   "10"
+  ,   "createdBy" :   "7"
+  ,   "image"     :   ""
+  ,   "certified" :   "True"
+  }
+  ,
+  {
+  "id"        :   "8"
+  ,   "title"     :   "Late Refinement"
+  ,   "course"    :   "DIS II"
+  ,   "lecture"   :   "3"
+  ,   "question"  :   "What is Late Refinement? What are it's levels?"
+  ,   "answer"    :   " App developer provides defaults that can be changed by user and Attributes must be publicized as configurable, with possible values. Levels: Per session for all users, Per application for all users, Per application per user, Per application per launch"
+  ,   "upvote"    :   "19"
+  ,   "downVote"  :   "8"
+  ,   "createdBy" :   "7"
+  ,   "image"     :   ""
+  ,   "certified" :   "False"
+  }
+  ,
+  {
+  "id"        :   "9"
+  ,   "title"     :   "Primitive Movement Input Device Representation"
+  ,   "course"    :   "DIS II"
+  ,   "lecture"   :   "1"
+  ,   "question"  :   "How is an input device represented?"
+  ,   "answer"    :   "An input device is represented as a 6-tuple. <M, In, S, R, Out, W> Manipulation operator, Input domain, Device State, Resolution function In->Out, Output domain, work properties"
+  ,   "upvote"    :   "24"
+  ,   "downVote"  :   "6"
+  ,   "createdBy" :   "7"
+  ,   "image"     :   ""
+  ,   "certified" :   "True"
+  }
   ]
