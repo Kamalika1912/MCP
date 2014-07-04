@@ -2,7 +2,7 @@
   {
   "id"        :   "1"
   ,   "title"     :   "DIA definition"
-  ,   "course"    :   "DIS I"
+  ,   "course"    :   "DIS 1"
   ,   "lecture"   :   "1"
   ,   "question"  :   "What do D, I, A, stand for in DIA Cycle? "
   ,   "answer"    :   "Design, Implementation, Analysis"
@@ -16,7 +16,7 @@
   {
   "id"        :   "2"
   ,   "title"     :   "gulfs"
-  ,   "course"    :   "DIS I"
+  ,   "course"    :   "DIS 1"
   ,   "lecture"   :   "2"
   ,   "question"  :   "What are gulfs?"
   ,   "answer"    :   "problems that arise bewteen action and execution"
@@ -30,7 +30,7 @@
   {
   "id"        :   "3"
   ,   "title"     :   "7 stages"
-  ,   "course"    :   "DIS I"
+  ,   "course"    :   "DIS 1"
   ,   "lecture"   :   "2"
   ,   "question"  :   "What are the 7 stages of action?"
   ,   "answer"    :   "1) Goal 2) Intention 3) Action 4) Execution 5) Perception 6) Interpretation 7) Evaluation"
@@ -44,7 +44,7 @@
   {
   "id"        :   "4"
   ,   "title"     :   "Design Principle"
-  ,   "course"    :   "DIS I"
+  ,   "course"    :   "DIS 1"
   ,   "lecture"   :   "2"
   ,   "question"  :   "What are the Design principle according to Norman?"
   ,   "answer"    :   "1) Consistency 2) Visibility 3) Affordance 4) Mapping 5) Constraints"
@@ -58,7 +58,7 @@
   {
   "id"        :   "5"
   ,   "title"     :   "Knowledge Head/World"
-  ,   "course"    :   "DIS I"
+  ,   "course"    :   "DIS 1"
   ,   "lecture"   :   "3"
   ,   "question"  :   "What is the difference between knowledge in the world and knolewdge in the head ?"
   ,   "answer"    :   "Knowledge in the world means the user do not consiuscly know how to operate something, until it get in front of it. Instead knowledge in the head means the user memorize and know at any time what to do in a certain situation"
@@ -85,7 +85,7 @@
   {
   "id"        :   "7"
   ,   "title"     :   "Composition Operators"
-  ,   "course"    :   "DIS II"
+  ,   "course"    :   "DIS 2"
   ,   "lecture"   :   "1"
   ,   "question"  :   "What are the different Composition Operators?"
   ,   "answer"    :   "Merge: Combination of Input Devides such that result is a Cartesian Product of the input domains, Layout: Collocation of two devices, Connect: Outut domain of one is mapped to input domain of another"
@@ -99,7 +99,7 @@
   {
   "id"        :   "8"
   ,   "title"     :   "Late Refinement"
-  ,   "course"    :   "DIS II"
+  ,   "course"    :   "DIS 2"
   ,   "lecture"   :   "3"
   ,   "question"  :   "What is Late Refinement? What are it's levels?"
   ,   "answer"    :   " App developer provides defaults that can be changed by user and Attributes must be publicized as configurable, with possible values. Levels: Per session for all users, Per application for all users, Per application per user, Per application per launch"
@@ -113,7 +113,7 @@
   {
   "id"        :   "9"
   ,   "title"     :   "Primitive Movement Input Device Representation"
-  ,   "course"    :   "DIS II"
+  ,   "course"    :   "DIS 2"
   ,   "lecture"   :   "1"
   ,   "question"  :   "How is an input device represented?"
   ,   "answer"    :   "An input device is represented as a 6-tuple. <M, In, S, R, Out, W> Manipulation operator, Input domain, Device State, Resolution function In->Out, Output domain, work properties"
