@@ -41,28 +41,28 @@
         [self addSubview:self.preview];
         
         
-        self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 30, 100, 50)];
-        self.redLabel.textColor = [UIColor redColor];
+        self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(215, 75, 100, 50)];
+        //self.redLabel.textColor = [UIColor redColor];
 
         [self.redLabel setFont:[UIFont systemFontOfSize:30]];
         self.redLabel.text = flashcardPreview[@"downVote"];
         self.redLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.redLabel];
         
-        self.greenLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 20, 100, 50)];
-        self.greenLabel.textColor = [UIColor greenColor];
+        self.greenLabel = [[UILabel alloc] initWithFrame:CGRectMake(215, 30, 100, 50)];
+       // self.greenLabel.textColor = [UIColor greenColor];
         [self.greenLabel setFont:[UIFont systemFontOfSize:30]];
         self.greenLabel.text = flashcardPreview[@"upVote"];
         self.greenLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.greenLabel];
         
-        self.thumbsDownLabel = [[UILabel alloc] initWithFrame:CGRectMake(180, 81, 28, 27)];
+        self.thumbsDownLabel = [[UILabel alloc] initWithFrame:CGRectMake(205, 91, 28, 27)];
         UIColor *color2 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_down.jpg"]];
         self.thumbsDownLabel.backgroundColor = color2;
         [self addSubview:self.thumbsDownLabel];
         
         
-        self.thumbsUpLabel = [[UILabel alloc] initWithFrame:CGRectMake(180, 28, 28, 27)];
+        self.thumbsUpLabel = [[UILabel alloc] initWithFrame:CGRectMake(205, 38, 28, 27)];
         UIColor *color1 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_up.jpg"]];
         self.thumbsUpLabel.backgroundColor = color1;
         [self addSubview:self.thumbsUpLabel];

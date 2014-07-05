@@ -45,45 +45,6 @@
 
         [self addSubview:self.backCoverButton];
         
-        
-        
-        self.thumbsDownLabel = [[UILabel alloc] initWithFrame:CGRectMake(230, 21, 28, 27)];
-        UIColor *color2 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_down.png"]];
-        self.thumbsDownLabel.backgroundColor = color2;
-        [self addSubview:self.thumbsDownLabel];
-        self.thumbsDownLabel.userInteractionEnabled=YES;
-        
-        
-        self.thumbsUpLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 15, 28, 27)];
-        UIColor *color1 = [UIColor colorWithPatternImage:[UIImage imageNamed:@"thumbs_up.png"]];
-        self.thumbsUpLabel.backgroundColor = color1;
-        [self addSubview:self.thumbsUpLabel];
-        
-        
-        self.thumbsDownLabel.userInteractionEnabled=YES;
-        UITapGestureRecognizer* downGesture = [[UITapGestureRecognizer alloc]       initWithTarget:self action:@selector(thumbsDownPressed:)];
-        [self.thumbsDownLabel setUserInteractionEnabled:YES];
-        [self.thumbsDownLabel addGestureRecognizer:downGesture];
-        
-        UITapGestureRecognizer* upGesture = [[UITapGestureRecognizer alloc]       initWithTarget:self action:@selector(thumbsUpPressed:)];
-        [self.thumbsUpLabel setUserInteractionEnabled:YES];
-        [self.thumbsUpLabel addGestureRecognizer:upGesture];
-        
-        
-        self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 19, 35, 25)];
-        self.redLabel.textColor = [UIColor redColor];
-        [self.redLabel setFont:[UIFont systemFontOfSize:19]];
-        self.redLabel.text = card[@"downVote"];
-        self.redLabel.textAlignment = NSTextAlignmentCenter;
-        [self addSubview:self.redLabel];
-        
-        self.greenLabel = [[UILabel alloc] initWithFrame:CGRectMake(255, 19, 35, 25)];
-        self.greenLabel.textColor = [UIColor greenColor];
-        [self.greenLabel setFont:[UIFont systemFontOfSize:19]];
-        self.redLabel.text = card[@"upVote"];
-        self.greenLabel.textAlignment = NSTextAlignmentCenter;
-        [self addSubview:self.greenLabel];
-        
     }
     return self;
 }

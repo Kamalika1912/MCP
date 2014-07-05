@@ -50,6 +50,9 @@
 		5AE6D418194640DE006BCF1A /* XYZSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D417194640DE006BCF1A /* XYZSubject.m */; };
 		6EA4DAC91965961C0059010A /* XYZCreateCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4DAC51965961C0059010A /* XYZCreateCardViewController.m */; };
 		6EA4DACA1965961C0059010A /* XYZCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4DAC71965961C0059010A /* XYZCreateViewController.m */; };
+		6EA4DAD11968AE000059010A /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA4DAD01968AE000059010A /* edit.png */; };
+		6EA4DAD31968AF090059010A /* edit2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA4DAD21968AF090059010A /* edit2.png */; };
+		6EA4DAD61968AFC20059010A /* XYZEditCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4DAD51968AFC20059010A /* XYZEditCardViewController.m */; };
 		6EEC9C00195CBB3100B7E980 /* thumbs_down.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */; };
 		6EEC9C02195CBB3A00B7E980 /* thumbs_up.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EEC9C01195CBB3A00B7E980 /* thumbs_up.jpg */; };
 		6EEC9C09195CEE6700B7E980 /* XYZSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC9C08195CEE6700B7E980 /* XYZSplashViewController.m */; };
@@ -150,6 +153,10 @@
 		6EA4DAC51965961C0059010A /* XYZCreateCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCreateCardViewController.m; sourceTree = "<group>"; };
 		6EA4DAC61965961C0059010A /* XYZCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateViewController.h; sourceTree = "<group>"; };
 		6EA4DAC71965961C0059010A /* XYZCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCreateViewController.m; sourceTree = "<group>"; };
+		6EA4DAD01968AE000059010A /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
+		6EA4DAD21968AF090059010A /* edit2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit2.png; sourceTree = "<group>"; };
+		6EA4DAD41968AFC20059010A /* XYZEditCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZEditCardViewController.h; sourceTree = "<group>"; };
+		6EA4DAD51968AFC20059010A /* XYZEditCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZEditCardViewController.m; sourceTree = "<group>"; };
 		6EEC9BFF195CBB3100B7E980 /* thumbs_down.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumbs_down.jpg; sourceTree = "<group>"; };
 		6EEC9C01195CBB3A00B7E980 /* thumbs_up.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumbs_up.jpg; sourceTree = "<group>"; };
 		6EEC9C07195CEE6700B7E980 /* XYZSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSplashViewController.h; sourceTree = "<group>"; };
@@ -243,6 +250,8 @@
 		5A8E39C919479B570020836F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				6EA4DAD21968AF090059010A /* edit2.png */,
+				6EA4DAD01968AE000059010A /* edit.png */,
 				6EF0FCB119658F7900B94C12 /* logo_rwth.gif */,
 				6EF0FCAF19658F0800B94C12 /* L2P-Logo_neu.png */,
 				6EF0FCAD19658ED000B94C12 /* logo-rwth-klein-quadr.jpg */,
@@ -296,6 +305,8 @@
 				5AB82241194C76D700A2A6FE /* XYZMyFlashcardsViewController.m */,
 				5A6E431E195769CD00C03987 /* XYZStartStudyingViewController.h */,
 				5A6E431F195769CD00C03987 /* XYZStartStudyingViewController.m */,
+				6EA4DAD41968AFC20059010A /* XYZEditCardViewController.h */,
+				6EA4DAD51968AFC20059010A /* XYZEditCardViewController.m */,
 				5A6E432C195914E700C03987 /* XYZFlashcardFront.h */,
 				5A6E432D195914E700C03987 /* XYZFlashcardFront.m */,
 				5A6E432F1959150300C03987 /* XYZFlashcardBack.h */,
@@ -534,12 +545,14 @@
 				5A6E432A1958F82300C03987 /* favouriteSelected.png in Resources */,
 				6EEC9C11195CF3F800B7E980 /* shopping-cart.png in Resources */,
 				6EF0FCA619657E6100B94C12 /* studyico.png in Resources */,
+				6EA4DAD31968AF090059010A /* edit2.png in Resources */,
 				5AE6D3EC1946330E006BCF1A /* Images.xcassets in Resources */,
 				5AB8223D194BBD9700A2A6FE /* reputation.png in Resources */,
 				5AE6D3DB1946330E006BCF1A /* InfoPlist.strings in Resources */,
 				3516B836196445C4004DDF94 /* MyCards.json in Resources */,
 				6EF0FCAE19658ED000B94C12 /* logo-rwth-klein-quadr.jpg in Resources */,
 				5AE6D3E41946330E006BCF1A /* Main.storyboard in Resources */,
+				6EA4DAD11968AE000059010A /* edit.png in Resources */,
 				6EF0FCB019658F0800B94C12 /* L2P-Logo_neu.png in Resources */,
 				5A6E432B1958F82300C03987 /* favouriteNotSelected.png in Resources */,
 				5AB82233194BABE700A2A6FE /* coin.png in Resources */,
@@ -572,6 +585,7 @@
 				6EF0FCAC19657FBF00B94C12 /* XYZLoginViewController.m in Sources */,
 				5AE6D41519463F93006BCF1A /* XYZLecture.m in Sources */,
 				5AB821FD1949146900A2A6FE /* DropDownViewCell.m in Sources */,
+				6EA4DAD61968AFC20059010A /* XYZEditCardViewController.m in Sources */,
 				5AB25AA9195735A7000EA6C1 /* XYZBuyCardsViewController.m in Sources */,
 				5A8E39C319471CDB0020836F /* XYZStartupViewController.m in Sources */,
 				5A8E39C019467DE80020836F /* XYZDBManager.m in Sources */,

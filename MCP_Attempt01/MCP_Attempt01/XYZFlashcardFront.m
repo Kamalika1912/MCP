@@ -8,6 +8,9 @@
 
 #import "XYZFlashcardFront.h"
 #import "XYZFlashcard.h"
+#import <QuartzCore/QuartzCore.h>
+
+
 
 @implementation XYZFlashcardFront
 
@@ -64,14 +67,14 @@
         
         
         self.redLabel = [[UILabel alloc] initWithFrame:CGRectMake(190, 19, 35, 25)];
-        self.redLabel.textColor = [UIColor redColor];
+   
         [self.redLabel setFont:[UIFont systemFontOfSize:19]];
         self.redLabel.text = card[@"downVote"];
         self.redLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.redLabel];
         
         self.greenLabel = [[UILabel alloc] initWithFrame:CGRectMake(255, 19, 35, 25)];
-        self.greenLabel.textColor = [UIColor greenColor];
+        
         [self.greenLabel setFont:[UIFont systemFontOfSize:19]];
         self.greenLabel.text = card[@"upVote"];
         self.greenLabel.textAlignment = NSTextAlignmentCenter;
@@ -80,12 +83,23 @@
     return self;
 }
 -(void) thumbsDownPressed:(UITapGestureRecognizer *)gestureRecognizer
-{ 
+{
+    //card[@"downVote"]--; checking wheather the user has voted...decrease
+    
+    self.thumbsDownLabel.layer.shadowRadius = 4.0f;
+    self.thumbsDownLabel.layer.shadowOpacity = .9;
+    self.thumbsDownLabel.layer.shadowOffset = CGSizeZero;
+    self.thumbsDownLabel.layer.masksToBounds = NO;
 }
 
 -(void) thumbsUpPressed:(UITapGestureRecognizer *)gestureRecognizer
 {
-    
+ //card[@"downVote"]++;
+    self.thumbsUpLabel.layer.shadowRadius = 4.0f;
+    self.thumbsUpLabel.layer.shadowOpacity = .9;
+    self.thumbsUpLabel.layer.shadowOffset = CGSizeZero;
+    self.thumbsUpLabel.layer.masksToBounds = NO;
+
 }
 
 /*
