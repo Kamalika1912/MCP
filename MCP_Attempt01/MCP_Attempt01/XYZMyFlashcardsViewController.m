@@ -248,9 +248,6 @@
     
 }
 
-
-
-
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     NSIndexPath *selectedRowIndex = [self.filteredTableView indexPathForSelectedRow];

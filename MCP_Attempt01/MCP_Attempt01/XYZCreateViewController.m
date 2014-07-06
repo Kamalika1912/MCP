@@ -44,22 +44,23 @@
     
     [self.view addSubview:self.horizontalScroll];
     
-    XYZFlashcard *flashcard;
-    flashcard.question=self.question;
-    flashcard.answer=self.answer;
+   // XYZFlashcard *flashcard;
+    //flashcard.question=self.question;
+    //flashcard.answer=self.answer;
     
-    XYZFlashcardFront *front = [[XYZFlashcardFront alloc] initWithFlashcardSimple:flashcard  withFrame:CGRectMake(0, 65, 320, 420)];//i 1 to proto
+    XYZFlashcardFront *front = [[XYZFlashcardFront alloc] initWithFlashcardForCreate:self.flashCard  withFrame:CGRectMake(0, 35, 320, 420)];//i 1 to proto
     
     front.frontCoverButton.tag = 0;
-    //[front.frontCoverButton addTarget:self action:@selector(flipCardToBackAtPos:) forControlEvents:UIControlEventTouchUpInside];
+    [front.frontCoverButton addTarget:self action:@selector(flipCardToBack:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.horizontalScroll addSubview:front];
+    
 }
 
 
 -(void)flipCardToBack:(UIButton *)sender {
     
-    XYZFlashcardBack *back = [[XYZFlashcardBack alloc] initWithFlashcard:self.flashCard withFrame:CGRectMake(self.horizontalScroll.frame.size.width*sender.tag, 65, 320, 420)];
+    XYZFlashcardBack *back = [[XYZFlashcardBack alloc] initWithFlashcardForCreate:self.flashCard withFrame:CGRectMake(self.horizontalScroll.frame.size.width*sender.tag, 35, 320, 420)];
     back.backCoverButton.tag=sender.tag;
     
     [back.backCoverButton addTarget:self action:@selector(flipCardToFront:) forControlEvents:UIControlEventTouchUpInside];
@@ -75,7 +76,7 @@
 
 -(void) flipCardToFront:(UIButton *)sender {
     
-    XYZFlashcardFront *front = [[XYZFlashcardFront alloc] initWithFlashcardSimple: self.flashCard withFrame:CGRectMake(self.horizontalScroll.frame.size.width*sender.tag, 65, 320, 420)];
+    XYZFlashcardFront *front = [[XYZFlashcardFront alloc] initWithFlashcardForCreate: self.flashCard withFrame:CGRectMake(self.horizontalScroll.frame.size.width*sender.tag, 35, 320, 420)];
     front.frontCoverButton.tag=sender.tag;
     
     [front.frontCoverButton addTarget:self action:@selector(flipCardToBack:) forControlEvents:UIControlEventTouchUpInside];

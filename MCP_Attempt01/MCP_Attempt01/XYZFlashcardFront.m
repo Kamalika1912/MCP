@@ -112,6 +112,50 @@
 }
 
 
+-(id) initWithFlashcardForCreate:(XYZFlashcard*)card withFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code        
+        
+        self.courseLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 01, 85, 85)];
+        
+        [self.courseLabel setFont:[UIFont systemFontOfSize:19]];
+        self.courseLabel.text = @"Course:";
+        self.courseLabel.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:self.courseLabel];
+        
+        self.lecLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 38, 85, 85)];
+        
+        [self.lecLabel setFont:[UIFont systemFontOfSize:19]];
+        self.lecLabel.text = @"Subject:";
+        self.lecLabel.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:self.lecLabel];
+        
+//        self.frontCoverButton.
+        self.frontCoverButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        self.frontCoverButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+        self.frontCoverButton.layer.backgroundColor = [UIColor yellowColor].CGColor;
+        self.frontCoverButton.layer.borderWidth = 2.0;
+        self.frontCoverButton.frame = CGRectMake(20, 100, 280, 250);
+        //self.preview.backgroundColor = [UIColor blueColor];
+        self.frontCoverButton.layer.cornerRadius = 5.0;
+        [self.frontCoverButton setTitle:@"Long press to add question" forState:UIControlStateNormal];
+        self.frontCoverButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        [self.frontCoverButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+        self.frontCoverButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [self.frontCoverButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
+        [self.frontCoverButton setTitleEdgeInsets:UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)]; // PADDING
+        
+        [self addSubview:self.frontCoverButton];
+        
+    }
+    return self;
+}
+
+
+
+
 -(void) thumbsDownPressed:(UITapGestureRecognizer *)gestureRecognizer
 {
     //card[@"downVote"]--; checking wheather the user has voted...decrease

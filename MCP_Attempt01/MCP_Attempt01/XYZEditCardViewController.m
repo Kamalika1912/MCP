@@ -44,16 +44,18 @@
     
     [self.view addSubview:self.horizontalScroll];
 
-    XYZFlashcard *flashcard;
-    flashcard.question=self.question;
-    flashcard.answer=self.answer;
     
-    XYZFlashcardFront *front = [[XYZFlashcardFront alloc] initWithFlashcardSimple:flashcard  withFrame:CGRectMake(0, 65, 320, 420)];//i 1 to proto
+    XYZFlashcardFront *front = [[XYZFlashcardFront alloc] initWithFlashcardSimple:self.flashCard  withFrame:CGRectMake(0, 65, 320, 420)];//i 1 to proto
     
-    front.frontCoverButton.tag = 0;
-   //[front.frontCoverButton addTarget:self action:@selector(flipCardToBackAtPos:) forControlEvents:UIControlEventTouchUpInside];
+   // front.frontCoverButton. = 0;
+   [front.frontCoverButton addTarget:self action:@selector(flipCardToBack:) forControlEvents:UIControlEventTouchUpInside];
     
+    front.frontCoverButton.userInteractionEnabled=YES;
+    UITapGestureRecognizer* TapGesture = [[UITapGestureRecognizer alloc]       initWithTarget:self action:@selector(tapToEdit:)];
+   // [self.thumbsDownLabel setUserInteractionEnabled:YES];
+    [front.frontCoverButton addGestureRecognizer:TapGesture];
     [self.horizontalScroll addSubview:front];
+    
 }
 
 
@@ -87,13 +89,18 @@
         [self.horizontalScroll insertSubview:front atIndex:sender.tag];
         
         
-        
     }];
     
     
     
 }
 
+-(void) tapToEdit:(UITapGestureRecognizer *)gestureRecognizer
+{
+    
+   //self.front
+     
+}
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];

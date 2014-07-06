@@ -15,11 +15,15 @@
 @property (strong,nonatomic) UILabel *redLabel;
 @property (strong,nonatomic) UILabel *greenLabel;
 
+@property (strong,nonatomic) UILabel *courseLabel;
+@property (strong,nonatomic) UILabel *lecLabel;
+
+
 @property (strong,nonatomic) UILabel *thumbsUpLabel;
 @property (strong,nonatomic) UILabel *thumbsDownLabel;
 
+-(id) initWithFlashcardForCreate:(XYZFlashcard*)card withFrame:(CGRect)frame;
 -(id) initWithFlashcard:(XYZFlashcard *)card withFrame:(CGRect)frame;
--(void) thumbsDownPressed:(UITapGestureRecognizer *)gestureRecognizer;
--(void) thumbsUpPressed:(UITapGestureRecognizer *)gestureRecognizer;
+ 
 
 @end

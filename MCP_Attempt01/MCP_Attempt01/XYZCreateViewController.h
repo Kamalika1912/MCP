@@ -14,8 +14,8 @@
 
 
 @interface XYZCreateViewController : UIViewController<UIScrollViewDelegate>
-@property (strong, nonatomic) NSString *answer;
-@property (strong, nonatomic) NSString *question;
+//@property (strong, nonatomic) NSString *answer;
+//@property (strong, nonatomic) NSString *question;
 @property (strong, nonatomic) UIScrollView *horizontalScroll;
 @property (strong,nonatomic) XYZFlashcard *flashCard;
 @end

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MCP_Attempt01/XYZFlashcardFront.h"
-            timestampString = "426365660.044469"
+            timestampString = "426378543.709403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "-initWithFlashcard:withFrame:"
             landmarkType = "4">
          </BreakpointContent>
