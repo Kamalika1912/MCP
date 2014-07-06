@@ -105,18 +105,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // return a list of Topics (not numbered lectures anymore) for wich there are card available for the specified course
 -(NSMutableArray *) loadLectureListForCourse:(NSString *)course {
     // filter all the cards by course

@@ -48,7 +48,6 @@
 		5AE6D40A19463644006BCF1A /* XYZFlashcard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D40919463644006BCF1A /* XYZFlashcard.m */; };
 		5AE6D41519463F93006BCF1A /* XYZLecture.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D41419463F93006BCF1A /* XYZLecture.m */; };
 		5AE6D418194640DE006BCF1A /* XYZSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AE6D417194640DE006BCF1A /* XYZSubject.m */; };
-		6EA4DAC91965961C0059010A /* XYZCreateCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4DAC51965961C0059010A /* XYZCreateCardViewController.m */; };
 		6EA4DACA1965961C0059010A /* XYZCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA4DAC71965961C0059010A /* XYZCreateViewController.m */; };
 		6EA4DAD11968AE000059010A /* edit.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA4DAD01968AE000059010A /* edit.png */; };
 		6EA4DAD31968AF090059010A /* edit2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EA4DAD21968AF090059010A /* edit2.png */; };
@@ -149,8 +148,6 @@
 		5AE6D41419463F93006BCF1A /* XYZLecture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZLecture.m; sourceTree = "<group>"; };
 		5AE6D416194640DE006BCF1A /* XYZSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSubject.h; sourceTree = "<group>"; };
 		5AE6D417194640DE006BCF1A /* XYZSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSubject.m; sourceTree = "<group>"; };
-		6EA4DAC41965961C0059010A /* XYZCreateCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateCardViewController.h; sourceTree = "<group>"; };
-		6EA4DAC51965961C0059010A /* XYZCreateCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCreateCardViewController.m; sourceTree = "<group>"; };
 		6EA4DAC61965961C0059010A /* XYZCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCreateViewController.h; sourceTree = "<group>"; };
 		6EA4DAC71965961C0059010A /* XYZCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCreateViewController.m; sourceTree = "<group>"; };
 		6EA4DAD01968AE000059010A /* edit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = edit.png; sourceTree = "<group>"; };
@@ -419,8 +416,6 @@
 		6E2ED563195C888300016C15 /* Create */ = {
 			isa = PBXGroup;
 			children = (
-				6EA4DAC41965961C0059010A /* XYZCreateCardViewController.h */,
-				6EA4DAC51965961C0059010A /* XYZCreateCardViewController.m */,
 				6EA4DAC61965961C0059010A /* XYZCreateViewController.h */,
 				6EA4DAC71965961C0059010A /* XYZCreateViewController.m */,
 			);
@@ -579,7 +574,6 @@
 			files = (
 				6EA4DACA1965961C0059010A /* XYZCreateViewController.m in Sources */,
 				5A6E43311959150300C03987 /* XYZFlashcardBack.m in Sources */,
-				6EA4DAC91965961C0059010A /* XYZCreateCardViewController.m in Sources */,
 				5A6E4320195769CD00C03987 /* XYZStartStudyingViewController.m in Sources */,
 				6EEC9C09195CEE6700B7E980 /* XYZSplashViewController.m in Sources */,
 				6EF0FCAC19657FBF00B94C12 /* XYZLoginViewController.m in Sources */,

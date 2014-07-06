@@ -213,11 +213,15 @@
                     <navigationItem key="navigationItem" id="4XJ-rQ-9kA">
                         <barButtonItem key="rightBarButtonItem" image="edit2.png" style="plain" id="rg2-eJ-bUg">
                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="NFW-u1-Yqf" kind="push" identifier="editCard" id="AAP-L1-VON"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cardNumber" destination="ft7-xr-Xk8" id="ZNk-rA-MB4"/>
+                        <outlet property="editButton" destination="rg2-eJ-bUg" id="y10-BJ-3kE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tJB-j4-jON" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -237,6 +241,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MGA-Vc-mF9">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="2p4-1O-Ylk">
+                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbe-FX-WhP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -512,10 +521,10 @@
             </objects>
             <point key="canvasLocation" x="-4985" y="1040"/>
         </scene>
-        <!--View Controller-->
+        <!--Create View Controller-->
         <scene sceneID="r9H-zj-Hlk">
             <objects>
-                <viewController id="PaF-i5-qaH" sceneMemberID="viewController">
+                <viewController id="PaF-i5-qaH" customClass="XYZCreateViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aBG-Fp-irS"/>
                         <viewControllerLayoutGuide type="bottom" id="DWp-AA-TLH"/>
@@ -525,7 +534,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jCk-Nm-J6U"/>
+                    <navigationItem key="navigationItem" id="OZI-XF-RDl">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="dZh-rV-BJJ"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4i-RE-x1I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

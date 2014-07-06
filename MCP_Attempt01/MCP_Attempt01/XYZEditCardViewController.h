@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XYZMyFlashcardsViewController.h"
+#import "XYZFlashcard.h"
+#import "XYZFlashcardFront.h"
+#import "XYZFlashcardBack.h"
 
-@interface XYZEditCardViewController : UIViewController
 
+@interface XYZEditCardViewController : UIViewController<UIScrollViewDelegate>
+@property (strong, nonatomic) NSString *answer;
+@property (strong, nonatomic) NSString *question;
+@property (strong, nonatomic) UIScrollView *horizontalScroll;
+@property (strong,nonatomic) XYZFlashcard *flashCard;
 @end

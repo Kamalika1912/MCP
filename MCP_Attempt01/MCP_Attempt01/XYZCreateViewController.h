@@ -7,38 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+ #import "XYZMyFlashcardsViewController.h"
 #import "XYZFlashcard.h"
-
-@interface XYZCreateViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate,UITableViewDelegate,UITableViewDataSource>
-{
-    NSMutableArray *courseList;
-    NSMutableArray *filterdLectureList;
-    NSMutableArray *filteredTagList;
-    NSInteger selectedCourse;
-    BOOL loadLectureList;
-
-}
+#import "XYZFlashcardFront.h"
+#import "XYZFlashcardBack.h"
 
 
-@property (weak, nonatomic) IBOutlet UIPickerView *coursePicker;
-@property (weak, nonatomic) IBOutlet UIButton *selectCourseButton;
-@property (weak, nonatomic) IBOutlet UISwitch *selectFilter;
-@property (weak, nonatomic) IBOutlet UIView *coursePickerView;
-@property (weak, nonatomic) IBOutlet UIView *coursePickerViewBorder;
-@property (weak, nonatomic) IBOutlet UIButton *done;
-@property (weak, nonatomic) IBOutlet UIButton *cancel;
-@property (weak, nonatomic) IBOutlet UITableView *filteredTableView;
-
-
-
-- (IBAction)selectCourseButtonTapped:(id)sender;
-- (IBAction)filterValueChanged:(id)sender;
-- (IBAction)doneButtonTapped:(id)sender;
-- (IBAction)cancelButtonTapped:(id)sender;
-
-
-
-
-- (void) loadCourseList;
-
+@interface XYZCreateViewController : UIViewController<UIScrollViewDelegate>
+@property (strong, nonatomic) NSString *answer;
+@property (strong, nonatomic) NSString *question;
+@property (strong, nonatomic) UIScrollView *horizontalScroll;
+@property (strong,nonatomic) XYZFlashcard *flashCard;
 @end

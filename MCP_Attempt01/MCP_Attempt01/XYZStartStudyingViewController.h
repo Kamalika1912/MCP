@@ -15,7 +15,9 @@
 }
 
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *editButton;
 @property (strong, nonatomic) IBOutlet UIButton *favouriteButton;
+
 @property (strong, nonatomic) UIScrollView *horizontalScroll;
 @property (strong, nonatomic) IBOutlet UILabel *cardNumber;
 

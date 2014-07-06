@@ -11,6 +11,8 @@
 #import "XYZFlashcard.h"
 #import "XYZFlashcardFront.h"
 #import "XYZFlashcardBack.h"
+#import "XYZEditCardViewController.h"
+
 
 @interface XYZStartStudyingViewController ()
 
@@ -110,12 +112,6 @@
 
         
     }];
-    
-
-    
-    
-    
-    
 }
 
 -(void) flipCardToFrontAtPos:(UIButton *)sender {
@@ -142,6 +138,17 @@
     
 }
 
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    long pos = [self findIndexOfCurrentCardInFocus];
+    XYZFlashcard *flashcard =[_myCards objectAtIndex: pos];
+    //NSString *answerToBeEdited;
+    //NSString *questionToBeEdited;
+    // pass the array of cards to next view
+    XYZEditCardViewController *targetVC = (XYZEditCardViewController  *)segue.destinationViewController;
+    targetVC.flashCard= flashcard;
+    //targetVC.answer= @"test2";
+}
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];

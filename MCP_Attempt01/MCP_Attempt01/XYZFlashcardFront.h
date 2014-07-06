@@ -19,6 +19,7 @@
 @property (strong,nonatomic) UILabel *thumbsDownLabel;
 
 -(id) initWithFlashcard:(XYZFlashcard *)card withFrame:(CGRect)frame;
+-(id) initWithFlashcardSimple:(XYZFlashcard*)card withFrame:(CGRect)frame;
 -(void) thumbsDownPressed:(UITapGestureRecognizer *)gestureRecognizer;
 -(void) thumbsUpPressed:(UITapGestureRecognizer *)gestureRecognizer;
 @end

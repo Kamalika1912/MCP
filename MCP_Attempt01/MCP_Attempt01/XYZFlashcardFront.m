@@ -82,6 +82,36 @@
     }
     return self;
 }
+//initiations for create and edit Card
+
+-(id) initWithFlashcardSimple:(XYZFlashcard*)card withFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        
+        
+        self.frontCoverButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        self.frontCoverButton.layer.borderColor = [UIColor darkGrayColor].CGColor;
+        self.frontCoverButton.layer.backgroundColor = [UIColor yellowColor].CGColor;
+        self.frontCoverButton.layer.borderWidth = 2.0;
+        self.frontCoverButton.frame = CGRectMake(20, 10, 280, 330);
+        //self.preview.backgroundColor = [UIColor blueColor];
+        self.frontCoverButton.layer.cornerRadius = 5.0;
+        [self.frontCoverButton setTitle:card[@"question"] forState:UIControlStateNormal];
+        self.frontCoverButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        [self.frontCoverButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        self.frontCoverButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [self.frontCoverButton.titleLabel setFont:[UIFont systemFontOfSize:25]];
+        [self.frontCoverButton setTitleEdgeInsets:UIEdgeInsetsMake(5.0, 5.0, 5.0, 5.0)]; // PADDING
+        
+        [self addSubview:self.frontCoverButton];
+        
+    }
+    return self;
+}
+
+
 -(void) thumbsDownPressed:(UITapGestureRecognizer *)gestureRecognizer
 {
     //card[@"downVote"]--; checking wheather the user has voted...decrease
@@ -110,5 +140,6 @@
     // Drawing code
 }
 */
+
 
 @end
